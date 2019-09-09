@@ -1,0 +1,249 @@
+.Form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    padding: 1.5rem 1.5rem;
+    width: 100%;
+    min-height: 40rem;
+
+    /* color: rgb(179, 179, 179); */
+    color: black;
+    
+}
+.form-p {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Dzięki metodzie poniżej chrome nie zmienia wyglądu inputa po autofillu */
+.Form 
+.field-text:-webkit-autofill,
+.field-text:-webkit-autofill:hover, 
+.field-text:-webkit-autofill:focus, 
+.field-text:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px rgb(238, 238, 238) inset !important;
+    box-shadow: 0 0 0 30px rgb(238, 238, 238) inset !important;
+    -webkit-text-fill-color: black !important;
+}
+
+.Form-inputDiv {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.field-text {
+    font-family: inherit;
+    height: 3rem;
+    width: 80%;
+    min-width: 20rem;
+    font-size: 1.4rem;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    color: black;
+}
+
+.data-container {
+    width: 40rem;
+    padding: 1.5rem;
+    margin-top: -1rem;
+}
+
+.data-container span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.data-start {
+    display: flex;
+    
+    margin-bottom: 1.5rem;
+    margin-left: 3rem;
+}
+
+.data-end {
+    display: flex;
+    margin-left: 3rem;
+}
+
+.span-item {
+    flex: 0 0 13%;
+}
+
+.date-items {
+    flex: 1;
+}
+
+.input-select {
+    font-size: 1.4rem;
+    font-family: inherit;
+    margin-right: 1rem;
+
+    background-color: transparent;
+    color: black;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.error-container {
+    text-align: start;
+    width: 40rem;
+}
+
+.error-message {
+    color: red;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.error-text-field {
+    border-color: rgb(255, 52, 52);
+    background-color: rgb(255, 163, 163);
+    color: black;
+}
+.error-text-field::placeholder {
+    color: black;
+}
+
+.error-text-field::-moz-placeholder {
+    color: black;
+    opacity: 1;
+}
+/* rgb(253, 186, 186) */
+.error-date {
+    background-color: rgb(255, 86, 86);
+    border: 2px rgb(245, 26, 26) solid;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.btn {
+    width: 10rem;
+    height: 4rem;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: none;
+    font-family: inherit;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgb(29, 29, 29);
+}
+
+.btn:active {
+    background-color: rgb(49, 49, 49);
+}
+
+.select-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 30rem;
+}
+
+.select-div p {
+    flex: 0 0 40%;
+    text-align: center;
+    margin-right: .5rem;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+@media (max-width: 2000px) {
+    .field-text {
+        width: 100%;
+    }
+
+    .data-container {
+        padding: 1.5rem 3rem;
+    }
+}
+
+@media (max-width: 1370px)/*  and (min-height: 850px) */ {
+    .select-div {
+        padding: 1rem;
+    }
+
+    .Form-inputDiv {
+        padding: .5rem;
+    }
+
+    .btn {
+        width: 10rem;
+        height: 5rem;
+        font-size: 1.8rem;
+        margin: .5rem;
+    }
+}
+
+@media (max-width: 1030px) and (orientation: portrait) {
+    .field-text {
+        font-size: 2rem;
+        height: 3.5rem;
+    }
+
+    .select-div {
+        width: 35rem;
+    }
+
+    .select-div p {
+        font-size: 2rem;
+    }
+
+    .input-select {
+        font-size: 1.8rem;
+    }
+
+    .form-p {
+        font-size: 2.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .data-container {
+        width: 42rem;
+    }
+
+    .span-item span {
+        font-size: 1.8rem;
+    }
+
+    .error-message {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+@media (max-width: 450px) {
+    .data-start {
+        margin-bottom: 2rem;
+        margin-top: .5rem;
+    }
+
+    .data-container {
+        margin: 1rem 0;
+    }
+}
+
+@media (max-width: 390px) {
+    .Form {
+        padding: 1.5rem 0;
+    }
+
+    .data-container {
+        padding: 1.5rem 1rem;
+        width: 38rem;
+    }
+}

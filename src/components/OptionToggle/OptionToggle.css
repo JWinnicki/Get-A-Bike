@@ -1,0 +1,52 @@
+@media(max-width: 40000px) {
+    .OptionToggle-list {
+        list-style: none;
+    
+        display: flex;
+    }
+    
+    .OptionToggle-item {
+        border: 1px white solid;
+    }
+    
+    .OptionToggle-item:last-child {
+        border-left: none;
+    }
+    
+    .OptionToggle-button {
+        color: white;
+        background-color: transparent;
+        border: none;
+        padding: 2rem 2rem;
+        width: 16rem;
+        text-align: center;
+        font-weight: bold;
+        font-family: inherit;
+        font-size: 1.6rem;
+    }
+    
+    .OptionToggle-button:hover {
+        cursor: pointer;
+    }
+    
+    .OptionToggle-button--active {
+        color: black;
+        background-color: rgb(238, 238, 238);
+    }
+    
+    
+}
+
+@media (max-width: 2085px) {
+    .OptionToggle-button {
+        padding: 1rem 2rem;
+        width: 16rem;
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 1030px) {
+    .OptionToggle-button {
+        padding: 2rem 2rem;
+    }
+}

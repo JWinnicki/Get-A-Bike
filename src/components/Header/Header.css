@@ -1,0 +1,155 @@
+@media (max-width: 43000px) {
+    .Header {
+        height: 12vh;
+        background-color: black;
+    
+        display: flex;
+    }
+    
+    .Header-logo__div {
+        width: 30rem;
+    
+        display: flex;
+        
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .Header-logo__div:hover {
+        cursor: pointer;
+    }
+    
+    .Header-logo__img {
+        width: 100%;
+        max-height: 12vh;
+    }
+    
+    .Header-links {
+        flex: 1;
+        color: white;
+    
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-left: 2rem;
+    }
+    
+    .Header-links__item {
+        font-size: 1.8rem;
+        height: 80%;
+        padding: 1rem;
+        margin-right: 1rem;
+        min-width: 12rem; 
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        transition: background-color 0.2s;
+    
+        text-decoration: none;
+        color: white;
+    }
+    
+    .Header-links__item--active {
+        background-color: rgb(46, 46, 46);
+    }
+    
+    .Header-links__item:hover {
+        cursor: pointer;
+        background-color: rgb(46, 46, 46);
+    }
+    
+    .Header-burgerMenu {
+        flex: 1;
+        
+    
+        display: none;
+    }
+}
+
+@media (max-width: 1920px) {
+    .Header-logo__div {
+        width: 26rem;
+    }
+}
+
+@media (max-width: 1795px) {
+    .Header-logo__div {
+        width: 25rem;
+    }
+}
+
+@media (max-width: 1600px) {
+    .Header-logo__div {
+        width: 24rem;
+    }
+}
+
+@media (max-width: 1030px) and (min-height: 1360px) {
+    .Header-links__item {
+        font-size: 2rem;
+        height: 50%;
+        min-width: 12rem; 
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .Header-logo__div {
+        width: 23rem;
+    }
+
+    .Header-burgerMenu {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .Header-links {
+        display: none;
+    }
+
+    .Header-logo__div {
+        margin-right: 3rem;
+    }
+}
+
+
+@media (max-width: 850px) {
+    .Header-logo__div {
+        width: 20rem;
+    }
+}
+
+@media (max-width: 850px) and (min-height: 360px) {
+    .Header-logo__div {
+        width: 17rem;
+    }
+}
+
+@media (max-width: 770px) and (min-height: 1000px) {
+    .Header-logo__div {
+        width: 24rem;
+    }
+}
+
+@media (max-width: 600px) and (min-height: 310px) {
+    .Header-logo__div {
+        width: 15rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .Header-logo__div {
+        width: 20rem;
+    }
+}
+
+
+
+
+
+
+
+

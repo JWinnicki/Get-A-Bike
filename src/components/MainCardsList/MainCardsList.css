@@ -1,0 +1,50 @@
+@media (max-width: 42000px) {
+    .MainCardsList {
+        width: 100%;
+        margin: 0 auto;
+    
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        grid-gap: 1rem;
+        justify-items: center;
+    
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 1030px) and (min-height: 1360px) {
+    .MainCardsList {
+        grid-template-columns: repeat(2, minmax(18rem, 1fr));
+        grid-gap: 5rem;
+        padding: 3rem 15rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .MainCardsList {
+        grid-template-columns: repeat(2, minmax(18rem, 1fr));
+        grid-gap: 5rem;
+        padding: 3rem 10rem;
+    }
+}
+
+
+
+@media (max-width: 562px) {
+    .MainCardsList {
+        padding: 3rem 4rem;
+    }
+}
+
+@media (max-width: 455px) {
+    .MainCardsList {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .MainCardsList {
+        grid-template-columns: repeat(1, minmax(18rem, 1fr));
+    }
+}

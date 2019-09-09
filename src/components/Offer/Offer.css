@@ -1,0 +1,286 @@
+@media (max-width: 40000px) {
+    .Offer {
+        /* width: 90%; */
+        min-height: 76vh;
+        /* margin: 5rem auto; */
+        color: white;
+        background-color: rgba(0, 0, 0, .8);
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .Offer-container {
+        width: 70%;
+        min-height: 45rem;
+        background-color: rgb(238, 238, 238);
+        color: black;
+        margin: 1rem;
+        padding: 2rem;
+        border-radius: 3px;
+    }
+    
+    .Offer-offers {
+        display: flex;
+        padding: 0 2rem;
+    }
+    
+    .Offer-section_A {
+        flex: 0 0 calc(50% + 2.5px);
+    
+        border-right: 5px black solid;
+    }
+    
+    .Offer-section_B {
+        flex: 1;
+    }
+    
+    .Offer-section_A,
+    .Offer-section_B {
+        /* min-height: 30rem; */
+        margin-top: 5rem;
+    
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    
+    .section-title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        
+        padding: 1rem;
+    }
+    
+    .section-title > h2 {
+        margin-left: 3rem;
+        font-size: 3rem;
+    }
+    
+    .section-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .section-list {
+        list-style: none;
+    }
+    
+    .section-list__item {
+        display: flex;
+        align-items: center;
+    
+        padding: .5rem;
+    }
+    
+    .section-list__item > p {
+        font-size: 2rem;
+        margin-left: 1rem; 
+    }
+    
+    .Offer-btn__div {
+        height: 6rem;
+        width: 20rem;
+        background-color: black;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        font-size: 2rem;
+    
+        transition: all .2s;
+    }
+    
+    .Offer-btn {
+        height: 6rem;
+        width: 20rem;
+        display: block;
+        margin: 3rem auto;
+    }
+    
+    .Offer-btn:visited,
+    .Offer-btn:link {
+        text-decoration: none;
+        color: white;
+    }
+    
+    .Offer-btn:active > .Offer-btn__div {
+        background-color: #272727;
+    }
+    
+    .Offer-btn__div:hover {
+        background-color: #1b1b1b;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 2000px) {
+    .Offer-container {
+        width: 75%;
+    }
+}
+
+@media (max-width: 1880px) {
+    .Offer-container {
+        min-height: 38rem;
+    }
+}
+
+@media (max-width: 1810px) {
+    .Offer-container {
+        width: 80%;
+    }
+
+    .Offer-btn {
+        margin: 3rem auto 1rem auto;
+    }
+}
+
+@media (max-width: 1385px) {
+    .Offer-container {
+        width: 80%;
+    }
+
+    .Offer-btn {
+        margin: 3rem auto;
+    }
+}
+
+@media (max-width: 1030px) and (orientation: portrait) {
+
+    .Offer-container {
+        width: 60%;
+    }
+
+    .Offer-offers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Offer-section_A {
+        border-bottom: 5px black solid;
+        border-right: none; 
+    }
+
+    .Offer-section_A,
+    .Offer-section_B {
+        /* min-height: 30rem; */
+        padding: 3rem 0;
+        margin-top: 0;
+        width: 70%;
+    }
+}
+
+@media (max-width: 780px) {
+
+    .Offer-container {
+        width: 70%;
+    }
+
+    .section-title > h2 {
+        margin-left: 2rem;
+        font-size: 3.2rem;
+    }
+
+    .section-list__item > p {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 682px) {
+
+    .Offer-container {
+        width: 80%;
+    }
+
+    .Offer-section_A,
+    .Offer-section_B {
+        width: 75%;
+    }
+
+    .section-title > h2 {
+        font-size: 3rem;
+    }
+
+    .section-list__item > p {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 682px) {
+
+    .Offer-container {
+        width: 80%;
+    }
+
+    .Offer-section_A,
+    .Offer-section_B {
+        width: 95%;
+    }
+}
+
+@media (max-width: 473px) {
+    .Offer-container {
+        width: 85%;
+    }
+
+    .section-title > h2 {
+        font-size: 2.9rem;
+    }
+
+    .section-list__item > p {
+        font-size: 2.3rem;
+    }
+}
+
+@media (max-width: 440px) {
+    .Offer-section_A,
+    .Offer-section_B {
+        width: 100%;
+    }
+
+    .Offer-btn__div {
+        height: 8rem;
+        width: 20rem;
+    }
+    
+}
+
+@media (max-width: 418px) {
+    .section-title > h2 {
+        font-size: 2.8rem;
+        margin-left: 1rem;
+    }
+
+    .section-list__item > p {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .Offer-offers {
+        padding: 0;
+    }
+}
+
+@media (max-width: 362px) {
+    .Offer-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 342px) {
+    .section-title > h2 {
+        font-size: 2.5rem;
+    }
+
+    .section-list__item > p {
+        font-size: 2.0rem;
+    }
+}

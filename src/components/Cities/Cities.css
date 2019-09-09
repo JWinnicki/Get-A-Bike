@@ -1,0 +1,95 @@
+
+@media (max-width: 40000px) {
+    .Cities {
+        /* width: 90%;
+        margin: 5rem auto; */
+        color: white;
+        background-color: rgba(0, 0, 0, .8);
+        min-height: 76vh;
+        padding: 9rem 13rem;
+    
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(2, minmax(45rem, 1fr));
+        justify-items: center;
+        grid-gap: 3rem;
+    }
+}
+
+@media (max-width: 2000px) {
+    .Cities {
+        padding: 7rem 10rem;
+        grid-gap: 4rem;
+    }
+}
+
+@media (max-width: 1700px) {
+    .Cities {
+        padding: 6rem 8rem;
+        grid-gap: 4rem;
+    }
+}
+
+@media (max-width: 1300px) {
+    .Cities {
+        padding: 5rem 12rem;
+        grid-gap: 3rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .Cities {
+        padding: 5rem 8rem;
+        grid-gap: 3rem;
+    }
+}
+
+@media (max-width: 1090px) {
+    .Cities {
+        padding: 3.5rem 8rem;
+        grid-gap: 3rem;
+    }
+}
+
+@media (max-width: 1030px) and (orientation: portrait) {
+    .Cities {
+        padding: 20rem 2rem;
+        grid-gap: 3rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .Cities {
+        padding: 3.5rem 4rem;
+        grid-gap: 3rem;
+    }
+}
+
+@media (max-width: 940px) {
+    .Cities {
+        grid-template-columns: repeat(1, minmax(45rem, 1fr));
+        padding: 5rem 2rem;
+        grid-gap: 5rem;
+    }
+}
+
+
+@media (max-width: 390px) {
+    .Cities {
+        grid-template-columns: repeat(1, minmax(45rem, 1fr));
+        padding: 5rem 1rem;
+        grid-gap: 4rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .Cities {
+        grid-template-columns: repeat(1, minmax(40rem, 1fr));
+    }
+}
+
+@media (max-width: 330px) {
+    .Cities {
+        grid-template-columns: repeat(1, minmax(38rem, 1fr));
+    }
+}

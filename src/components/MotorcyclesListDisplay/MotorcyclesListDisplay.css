@@ -1,0 +1,29 @@
+.MotorcyclesListDisplay{
+    width: 100%;
+    min-height: 50rem;
+    background-color: rgb(24, 24, 24);
+    min-height: 76vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.list-container {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1030px) {
+    .MotorcyclesListDisplay-togglerDiv {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 940px) {
+    .MotorcyclesListDisplay-togglerDiv {
+        margin-top: 0;
+    }
+}

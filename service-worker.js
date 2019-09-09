@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Get-A-Bike/precache-manifest.65ee2e4f0a9c3d462eb6c3e152aae1eb.js"
+  "/Get-A-Bike/precache-manifest.9fc7417ff64c2267c9eca939e22e4476.js"
 );
 
 workbox.clientsClaim();

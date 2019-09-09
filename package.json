@@ -1,10 +1,12 @@
 {
   "name": "get-a-bike",
   "version": "0.1.0",
+  "homepage": "https://JWinnicki.github.io/Get-A-Bike",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
     "formik": "^1.5.7",
+    "gh-pages": "^2.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.2",
@@ -15,6 +17,8 @@
     "yup": "^0.27.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

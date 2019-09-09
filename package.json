@@ -1,7 +1,7 @@
 {
   "name": "get-a-bike",
   "version": "0.1.0",
-  "homepage": "https://JWinnicki.github.io/Get-A-Bike",
+  "homepage": "https://jwinnicki.github.io/Get-A-Bike",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",

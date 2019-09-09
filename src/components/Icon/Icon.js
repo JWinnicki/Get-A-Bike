@@ -6,7 +6,7 @@ const Icon = props => {
     
     return (
         <svg className={`icon-${props.icon} ${props.color ? props.color : 'icon'} ${props.size} ${props.rotate ? props.rotate : null}`}>
-            <use xlinkHref={`/sprite.svg#${props.icon}`} />
+            <use xlinkHref={`../../sprite.svg#${props.icon}`} />
         </svg>
     )
 }

@@ -96,4 +96,9 @@
     .BrandToggler-list--item:nth-child(3) {
         border-left: 1px white solid;
     }
+
+    .BrandToggler-list--item:nth-child(3),
+    .BrandToggler-list--item:nth-child(4) {
+        border-top: none;
+    }
 }

@@ -89,4 +89,8 @@
         width: 35rem;
         height: 45rem;
     }
+
+    .MotoCard-book {
+        height: 7rem;
+    }
 }

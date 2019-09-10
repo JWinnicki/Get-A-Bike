@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import * as actionTypes from './actionTypes';
+import apiKey from '../apiKey';
 
 
 export const authStart = () => {
@@ -56,9 +57,9 @@ export const auth = (email, password, isRegistered) => {
             returnSecureToken: true
         }
 
-        let url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDQoSEibie0gLkdiLh07dA_b_1CGKQLwL4`;
+        let url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`;
         if(isRegistered) {
-            url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDQoSEibie0gLkdiLh07dA_b_1CGKQLwL4`;
+            url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`;
         }
 
         try {

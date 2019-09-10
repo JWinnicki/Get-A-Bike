@@ -134,6 +134,12 @@
     }
 }
 
+@media (max-width: 700px) and (max-height: 450px) {
+    .Header-logo__div {
+        width: 16rem;
+    }
+}
+
 @media (max-width: 600px) and (min-height: 310px) {
     .Header-logo__div {
         width: 15rem;

@@ -1,36 +1,32 @@
 .Footer {
-    height: 12vh;
+    min-height: 12vh;
     background-color: black;
     color: white;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    align-items: center;
     position: sticky;
     bottom: 0;    
 }
 
-.Footer-items__div {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 5rem;
+.Footer-text {
+    font-size: 1.2rem;
 }
 
-.Footer-items__item {
-    font-size: 1.5rem;
-    height: 5rem;
-    width: 12rem;
-
+.Footer-contact {
+    width: 50%;
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-
-    transition: all .2s;
+    margin-top: .5rem;
 }
 
-.Footer-items__item:hover {
-    cursor: pointer;
-    background-color: rgb(46, 46, 46);
+.Footer-contact--text{
+    font-size: 1.4rem;
+}
+
+.Footer-contact--link{
+    margin-left: .8rem;
 }

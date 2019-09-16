@@ -14,7 +14,7 @@
     .BrandToggler-list--item {
         width: 10rem;
         background-color: transparent;
-        border: 1px white solid;
+        border: 2px white solid;
         border-left: none;
         
         display: flex;
@@ -23,7 +23,7 @@
     }
     
     .BrandToggler-list--item:first-child {
-        border-left: 1px white solid;
+        border-left: 2px white solid;
     }
     
     .BrandToggler-list--link {
@@ -94,7 +94,7 @@
     }
 
     .BrandToggler-list--item:nth-child(3) {
-        border-left: 1px white solid;
+        border-left: 2px white solid;
     }
 
     .BrandToggler-list--item:nth-child(3),

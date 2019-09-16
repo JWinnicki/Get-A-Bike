@@ -1,15 +1,15 @@
 {
-  "main.css": "/Get-A-Bike/static/css/main.9bd3d6c6.chunk.css",
-  "main.js": "/Get-A-Bike/static/js/main.95ba2d8f.chunk.js",
-  "main.js.map": "/Get-A-Bike/static/js/main.95ba2d8f.chunk.js.map",
+  "main.css": "/Get-A-Bike/static/css/main.fe34d0a9.chunk.css",
+  "main.js": "/Get-A-Bike/static/js/main.ea2da188.chunk.js",
+  "main.js.map": "/Get-A-Bike/static/js/main.ea2da188.chunk.js.map",
   "runtime~main.js": "/Get-A-Bike/static/js/runtime~main.2b4a33d1.js",
   "runtime~main.js.map": "/Get-A-Bike/static/js/runtime~main.2b4a33d1.js.map",
-  "static/js/2.e8f2881e.chunk.js": "/Get-A-Bike/static/js/2.e8f2881e.chunk.js",
-  "static/js/2.e8f2881e.chunk.js.map": "/Get-A-Bike/static/js/2.e8f2881e.chunk.js.map",
+  "static/js/2.a4e44a34.chunk.js": "/Get-A-Bike/static/js/2.a4e44a34.chunk.js",
+  "static/js/2.a4e44a34.chunk.js.map": "/Get-A-Bike/static/js/2.a4e44a34.chunk.js.map",
   "index.html": "/Get-A-Bike/index.html",
-  "precache-manifest.b01616b90f3b3facffe7bb4e2382fdf3.js": "/Get-A-Bike/precache-manifest.b01616b90f3b3facffe7bb4e2382fdf3.js",
+  "precache-manifest.9b3e70b35e2582abc6ef76b0f055f93e.js": "/Get-A-Bike/precache-manifest.9b3e70b35e2582abc6ef76b0f055f93e.js",
   "service-worker.js": "/Get-A-Bike/service-worker.js",
-  "static/css/main.9bd3d6c6.chunk.css.map": "/Get-A-Bike/static/css/main.9bd3d6c6.chunk.css.map",
+  "static/css/main.fe34d0a9.chunk.css.map": "/Get-A-Bike/static/css/main.fe34d0a9.chunk.css.map",
   "static/media/CB1000R.png": "/Get-A-Bike/static/media/CB1000R.1adf5969.png",
   "static/media/CB500F.jpg": "/Get-A-Bike/static/media/CB500F.0934e8b4.jpg",
   "static/media/CB650F.jpg": "/Get-A-Bike/static/media/CB650F.aff97f5e.jpg",
@@ -38,5 +38,5 @@
   "static/media/kawasaki-ZX6R.png": "/Get-A-Bike/static/media/kawasaki-ZX6R.ed75fc0a.png",
   "static/media/App.css": "/Get-A-Bike/static/media/main.272eb047.jpg",
   "static/media/ninja-650.png": "/Get-A-Bike/static/media/ninja-650.207a87a4.png",
-  "static/media/sprite.svg": "/Get-A-Bike/static/media/sprite.144a009c.svg"
+  "static/media/sprite.svg": "/Get-A-Bike/static/media/sprite.78387e03.svg"
 }

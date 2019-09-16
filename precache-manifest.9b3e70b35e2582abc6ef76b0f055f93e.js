@@ -4,24 +4,24 @@ self.__precacheManifest = [
     "url": "/Get-A-Bike/static/media/Z125.30c3b193.png"
   },
   {
-    "revision": "12fc8e4bf609a88c5f97",
-    "url": "/Get-A-Bike/static/css/main.9bd3d6c6.chunk.css"
+    "revision": "ab30e2070ab453e431bf",
+    "url": "/Get-A-Bike/static/css/main.fe34d0a9.chunk.css"
   },
   {
     "revision": "eaaf8ac46a92537b49ad",
     "url": "/Get-A-Bike/static/js/runtime~main.2b4a33d1.js"
   },
   {
-    "revision": "a3fe02e7a12d08f120a8",
-    "url": "/Get-A-Bike/static/js/2.e8f2881e.chunk.js"
+    "revision": "b4a8df9659db12e61d91",
+    "url": "/Get-A-Bike/static/js/2.a4e44a34.chunk.js"
   },
   {
     "revision": "9fd78e66aad44a37861b5754fe8b8abe",
     "url": "/Get-A-Bike/static/media/Logo-second.9fd78e66.png"
   },
   {
-    "revision": "144a009cfe43baeb35088aaf63468911",
-    "url": "/Get-A-Bike/static/media/sprite.144a009c.svg"
+    "revision": "78387e03ca66f224055eac077bba88e9",
+    "url": "/Get-A-Bike/static/media/sprite.78387e03.svg"
   },
   {
     "revision": "55383c460b2b28be9657faed136fda5a",
@@ -68,8 +68,8 @@ self.__precacheManifest = [
     "url": "/Get-A-Bike/static/media/ninja-650.207a87a4.png"
   },
   {
-    "revision": "12fc8e4bf609a88c5f97",
-    "url": "/Get-A-Bike/static/js/main.95ba2d8f.chunk.js"
+    "revision": "ab30e2070ab453e431bf",
+    "url": "/Get-A-Bike/static/js/main.ea2da188.chunk.js"
   },
   {
     "revision": "b3c9efb6d8b8d433a89ed13174f27dcc",
@@ -132,7 +132,7 @@ self.__precacheManifest = [
     "url": "/Get-A-Bike/static/media/main.272eb047.jpg"
   },
   {
-    "revision": "86b682907c6c491d15ccddb6c2a3bf4b",
+    "revision": "3cf946fad798560bc7509681775b9cc5",
     "url": "/Get-A-Bike/index.html"
   }
 ];

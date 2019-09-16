@@ -1,4 +1,4 @@
-@media (max-width: 40000px) {
+
     .LogIn-container {
         /* width: 90%; */
         min-height: 76vh;
@@ -46,7 +46,7 @@
         align-items: center;
         justify-content: center;
     }
-}
+
 
 @media (max-width: 2085px) {
     .LogIn-form__background {

@@ -1,4 +1,4 @@
-@media(max-width: 40000px) {
+
     .OptionToggle-list {
         list-style: none;
     
@@ -6,7 +6,7 @@
     }
     
     .OptionToggle-item {
-        border: 1px white solid;
+        border: 2px white solid;
     }
     
     .OptionToggle-item:last-child {
@@ -33,9 +33,7 @@
         color: black;
         background-color: rgb(238, 238, 238);
     }
-    
-    
-}
+
 
 @media (max-width: 2085px) {
     .OptionToggle-button {

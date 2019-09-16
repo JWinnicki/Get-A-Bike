@@ -1,4 +1,4 @@
-@media (max-width: 40000px) {
+
     .Logo-div {
         width: 22rem; /* było 18rem oryginalnie */
         height: 22rem;
@@ -45,7 +45,7 @@
         opacity: 1;
         filter: none;
     }
-}
+
 
 @media (max-width: 1925px) {
     .Logo-div {

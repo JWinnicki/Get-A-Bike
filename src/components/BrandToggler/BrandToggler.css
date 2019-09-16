@@ -1,4 +1,4 @@
-@media (max-width: 10000px) {
+
     .BrandToggler-container {
         display: flex;
         align-items: center;
@@ -44,7 +44,6 @@
         color: black;
         background-color: white;
     }
-}
 
 @media (max-width: 1030px) and (min-height: 1300px) {
     .BrandToggler-list--item {

@@ -1,5 +1,5 @@
 
-@media (max-width: 40000px) {
+
     .Cities {
         /* width: 90%;
         margin: 5rem auto; */
@@ -14,7 +14,7 @@
         justify-items: center;
         grid-gap: 3rem;
     }
-}
+
 
 @media (max-width: 2000px) {
     .Cities {

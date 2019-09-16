@@ -1,4 +1,4 @@
-@media (max-width: 40000px) {
+
     .RegisterForm-Form {
         display: flex;
         flex-direction: column;
@@ -91,7 +91,7 @@
         display: flex;
         justify-content: center;
     }
-}
+
 
 @media (max-width: 1400px) {
     .RegisterForm-textInput {

@@ -1,4 +1,4 @@
-@media (max-width: 40000px) {
+
     .CityDataComponent{
         width: 45rem;
         height: 20rem;
@@ -42,7 +42,7 @@
     .card-content > p {
         padding: 0.5rem;
     }
-}
+
 
 @media (max-width: 2000px) {
     .CityDataComponent{

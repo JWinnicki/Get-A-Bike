@@ -1,4 +1,4 @@
-@media (max-width: 40000px) {
+
     .Brand-Logos__div {
         display: flex;
         align-items: center;
@@ -10,7 +10,7 @@
         color: white;
         background-color: rgba(0, 0, 0, .8);
     }
-}
+
 
 @media (max-width: 1700px) {
     .Brand-Logos__div {

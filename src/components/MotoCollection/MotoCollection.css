@@ -1,5 +1,5 @@
 
-@media (max-width: 40000px) {
+
     .MotoCollection {
         display: grid;
         grid-template-columns: repeat(3, minmax(30rem, 1fr));
@@ -10,7 +10,7 @@
         
         /* padding: 0rem 1rem 5rem 1rem; */
     }
-}
+
 
 @media (max-width: 1950px) {
     .MotoCollection {

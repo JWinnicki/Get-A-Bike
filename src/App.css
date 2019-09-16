@@ -1,6 +1,6 @@
 
 
-@media (max-width: 4300px) {
+
   html {
     font-size: 100%;
     box-sizing: border-box;
@@ -92,7 +92,7 @@
   .error-link {
     color: #0000EE;
   }
-}
+
 
 @media (max-width: 1750px) {
   html {

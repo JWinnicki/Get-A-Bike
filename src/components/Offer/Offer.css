@@ -1,4 +1,4 @@
-@media (max-width: 40000px) {
+
     .Offer {
         /* width: 90%; */
         min-height: 76vh;
@@ -117,7 +117,7 @@
         background-color: #1b1b1b;
         cursor: pointer;
     }
-}
+
 
 @media (max-width: 2000px) {
     .Offer-container {

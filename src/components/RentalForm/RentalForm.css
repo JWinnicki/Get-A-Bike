@@ -48,7 +48,7 @@
 }
 
 .data-container {
-    width: 40rem;
+    width: 80%;
     padding: 1.5rem;
     margin-top: -1rem;
 }
@@ -62,12 +62,12 @@
     display: flex;
     
     margin-bottom: 1.5rem;
-    margin-left: 3rem;
+    /* margin-left: 3rem; */
 }
 
 .data-end {
     display: flex;
-    margin-left: 3rem;
+    /* margin-left: 3rem; */
 }
 
 .span-item {
@@ -91,8 +91,9 @@
 
 .error-container {
     text-align: start;
-    width: 40rem;
-    margin-bottom: .8rem;
+    width: 80%;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
 }
 
 .error-message {
@@ -168,7 +169,7 @@
     }
 
     .data-container {
-        padding: 1.5rem 3rem;
+        width: 85%;
     }
 }
 
@@ -213,7 +214,7 @@
     }
 
     .data-container {
-        width: 42rem;
+        width: 70%;
     }
 
     .span-item span {
@@ -245,6 +246,6 @@
 
     .data-container {
         padding: 1.5rem 1rem;
-        width: 38rem;
+        width: 90%;
     }
 }

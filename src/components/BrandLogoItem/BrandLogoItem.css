@@ -218,32 +218,32 @@
     }
 }
 
-@media (max-width: 670px) {
+/* @media (max-width: 670px) {
     .Logo-div {
-        width: 16rem; /* było 18rem oryginalnie */
+        width: 16rem;
         height: 16rem;
     }
     
     .red > img {
-        width: 7.5rem;
-        height: 7.5rem;
+        width: 8.5rem;
+        height: 8.5rem;
     }
     
     .green > img {
-        width: 9rem;
-        height: 9rem;
+        width: 10rem;
+        height: 10rem;
     }
     
     .light-blue > img {
-        width: 9rem;
-        height: 9rem;
+        width: 10rem;
+        height: 10rem;
     }
     
     .dark-blue > img {
-        width: 9rem;
-        height: 9rem;
+        width: 10rem;
+        height: 10rem;
     }
-}
+} */
 
 @media (max-width: 570px) {
     .Logo-div {

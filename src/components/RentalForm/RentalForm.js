@@ -223,127 +223,12 @@ const FormikForm = withFormik({
         }
 
         if( new Date(formData.end.endYear, formData.end.endMonth - 1, formData.end.endDay, formData.end.endHour).getTime() > new Date(formData.start.startYear, formData.start.startMonth - 1, formData.start.startDay, formData.start.startHour).getTime() && new Date(formData.start.startYear, formData.start.startMonth - 1, formData.start.startDay, formData.start.startHour).getTime() >= now ){
-            //wysylamy
-            console.log('form ok');
-            /* console.log('początek: ' + new Date(formData.start.startYear, formData.start.startMonth - 1, formData.start.startDay, formData.start.startHour))
-            console.log('koniec: ' + new Date(formData.end.endYear, formData.end.endMonth - 1, formData.end.endDay, formData.end.endHour))
-            console.log(new Date(formData.end.endYear, formData.end.endMonth - 1, formData.end.endDay, formData.end.endHour).getTime() - new Date(formData.start.startYear, formData.start.startMonth - 1, formData.start.startDay, formData.start.startHour).getTime()) */
             props.onFormSubmit(formData);
         } else {
-            //error
-            console.log('form not ok');
-            /* console.log('początek: ' + new Date(formData.start.startYear, formData.start.startMonth - 1, formData.start.startDay, formData.start.startHour))
-            console.log('koniec: ' + new Date(formData.end.endYear, formData.end.endMonth - 1, formData.end.endDay, formData.end.endHour))
-            console.log(new Date(formData.end.endYear, formData.end.endMonth - 1, formData.end.endDay, formData.end.endHour).getTime() - new Date(formData.start.startYear, formData.start.startMonth - 1, formData.start.startDay, formData.start.startHour).getTime()) */
             setErrors({startYear: 'Incorrect date'});
         }
 
-        /* if(values.rentalOption === 'short'){
-
-            if(Number(formData.end.endHour) > Number(formData.start.startHour) && Number(formData.start.startYear) > now.getFullYear()) {
-               
-                props.onFormSubmit(formData);
-                console.log('wysłane');
-    
-
-            } else if (Number(formData.start.startYear) === now.getFullYear()) {
-
-                if(formData.start.startMonth > (now.getMonth() + 1) && formData.end.endHour > formData.start.startHour) {
-
-                    props.onFormSubmit(formData);
-                    console.log('wysłane');
         
-
-                } else if(Number(formData.start.startMonth) === (now.getMonth() + 1) && formData.start.startDay >= now.getDate() && formData.end.endHour > formData.start.startHour) {
-
-                    props.onFormSubmit(formData);
-                    console.log('wysłane');
-        
-
-                } else {
-                    console.log('Lipa, opcja II');
-                    setErrors({startDay: 'Incorrect date'});
-                }
-
-            } else {
-                
-                console.log('Lipa, short - inne');
-                setErrors({startDay: 'Incorrect date'});
-            
-            }
-
-            
-        } else {
-
-            if(Number(formData.start.startYear) > now.getFullYear() && Number(formData.end.endYear) > Number(formData.start.startYear)) {
-
-                props.onFormSubmit(formData);
-                console.log('wysłane');
-    
-
-            } else if(Number(formData.start.startYear) === now.getFullYear() && Number(formData.end.endYear) > Number(formData.start.startYear)) {
-
-                if(formData.start.startMonth > (now.getMonth() + 1)) {
-                    props.onFormSubmit(formData);
-                    console.log('wysłane');
-        
-                } else if(Number(formData.start.startMonth) === (now.getMonth() + 1) && Number(formData.start.startDay) >= now.getDate()) {
-                    props.onFormSubmit(formData);
-                    console.log('wysłane');
-        
-                } else {
-                    console.log('Błąd - opcja II');
-                    setErrors({startYear: 'Incorrect date'});
-                }
-
-            } else if(Number(formData.start.startYear) > now.getFullYear() && Number(formData.end.endYear) === Number(formData.start.startYear)) {
-                
-                if(Number(formData.end.endMonth) > Number(formData.start.startMonth)) {
-                    props.onFormSubmit(formData);
-                    console.log('wysłane');
-        
-                } else if(Number(formData.end.endMonth) === Number(formData.start.startMonth) && Number(formData.start.startDay) < Number(formData.end.endDay)) {
-                    props.onFormSubmit(formData);
-                    console.log('wysłane');
-        
-                } else {
-                    console.log('Błąd - opcja III');
-                    setErrors({startYear: 'Incorrect date'});
-                }
-
-            } else if(Number(formData.start.startYear) === now.getFullYear() && Number(formData.end.endYear) === Number(formData.start.startYear)) {
-                
-                if(Number(formData.start.startMonth) > (now.getMonth() + 1) && Number(formData.end.endMonth) > Number(formData.start.startMonth)) {
-                    props.onFormSubmit(formData);
-                    console.log('wysłane');
-        
-                } else if(Number(formData.start.startMonth) === (now.getMonth() + 1) && Number(formData.end.endMonth) > Number(formData.start.startMonth) && Number(formData.start.startDay) >= now.getDate()) {
-                    props.onFormSubmit(formData);
-                    console.log('wysłane');
-        
-                } else if(Number(formData.start.startMonth) > (now.getMonth() + 1) && Number(formData.end.endYear) === Number(formData.start.startYear) && Number(formData.start.startDay) < Number(formData.end.endDay)) {
-                    props.onFormSubmit(formData);
-                    console.log('wysłane');
-        
-                } else if(Number(formData.start.startMonth) === (now.getMonth() + 1) && Number(formData.end.endYear) === Number(formData.start.startYear) && Number(formData.start.startDay) < Number(formData.end.endDay) && Number(formData.start.startDay) >= now.getDate()) {
-                    props.onFormSubmit(formData);
-                    console.log('wysłane');
-        
-                } else {
-                    console.log('Błąd - opcja IV');
-                    setErrors({startYear: 'Incorrect date'});
-                    console.log(formData);
-                }
-
-            } else {
-
-                console.log('Błąd - inne');
-                setErrors({startYear: 'Incorrect date'});
-
-            }
-
-        } */
-
        
         setSubmitting(false);
     } 

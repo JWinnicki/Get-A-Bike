@@ -65,7 +65,7 @@ export const auth = (email, password, isRegistered) => {
         try {
 
             const response = await axios.post(url, authData);
-            console.log(response);
+            //console.log(response);
 
             const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
             localStorage.setItem('token', response.data.idToken);
@@ -79,10 +79,10 @@ export const auth = (email, password, isRegistered) => {
 
             if(error.response === undefined) {
                 dispatch(authFail(null));
-                console.log(error);
+                //console.log(error);
             } else {
                 dispatch(authFail(error.response.data.error.message));
-                console.log(error.response.data.error);
+                //console.log(error.response.data.error);
             }
 
         }

@@ -92,6 +92,7 @@
 .error-container {
     text-align: start;
     width: 40rem;
+    margin-bottom: .8rem;
 }
 
 .error-message {

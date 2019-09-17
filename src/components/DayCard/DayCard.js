@@ -28,7 +28,7 @@ const DayCard = props => {
                         {sortedArr.map(el => {
                             const { startDay, startHour, startMonth, startYear } = el.start;
                             const { endDay, endHour, endMonth, endYear } = el.end;
-                            const shortOrder = `${startDay < 10 ? "0" + startDay : startDay}.${startMonth < 10 ? "0" + (startMonth) : startMonth}.${startYear} ${startHour}:00-${endHour}:00`;
+                            const shortOrder = `${startDay < 10 ? "0" + startDay : startDay}.${startMonth < 10 ? "0" + (startMonth) : startMonth}.${startYear}, ${startHour}:00-${endHour}:00`;
                             const longOrder = `${startDay < 10 ? "0" + startDay : startDay}.${startMonth < 10 ? "0" + (startMonth) : startMonth}.${startYear} - ${endDay < 10 ? "0" + endDay : endDay}.${endMonth < 10 ? "0" + (endMonth) : endMonth}.${endYear}`;
                             return <li className='DayCard-list--item' key={el.id}>
                                         <Icon size='tiniest' icon='arrow-right' />

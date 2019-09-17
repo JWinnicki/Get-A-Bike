@@ -49,16 +49,16 @@ export const rentBike = orderData => {
         
         try{
             const response = await axios.post(`/orders.json`, orderData); //`/orders/${orderData.selectedModel}.json`
-            console.log(response);
+            //console.log(response);
             dispatch(rentSucces(orderData, response.data.name));
         } catch(error) {
             
             if(error.response === undefined) {
                 dispatch(rentFail(null));
-                console.log(error);
+                //console.log(error);
             } else {
                 dispatch(rentFail(error.response.data.error));
-                console.log(error.response.data.response);
+                //console.log(error.response.data.response);
             }
             
         }
@@ -106,23 +106,14 @@ export const fetchOrders = () => {
         try {
             const response = await axios.get(`/orders.json`);
             //console.log(response.data);
-            /* const fetchedOrders = [];
-
-            for ( let key in response.data ) {
-                fetchedOrders.push( {
-                    ...response.data[key],
-                    id: key
-                } );
-            }
-            console.log(fetchedOrders); */
             dispatch(fetchOrdersSucces(response.data));
         } catch(error) {
             if(error.response === undefined) {
                 dispatch(fetchOrdersFail(null));
-                console.log(error);
+                //console.log(error);
             } else {
                 dispatch(fetchOrdersFail(error.response.data.error));
-                console.log(error.response.data.error);
+                //console.log(error.response.data.error);
             }
             
         }
@@ -143,7 +134,7 @@ export const fetchUserOrders = (token, userId) => {
 
         try {
             const response = await axios.get(`/orders.json${queryParams}`);
-            console.log(response.data);
+            //console.log(response.data);
             const fetchedOrders = [];
 
             for ( let key in response.data ) {
@@ -157,10 +148,10 @@ export const fetchUserOrders = (token, userId) => {
         } catch(error) {
             if(error.response === undefined) {
                 dispatch(fetchOrdersFail(null));
-                console.log(error);
+                //console.log(error);
             } else {
                 dispatch(fetchOrdersFail(error.response.data.error));
-                console.log(error.response.data.error);
+                //console.log(error.response.data.error);
             }
             
         }
@@ -189,10 +180,10 @@ export const fetchSelectedModelOrders = selectedModel => {
         } catch(error) {
             if(error.response === undefined) {
                 dispatch(fetchOrdersFail(null));
-                console.log(error);
+                //console.log(error);
             } else {
                 dispatch(fetchOrdersFail(error.response.data.error));
-                console.log(error.response.data.error);
+                //console.log(error.response.data.error);
             }
             
         }
@@ -234,10 +225,10 @@ export const deleteItem = orderId => {
 
             if(error.response === undefined) {
                 dispatch(deleteItemFail(null));
-                console.log(error);
+                //console.log(error);
             } else {
                 dispatch(deleteItemFail(error.response.data.error));
-                console.log(error.response.data.error);
+                //console.log(error.response.data.error);
             }
 
         }   
@@ -257,40 +248,3 @@ export const getOrdersOfTheDay = (orders, dayInfo) => {
         dayInfo: dayInfo
     }
 }
-
-
-
-/* export const fetchOrders = (token, userId) => {
-    return dispatch => {  //tutaj zeby zdobyc ten token mozna uzyć getState()
-        dispatch(fetchOrdersStart());
-        const queryParams = `?auth=${token}&orderBy="userId"&equalTo="${userId}"`
-        axios.get( `/orders.json${queryParams}` ) //?auth=[TOKEN] dodajemy to na koncu url jesli potrzebujemy dostać sie do zasobu chronionego (trzeba by zalogowanym)
-            .then( res => {
-                const fetchedOrders = [];
-                for ( let key in res.data ) {
-                    fetchedOrders.push( {
-                        ...res.data[key],
-                        id: key
-                    } );
-                }
-                dispatch(fetchOrdersSucces(fetchedOrders));
-            } )
-            .catch( err => {
-                dispatch(fetchOrdersFail(err));
-            } );
-    };
-}; */
-
-/* export const purchaseBurger = (orderData, token) => {
-    return dispatch => {
-        dispatch(purchaseBurgerStart());
-        axios.post(`/orders.json?auth=${token}`, orderData)
-            .then(response => {
-                console.log(response.data);
-                dispatch(purchaseBurgerSucces(response.data.name, orderData));
-            })
-            .catch(error => {
-                dispatch(purchaseBurgerFail(error));
-            });
-    };
-}; */

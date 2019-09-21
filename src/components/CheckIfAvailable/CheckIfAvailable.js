@@ -21,14 +21,29 @@ class CheckIfAvailable extends React.Component {
     }
 
     renderFiltered = () => {
-        const filteredArr = this.props.rawMotorcyclesArr.map(el => {
-            return el.model
+        const motoArr = this.props.rawMotorcyclesArr.map(el => {
+            return {model: el.model, brand: el.brand}
         });
 
-        const finalArr = ['Please select model', ...filteredArr];
+        const brands = ['Honda', 'Kawasaki', 'Suzuki', 'Yamaha'];
+        const filterArr = brand => {
+            const arr = motoArr.filter(el => {
+                return el.brand === brand;
+            });
 
-        return finalArr.map(el => {
-            return <option key={el} value={el}>{el}</option>
+            return arr.map(el => {
+                return el.model;
+            })
+        }
+
+        return brands.map( brand => {
+            return (
+                <optgroup label={brand} key={brand}>
+                    {filterArr(brand).map(el => {
+                        return <option key={el}>{el}</option>
+                    })}
+                </optgroup>
+            );
         })
     }
 
@@ -104,6 +119,7 @@ class CheckIfAvailable extends React.Component {
                 <div className='CheckIfAvailable-content'>
                     <div className='CheckIfAvailable-header'>
                         <select value={this.state.selectedBike} className='input-select CheckIfAvailable--brandSelect' onChange={this.onChangeModelHandler}>
+                            <option>Please select model</option>
                             {this.renderFiltered()}
                         </select>
                     </div>

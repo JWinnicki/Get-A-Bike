@@ -7,7 +7,7 @@ const MainCardsList = props => {
     
     return (
         <div className='MainCardsList'>
-            <MainCard text='Motorcyckles' icon='motorcycle' to='/motorcycles' />
+            <MainCard text='Motorcycles' icon='motorcycle' to='/motorcycles' />
             <MainCard text='Offer' icon='money-1' to='/offer' />
             <MainCard text='Locations & Contact' icon='map-pin-empty' to='/cities' />
             <MainCard text='Check if available' icon='timetable' to='/check_if_available' />

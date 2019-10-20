@@ -132,6 +132,9 @@
         font-size: 1.6rem;
         font-weight: bold;
     } */
+    .CheckIfAvailable-navigation {
+        width: 100%;
+    }
 
     .CheckIfAvailable-content {
         min-width: 0;

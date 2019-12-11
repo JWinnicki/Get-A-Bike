@@ -19,11 +19,11 @@ class Header extends Component {
         return (
             <div className='Header'>
                 <div className='Header-links'>
+                    <Link to='/motorcycles' className={`Header-links__item ${this.selectOption('/motorcycles') ? 'Header-links__item--active' : null}`}>Motorcycles</Link>
                     <Link to={togglePath} className={`Header-links__item ${this.selectOption(togglePath) ? 'Header-links__item--active' : null}`}>{this.props.token === null ? `Log In` : `Profile`}</Link>
+                    <Link to='/check_if_available' className={`Header-links__item ${this.selectOption('/check_if_available') ? 'Header-links__item--active' : null}`}>Check If Available</Link>
                     <Link to='/offer' className={`Header-links__item ${this.selectOption('/offer') ? 'Header-links__item--active' : null}`}>Offer</Link>
                     <Link to='/cities' className={`Header-links__item ${this.selectOption('/cities') ? 'Header-links__item--active' : null}`}>Cities</Link>
-                    <Link to='/check_if_available' className={`Header-links__item ${this.selectOption('/check_if_available') ? 'Header-links__item--active' : null}`}>Check If Available</Link>
-                    <Link to='/motorcycles' className={`Header-links__item ${this.selectOption('/motorcycles') ? 'Header-links__item--active' : null}`}>Motorcycles</Link>
                     <Link to='/' className={`Header-links__item`}>Home</Link>  
                 </div>
                 <div className='Header-burgerMenu'>

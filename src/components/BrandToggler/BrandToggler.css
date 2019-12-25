@@ -42,7 +42,7 @@
     
     .BrandToggler-list--link__active {
         color: black;
-        background-color: white;
+        background-color: rgb(238, 238, 238);
     }
 
 @media (max-width: 1030px) and (min-height: 1300px) {

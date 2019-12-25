@@ -1,5 +1,6 @@
 .Footer {
-    min-height: 12vh;
+    height: 12vh;
+    min-height: 60px;
     background-color: black;
     color: white;
 

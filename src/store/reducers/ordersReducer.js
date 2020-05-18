@@ -1,6 +1,6 @@
 import * as actionTypes from '../actions/actionTypes';
 
-
+//Rozbił bym ten reducer na kilka mniejszych
 const initialState = {
     orders: [],
     renting: false,

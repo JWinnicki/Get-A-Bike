@@ -3,8 +3,10 @@ import React from 'react';
 import './Modal.css';
 import Backdrop from '../Backdrop/Backdrop';
 
+//W Reactie unikamy klas jak są zbędne
 class Modal extends React.Component {
 
+    //TODO Usuwamy zbędne komentarze
     //dzieki temu OrderSummary re-renderuje się tylko po pokazaniu się Modal'a
     //Dokładniej chodzi o to, że nie ma potrzeby re-renderować modal kiedy jest on niewidoczny. Jeśli nie re-rendujemy Modal to OrderSummary jako child też się nie rerenderuje
     shouldComponentUpdate(nextProps, nextState) {

@@ -42,7 +42,7 @@ export const rentSucces = (orderData, id) => {
         orderData: orderData
     }
 }
-
+//Do oddzielnego pliku
 export const rentBike = orderData => {
     return async dispatch => {
         dispatch(rentStart());

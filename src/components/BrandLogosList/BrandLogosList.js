@@ -32,7 +32,7 @@ const mapStateToProps = state => {
         brandsArr: state.motorcycles.brands
     };
 };
-
+//Pueste
 const mapDispatchToProps = dispatch => {
     return {
 

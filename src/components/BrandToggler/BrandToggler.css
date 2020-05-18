@@ -10,7 +10,7 @@
         list-style: none;
         display: flex;
     }
-    
+    /*Co to za metodyka nazywania klas CSS*/
     .BrandToggler-list--item {
         width: 10rem;
         background-color: transparent;

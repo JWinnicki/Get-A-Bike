@@ -42,7 +42,6 @@ class App extends Component {
                   {this.props.errorMsg === 'Motorcycle not availible' ? <p className='error-linkMsg'>Please click <Link onClick={this.props.onCancelOrder} className='error-link' to='/check_if_available'>here</Link> to check when motorcycle is available.</p> : null}
                 </div>
               </div>
-              
           );
       } else if(this.props.loading && !this.props.error) {
           return (
@@ -96,7 +95,6 @@ class App extends Component {
     return (
       <div className="container">
       <Modal show={this.props.showModal} modalClosed={this.props.onCancelOrder} modalWidth='50%' >
-          {/* this.props.error ? <p className='error-msg'>Something went wrong!</p> : <RentalSummary order={this.props.order} cancelOrder={this.props.onCancelOrder} submitForm={this.props.onRentBike} fetchOrders={this.props.onFetchOrders} rented={this.props.rented} fetched={this.props.fetched} /> */}
           { renderModalMsg() }
       </Modal>
         <header>

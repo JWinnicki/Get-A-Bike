@@ -63,6 +63,12 @@ const RegisterForm = (/* props,  */{ /// destrukturyzacja props'ów
                 <Field type={isRegistered === true ? 'password' : 'text'} name='password' placeholder='Password' className={touched.password && errors.password ? 'RegisterForm-textInput RegisterForm-textInput--error' : 'RegisterForm-textInput'} />
             </div>
             {/* isRegistered === true ? null : renderOptional() */}
+            <div className='RegisterForm-checkboxContainer'>
+                <Field type='checkbox' name='allowLocalStorage' checked={values.allowLocalStorage} id='allowLocalStorage' />
+                <label htmlFor='allowLocalStorage'>
+                    <p className='RegisterForm-checkboxText'>Keep logged-in for 60 minutes. This feature will use local storage.</p>
+                </label>
+            </div>
             <div className='RegisterForm-btnContainer'>
                 <button className='RegisterForm-btn' type='submit' disabled={isSubmitting}>{isRegistered === true ? 'Log In' : 'Create'}</button>
             </div>
@@ -78,7 +84,8 @@ const FormikRegisterForm = withFormik({
         isRegistered: props.isRegistered,
         name: '',
         surname: '',
-        phone: ''
+        phone: '',
+        allowLocalStorage: false,
     }),
     validationSchema: Yup.object().shape({
         email: Yup.string().email('Email is not valid').required('Email is required!'),
@@ -88,8 +95,7 @@ const FormikRegisterForm = withFormik({
         phone: Yup.number().min(5, 'At least 5 digits').positive()
     }),
     handleSubmit(values, { resetForm, setErrors, setSubmitting, props }) {
-        console.log(values);
-        props.onAuth(values.email, values.password, values.isRegistered);
+        props.onAuth(values.email, values.password, values.isRegistered, values.allowLocalStorage);
         setSubmitting(false);
     },
     enableReinitialize: true
@@ -103,7 +109,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAuth: (email, password, isRegistered) => dispatch(auth(email, password, isRegistered))
+        onAuth: (email, password, isRegistered, allowLocalStorage) => dispatch(auth(email, password, isRegistered, allowLocalStorage))
     }
 }
 

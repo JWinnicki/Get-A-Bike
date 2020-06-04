@@ -36,7 +36,7 @@ class LogInContainer extends React.Component {
                         <RegisterForm isRegistered={this.state.isRegistered} />
                     </div>
                 </div>
-                {this.props.token && this.props.userId ? <Redirect to='/' /> : null}
+                {(this.props.token && this.props.userId) && <Redirect to='/' />}
             </div>
         );
     }

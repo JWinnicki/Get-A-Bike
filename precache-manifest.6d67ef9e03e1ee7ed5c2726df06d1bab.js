@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "954438542cc21f689425",
-    "url": "/Get-A-Bike/static/css/main.c3792447.chunk.css"
+    "revision": "e4d9ef0b3b7232b79450",
+    "url": "/Get-A-Bike/static/css/main.2b97a86a.chunk.css"
   },
   {
-    "revision": "954438542cc21f689425",
-    "url": "/Get-A-Bike/static/js/main.44c93a01.chunk.js"
+    "revision": "e4d9ef0b3b7232b79450",
+    "url": "/Get-A-Bike/static/js/main.0e6bc3fa.chunk.js"
   },
   {
     "revision": "eaaf8ac46a92537b49ad",
@@ -132,7 +132,7 @@ self.__precacheManifest = [
     "url": "/Get-A-Bike/static/media/main.272eb047.jpg"
   },
   {
-    "revision": "b9443fd756cf464ae8ea43f94c31d4ae",
+    "revision": "5ab8eb4cdfdbe77cc62b3279d19aaab7",
     "url": "/Get-A-Bike/index.html"
   }
 ];

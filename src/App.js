@@ -4,23 +4,23 @@ import { connect } from 'react-redux';
 
 import './App.css';
 import Header from './components/Header/Header';
-import Main from './components/Main/Main';
+import Main from './views/Main/Main';
 import Footer from './components/Footer/Footer';
-import Cities from './components/Cities/Cities';
-import BrandLogosList from './components/BrandLogosList/BrandLogosList';
-import MotorcyclesListDisplay from './components/MotorcyclesListDisplay/MotorcyclesListDisplay';
-import Offer from './components/Offer/Offer';
-import RentFormContainer from './components/RentFormContainer/RentFormContainer';
-import LogInContainer from './components/LogInContainer/LogInContainer';
-import Profile from './components/Profile/Profile';
+import Cities from './views/Cities/Cities';
+import BrandLogosList from './views/MotorcyclesMenu/BrandLogosList';
+import MotorcyclesListDisplay from './views/MotorcyclesListDisplay/MotorcyclesListDisplay';
+import Offer from './views/Offer/Offer';
+import RentFormContainer from './views/RentFormContainer/RentFormContainer';
+import LogInContainer from './views/LogInContainer/LogInContainer';
+import Profile from './views/Profile/Profile';
 import { authCheckState } from './store/actions/index';
 import Spinner from './components/Spinner/Spinner';
 import Icon from './components/Icon/Icon';
 import Modal from './components/Modal/Modal';
-import RentalSummary from './components/RentalSummary/RentalSummary';
-import CheckIfAvailable from './components/CheckIfAvailable/CheckIfAvailable';
+import RentalSummary from './views/RentFormContainer/RentFormContainerComponents/RentalSummary/RentalSummary';
+import CheckIfAvailable from './views/CheckIfAvailable/CheckIfAvailable';
 import { cancelConfirmation, submitForm, rentBike, fetchSelectedModelOrders, fetchOrdersFail } from './store/actions/orders';
-import DayCard from './components/DayCard/DayCard';
+import DayCard from './views/CheckIfAvailable/CheckIfAvailableComponents/DayCard/DayCard';
 
 class App extends Component {
 
@@ -126,7 +126,6 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-      motoArr: state.motorcycles.motorcycles,
       showModal: state.orders.renting || state.orders.error || state.orders.deleted || state.orders.checkingOrders,
       order: state.orders.order,
       orders: state.orders.orders,

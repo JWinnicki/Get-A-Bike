@@ -1,30 +1,24 @@
-import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import React from 'react';
+import { Link, withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import './Header.css';
 import Logo from '../../img/Logos/Logo-second.png';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
-class Header extends Component {
+const Header = ({token}) => {
     
-    selectOption = selectedOption => {
-        return this.props.location.pathname.includes(selectedOption) ? true : false;
-    }
-/* 
-                    <Link to='/check_if_available' className={`Header-links__item ${this.selectOption('/check_if_available') ? 'Header-links__item--active' : null}`}>Check If Available</Link> */
-    render() {
+        const togglePath = token === null ? `/login` : `/profile`;
 
-        let togglePath = this.props.token === null ? `/login` : `/profile`;
         return (
             <div className='Header'>
                 <div className='Header-links'>
-                    <Link to={togglePath} className={`Header-links__item ${this.selectOption(togglePath) ? 'Header-links__item--active' : null}`}>{this.props.token === null ? `Log In` : `Profile`}</Link>
-                    <Link to='/motorcycles' className={`Header-links__item ${this.selectOption('/motorcycles') ? 'Header-links__item--active' : null}`}>Motorcycles</Link>
-                    <Link to='/check_if_available' className={`Header-links__item ${this.selectOption('/check_if_available') ? 'Header-links__item--active' : null}`}>Check If Available</Link>
-                    <Link to='/offer' className={`Header-links__item ${this.selectOption('/offer') ? 'Header-links__item--active' : null}`}>Offer</Link>
-                    <Link to='/cities' className={`Header-links__item ${this.selectOption('/cities') ? 'Header-links__item--active' : null}`}>Cities</Link>
-                    <Link to='/' className={`Header-links__item`}>Home</Link>  
+                    <NavLink to='/' exact className={`Header-links__item`} activeClassName='Header-links__item--active'>Home</NavLink> 
+                    <NavLink to='/motorcycles' className={`Header-links__item`} activeClassName='Header-links__item--active'>Motorcycles</NavLink>
+                    <NavLink to='/check_if_available' className={`Header-links__item`} activeClassName='Header-links__item--active'>Check If Available</NavLink>
+                    <NavLink to='/offer' className={`Header-links__item`} activeClassName='Header-links__item--active'>Offer</NavLink>
+                    <NavLink to='/cities' className={`Header-links__item`} activeClassName='Header-links__item--active'>Cities</NavLink>
+                    <NavLink to={togglePath} className={`Header-links__item`} activeClassName='Header-links__item--active'>{token === null ? `Log In` : `Profile`}</NavLink>
                 </div>
                 <div className='Header-burgerMenu'>
                     <BurgerMenu togglePath={togglePath} />
@@ -34,7 +28,7 @@ class Header extends Component {
                 </Link>
             </div>
         );
-    }
+    
 }
 
  const mapStateToProps = state => {
@@ -44,3 +38,4 @@ class Header extends Component {
  }
 
 export default withRouter(connect(mapStateToProps)(Header));
+

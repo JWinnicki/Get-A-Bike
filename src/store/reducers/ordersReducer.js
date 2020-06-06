@@ -20,14 +20,6 @@ const initialState = {
 
 export default (state=initialState, action) => {
     switch(action.type) {
-        /* case actionTypes.SUBMIT_FORM:
-            return {
-                ...state,
-                renting: false,
-                order: action.payload,
-                orders: state.orders.concat(action.payload),
-                [action.payload.selectedModel]: state[action.payload.selectedModel].concat(action.payload)
-            }; */
         case actionTypes.START_CONFIRMATION:
             return {
                 ...state,
@@ -65,16 +57,12 @@ export default (state=initialState, action) => {
                 renting: true
             }
         case actionTypes.RENT_SUCCES:
-            /* const newOrder = {
-                ...action.orderData,
-                id: action.orderId
-            } */
-
             return {
                 ...state,
                 orders: {...state.orders, [action.orderData.selectedModel]: {...state.orders[action.orderData.selectedModel], [action.orderId]: action.orderData}},
                 loading: false,
-                rented: true
+                rented: true,
+                renting: false
             };
         case actionTypes.FETCH_ORDERS_START:
             return {

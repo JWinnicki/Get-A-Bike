@@ -10,5 +10,8 @@ export {
     fetchSelectedModelOrders,
     fetchOrdersFail,
     clearOrdersArr,
-    getOrdersOfTheDay
+    getOrdersOfTheDay,
+    cancelConfirmation,
+    rentBike,
+    submitForm
 } from './orders'

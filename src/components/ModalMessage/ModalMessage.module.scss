@@ -1,0 +1,32 @@
+.messageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  
+    /* min-height: 16rem; */
+    min-width: 25rem;
+}
+  
+.messageText {
+    margin-left: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+  
+.messageLinkContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem 1rem 1rem;
+}
+  
+.messageLinkText {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+  
+.messageLink {
+    color: #0000EE;
+}

@@ -56,38 +56,7 @@
     min-height: 76vh;
   }
   
-  .error-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
   
-    /* min-height: 16rem; */
-    min-width: 25rem;
-  }
-  
-  .error-msg {
-    margin-left: 1rem;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
-  .error-linkDiv {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 1rem 1rem 1rem;
-  }
-  
-  .error-linkMsg {
-    font-size: 1.4rem;
-    font-weight: bold;
-  }
-  
-  .error-link {
-    color: #0000EE;
-  }
 
 
 @media (max-width: 4000px) {

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './DayCard.css';
 import Icon from '../../../../components/Icon/Icon';
+import BasicButton from '../../../../components/atoms/BasicButton/BasicButton';
 
 const DayCard = props => {
     const { selectedDay, selectedMonth, selectedYear, availability, selectedBike } = props.dayInfo;
@@ -55,8 +56,8 @@ const DayCard = props => {
                 {renderOrders()}
             </div>
             <div className='DayCard-buttonsDiv'>
-                {availability === 'not' ? null : <Link className='DayCard-buttonsDiv--button DayCard-buttonsDiv--link' onClick={props.closeModal} to={`/rent/${selectedBike}`}>Rent This Bike!</Link>}
-                <button className='DayCard-buttonsDiv--button' onClick={props.closeModal}>Close</button>
+                {availability !== 'not' && <BasicButton onClick={props.closeModal} to={`/rent/${selectedBike}`} tag='link'>Rent This Bike!</BasicButton>}
+                <BasicButton onClick={props.closeModal}>Close</BasicButton>
             </div>
         </div>
     );

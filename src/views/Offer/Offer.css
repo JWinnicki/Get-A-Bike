@@ -81,43 +81,16 @@
         font-size: 2rem;
         margin-left: 1rem; 
     }
-    
-    .Offer-btn__div {
-        height: 6rem;
-        width: 20rem;
-        background-color: black;
-    
+
+    .Offer-buttonContainer {
+        margin-top: 3rem;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        
-        font-size: 2rem;
-    
-        transition: all .2s;
     }
     
-    .Offer-btn {
-        height: 6rem;
-        width: 20rem;
-        display: block;
-        margin: 3rem auto;
-    }
     
-    .Offer-btn:visited,
-    .Offer-btn:link {
-        text-decoration: none;
-        color: white;
-    }
-    
-    .Offer-btn:active > .Offer-btn__div {
-        background-color: #272727;
-    }
-    
-    .Offer-btn__div:hover {
-        background-color: #1b1b1b;
-        cursor: pointer;
-    }
-
 
 @media (max-width: 2000px) {
     .Offer-container {

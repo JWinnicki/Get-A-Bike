@@ -94,6 +94,7 @@
 
     .RegisterForm-checkboxContainer {
         display: flex;
+        align-items: center;
         margin-bottom: 2rem;
     }
 

@@ -7,7 +7,7 @@ import { cancelConfirmation } from '../../store/actions/orders';
 
 class Modal extends React.Component {
 
-    shouldComponentUpdate(nextProps, nextState) {
+    shouldComponentUpdate(nextProps) {
         if(nextProps.show !== this.props.showModal || nextProps.children !== this.props.children){
             return true;
         } else {

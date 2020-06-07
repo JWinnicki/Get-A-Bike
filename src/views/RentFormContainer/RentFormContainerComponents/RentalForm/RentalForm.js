@@ -6,12 +6,12 @@ import { connect } from 'react-redux';
 
 import './RentalForm.css';
 import { startConfirmation } from '../../../../store/actions/orders';
+import BasicButton from '../../../../components/atoms/BasicButton/BasicButton';
 
 const RentalForm = ({ /// destrukturyzacja props'ów
     values,
     errors,
-    touched,
-    isSubmitting
+    touched
 }) => {
 
     const createNumbersArr = (start, end) => {
@@ -172,8 +172,8 @@ const RentalForm = ({ /// destrukturyzacja props'ów
                 </Field>
             </div>
             <p className='form-p'>Please select date:</p>
-            {values.rentalOption === 'short' ? renderHoursSelect() : renderDateSelect()}
-            <button type='submit' disabled={isSubmitting} className='btn'>Submit</button>    
+            {values.rentalOption === 'short' ? renderHoursSelect() : renderDateSelect()} 
+            <BasicButton  type='submit' >Submit</BasicButton>
         </Form>
     );
 }
@@ -202,7 +202,7 @@ const FormikForm = withFormik({
         surname: Yup.string().min(2, 'Too short!').max(30, 'Too long!').required('Surname is required!'),
         phone: Yup.number().min(5, 'At least 5 digits').required('Phone is required!').integer().positive()
     }),
-    handleSubmit(values, { resetForm, setErrors, setSubmitting, props }) { ///dzięki dodaniu tu 'props' mam dostep do redux store
+    handleSubmit(values, { setErrors, setSubmitting, props }) { ///dzięki dodaniu tu 'props' mam dostep do redux store
         
         const now = new Date().getTime();
 

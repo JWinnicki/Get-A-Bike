@@ -61,10 +61,10 @@
 
 @media (max-width: 4000px) {
   html {
-    font-size: 88%;
+    font-size: 75%;
   }
 }
-
+/* 
 @media (max-width: 1575px) {
   html {
     font-size: 85%;
@@ -75,7 +75,7 @@
   html {
     font-size: 80%;
   }
-}
+} */
 
 @media (max-width: 1385px) {
   html {

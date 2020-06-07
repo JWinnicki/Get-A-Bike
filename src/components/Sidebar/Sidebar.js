@@ -15,11 +15,13 @@ class Sidebar extends Component {
 
     render() {
         return(
-            <div className='Sidebar'>
-                <ul className='Sidebar-list'>
-                    {this.renderElements()}
-                </ul>
-            </div>
+            <nav>
+                <div className='Sidebar'>
+                    <ul className='Sidebar-list'>
+                        {this.renderElements()}
+                    </ul>
+                </div>
+            </nav>
         );
     }
 }

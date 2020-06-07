@@ -2,6 +2,7 @@ import React from 'react';
 
 import './RentalSummary.css';
 import Icon from '../../../../components/Icon/Icon';
+import BasicButton from '../../../../components/atoms/BasicButton/BasicButton';
 
 const RentalSummary = props => {
 
@@ -39,26 +40,6 @@ const RentalSummary = props => {
         if(props.order.start !== undefined) {
             return (
                 <div className='details-main'>
-                    {/* <div className='details-section'>
-                        <ul>
-                            <li>
-                                <Icon icon='arrow-right' size='tiniest' />
-                                <p>Name: {props.order.name}</p>
-                            </li>
-                            <li>
-                                <Icon icon='arrow-right' size='tiniest' />
-                                <p>Surname: {props.order.surname}</p>
-                            </li>
-                            <li>
-                                <Icon icon='arrow-right' size='tiniest' />
-                                <p>Phone Number: {props.order.phone}</p>
-                            </li>
-                            <li>
-                                <Icon icon='arrow-right' size='tiniest' />
-                                <p>Email: {props.order.email}</p>
-                            </li>
-                        </ul>
-                    </div> */}
                     <div className='details-section'>
                         <ul className='details-section--list'>
                             <li className='details-section--listItem'>
@@ -92,7 +73,6 @@ const RentalSummary = props => {
 
     const submitForm = async () => {
         const response = await props.fetchOrders(props.order.selectedModel)
-        //console.log(response);
 
         const checkIfEvery = () => {
             return response.every(el => {
@@ -100,55 +80,21 @@ const RentalSummary = props => {
             });
         }
 
-        //console.log(checkIfEvery());
-
         if(checkIfEvery()) {
             props.submitForm(props.order);
         } else {
             props.fetchOrdersFail('Motorcycle not availible');
         }
 
-        /* .then(res => {
-            console.log(res)
-            if(props.fetched && !props.error && props.orders.length > 0) {
-                console.log('chujnia z validacją');
-                const checkIfAvailible = () => {
-                    props.orders.every(el => {
-                        return (new Date(props.order.end.endYear, props.order.end.endMonth, props.order.end.endDay, props.order.end.endHour).getTime() < new Date(el.start.startYear, el.start.startMonth, el.start.startDay, el.start.startHour).getTime() || new Date(props.order.start.startYear, props.order.start.startMonth, props.order.start.startDay, props.order.start.startHour).getTime() > new Date(el.end.endYear, el.end.endMonth, el.end.endDay, el.end.endHour).getTime())
-                    })
-                }
-    
-                if(checkIfAvailible()) {
-                    props.submitForm(props.order);
-                } else {
-                    props.fetchOrdersFail('Motorcycle not availible');
-                }
-    
-            } else {
-                console.log('Nie wykonało się wcale');
-            }
-        }); */
-
-        
-
-        //props.submitForm(props.order);
-        //return this.props.userOrders.filter(el => new Date(el.start.startYear, el.start.startMonth - 1, el.start.startDay, el.rentalOption === 'short' ? el.start.startHour : null).getTime() > now)
     }
-
-    /* const closeModal = () => {
-        if(props.fetched && props.rented) {
-            props.cancelOrder()
-        }
-    } */
     return (
         <div className='RentalSummary'>
             <h1>Rental Summary</h1>
             {renderDetails()}
             <div className='buttons-container'> 
-                <button onClick={submitForm} className='btn confirm'>Confirm</button>
-                <button onClick={props.cancelOrder} className='btn cancel'>Cancel</button>
+                <BasicButton onClick={submitForm} color='green'>Confirm</BasicButton>
+                <BasicButton onClick={props.cancelOrder} color='red'>Cancel</BasicButton>
             </div>
-            {/* closeModal() */}
         </div>
     );
 }

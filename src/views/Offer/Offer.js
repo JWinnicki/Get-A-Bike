@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import './Offer.css';
 import Icon from '../../components/Icon/Icon';
+import BasicButton from '../../components/atoms/BasicButton/BasicButton';
 
 const Offer = () => {
     return (
@@ -37,9 +37,9 @@ const Offer = () => {
                         </div>
                     </div>
                 </div>
-                <Link className='Offer-btn' to='/motorcycles'>
-                    <div className='Offer-btn__div'>Choose your bike!</div>
-                </Link>
+                <div className='Offer-buttonContainer'>
+                    <BasicButton tag='link' size='big' to='/motorcycles'>Choose your bike!</BasicButton>
+                </div>
             </div>
         </div>
     );

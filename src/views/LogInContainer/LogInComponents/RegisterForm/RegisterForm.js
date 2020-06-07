@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import './RegisterForm.css';
 import Icon from '../../../../components/Icon/Icon';
 import { auth } from '../../../../store/actions';
+import BasicButton from '../../../../components/atoms/BasicButton/BasicButton';
 
 const RegisterForm = (/* props,  */{ /// destrukturyzacja props'ów
     values,
@@ -15,28 +16,6 @@ const RegisterForm = (/* props,  */{ /// destrukturyzacja props'ów
     isRegistered, // to jest mój props
     errorMsg
 }) => {
-
-    /* const renderOptional = () => {
-        return (
-            <div className='RegisterForm-optionalContainer'>
-                {<HiddenMessageComponent><p>Fields below are optional. They will be used to automatically update similar fields in renting form. You can update this information any time in your Profile.</p></HiddenMessageComponent>}
-                {<p>They will be used to automatically update similar fields in renting form.</p>
-                <p>You can update this information any time in your Profile.</p>}
-                <div className='RegisterForm-margin'>
-                    { errors.name && <p>{errors.name}</p> }
-                    <Field type='text' name='name' placeholder='Name (Optional)' className={touched.name && errors.name ? 'RegisterForm-textInput RegisterForm-textInput--error' : 'RegisterForm-textInput'} />
-                </div>
-                <div>
-                    { errors.surname && <p>{errors.surname}</p> }
-                    <Field type='text' name='surname' placeholder='Surname (Optional)' className={touched.surname && errors.surname ? 'RegisterForm-textInput RegisterForm-textInput--error' : 'RegisterForm-textInput'} />
-                </div>
-                <div>
-                    { errors.phone && <p>{'Incorrect format'}</p> }
-                    <Field type='text' name='phone' placeholder='Phone (Optional)' className={touched.phone && errors.phone ? 'RegisterForm-textInput RegisterForm-textInput--error' : 'RegisterForm-textInput'} />
-                </div>
-            </div>
-        );
-    } */
 
     const renderInformation = () => {
         return (
@@ -69,7 +48,7 @@ const RegisterForm = (/* props,  */{ /// destrukturyzacja props'ów
                 </label>
             </div>
             <div className='RegisterForm-btnContainer'>
-                <button className='RegisterForm-btn' type='submit' disabled={isSubmitting}>{isRegistered === true ? 'Log In' : 'Create'}</button>
+                <BasicButton type='submit' disabled={isSubmitting}>{isRegistered === true ? 'Log In' : 'Create'}</BasicButton>
             </div>
             {/* isRegistered === true ? renderInformation() : null */}
         </Form>

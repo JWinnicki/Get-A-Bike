@@ -11,22 +11,24 @@ const Header = ({token}) => {
         const togglePath = token === null ? `/login` : `/profile`;
 
         return (
-            <div className='Header'>
-                <div className='Header-links'>
-                    <NavLink to='/' exact className={`Header-links__item`} activeClassName='Header-links__item--active'>Home</NavLink> 
-                    <NavLink to='/motorcycles' className={`Header-links__item`} activeClassName='Header-links__item--active'>Motorcycles</NavLink>
-                    <NavLink to='/check_if_available' className={`Header-links__item`} activeClassName='Header-links__item--active'>Check If Available</NavLink>
-                    <NavLink to='/offer' className={`Header-links__item`} activeClassName='Header-links__item--active'>Offer</NavLink>
-                    <NavLink to='/cities' className={`Header-links__item`} activeClassName='Header-links__item--active'>Cities</NavLink>
-                    <NavLink to={togglePath} className={`Header-links__item`} activeClassName='Header-links__item--active'>{token === null ? `Log In` : `Profile`}</NavLink>
+            <nav>
+                <div className='Header'>
+                    <div className='Header-links'>
+                        <NavLink to='/' exact className={`Header-links__item`} activeClassName='Header-links__item--active'>Home</NavLink> 
+                        <NavLink to='/motorcycles' className={`Header-links__item`} activeClassName='Header-links__item--active'>Motorcycles</NavLink>
+                        <NavLink to='/check_if_available' className={`Header-links__item`} activeClassName='Header-links__item--active'>Check If Available</NavLink>
+                        <NavLink to='/offer' className={`Header-links__item`} activeClassName='Header-links__item--active'>Offer</NavLink>
+                        <NavLink to='/cities' className={`Header-links__item`} activeClassName='Header-links__item--active'>Cities</NavLink>
+                        <NavLink to={togglePath} className={`Header-links__item`} activeClassName='Header-links__item--active'>{token === null ? `Log In` : `Profile`}</NavLink>
+                    </div>
+                    <div className='Header-burgerMenu'>
+                        <BurgerMenu togglePath={togglePath} />
+                    </div>
+                    <Link className='Header-logo__div' to='/'>
+                        <img src={Logo} alt='logo' className='Header-logo__img' /> 
+                    </Link>
                 </div>
-                <div className='Header-burgerMenu'>
-                    <BurgerMenu togglePath={togglePath} />
-                </div>
-                <Link className='Header-logo__div' to='/'>
-                    <img src={Logo} alt='logo' className='Header-logo__img' /> 
-                </Link>
-            </div>
+            </nav>
         );
     
 }

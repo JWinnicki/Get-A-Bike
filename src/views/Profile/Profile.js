@@ -7,6 +7,7 @@ import { logout, fetchUserOrders, deleteItem, clearOrdersArr } from '../../store
 import CardMenu from '../../components/CardMenu/CardMenu';
 import OrderItem from './ProfileComponents/OrderItem/OrderItem';
 import Spinner from '../../components/Spinner/Spinner';
+import BasicButton from '../../components/atoms/BasicButton/BasicButton';
 
 class Profile extends React.Component {
 
@@ -22,11 +23,6 @@ class Profile extends React.Component {
             this.props.onFetchUserOrders(this.props.token, this.props.userId);
         }
 
-    }
-
-    deleteItem = orderId => {
-        this.props.onDeleteItem(orderId);
-        
     }
 
     selectPageHandler = selectedPage => {
@@ -69,7 +65,7 @@ class Profile extends React.Component {
                             city={el.city}
                             orderId={el.id}
                             rentalOption={el.rentalOption} 
-                            clicked={this.deleteItem}
+                            clicked={this.props.onDeleteItem}
                             displayDeleteBtn={this.state.selected === 'Upcoming' ? true : false}
                         />
                 })
@@ -93,7 +89,7 @@ class Profile extends React.Component {
                             {this.renderOrdersHandler()}
                         </div>
                         <div className='profile-personal__div'>
-                            <button className='profile-personal__button' onClick={() => this.props.onLogout()}>Log Out</button>
+                            <BasicButton onClick={this.props.onLogout}>Log Out</BasicButton>
                         </div>
                         <div className='profile-whiteBar bottom'></div>
                     </div>

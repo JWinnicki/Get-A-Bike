@@ -23,9 +23,7 @@ const BasicButton = ({tag, size, color, children, ...props}) => {
             );
         }
     }
-
-
-    return renderButton()
+return renderButton()   
 }
 
 BasicButton.propTypes = {

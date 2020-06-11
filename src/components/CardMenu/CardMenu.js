@@ -2,13 +2,13 @@ import React from 'react';
 
 import './CardMenu.css';
 
-const CardMenu = props => {
+const CardMenu = ({options, clicked, selected}) => {
 
     const renderCards = () => {
-        return props.options.map(el => {
+        return options.map(el => {
             return(
                 <li key={el}>
-                    <button onClick={() => props.clicked(el)} className={`CardMenu-item__button ${props.selected === el ? 'CardMenu-item__button--active' : null}`} >{el}</button>
+                    <button onClick={() => clicked(el)} className={`CardMenu-item__button ${selected === el && 'CardMenu-item__button--active'}`} >{el}</button>
                 </li>
             );
         })

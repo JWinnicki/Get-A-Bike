@@ -13,7 +13,7 @@ const ModalMessage = ({errorMsg, error, loading, rented, deleted, fetched, check
 
     let icon = 'exclamation-mark';
     if(isRented() || isDeleted()) {
-        icon = 'checked'
+        icon = 'checked';
     }
 
     let text = 'Something went wrong!';

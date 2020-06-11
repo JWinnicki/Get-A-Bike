@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './BurgerMenu.css';
+import styles from './BurgerMenu.module.scss';
 
 class BurgerMenu extends React.Component {
 
@@ -12,24 +12,24 @@ class BurgerMenu extends React.Component {
     onClickHandler = () => {
         this.setState({showMenu: !this.state.showMenu});
     }
-
+    
     render() {
         return(
             <React.Fragment>
-                <button onClick={this.onClickHandler} className={`BurgerMenu-button ${this.state.showMenu ? `BurgerMenu-button--active` : ''}`}>
-                    <span className={`BurgerMenu-span ${this.state.showMenu ? `BurgerMenu-span--active` : ''}`}></span>
+                <button onClick={this.onClickHandler} className={this.state.showMenu ? styles.BurgerMenuButtonActive : styles.BurgerMenuButton}>
+                    <span className={styles.BurgerMenuButtonContent}></span>
                 </button>
-                <div onClick={this.onClickHandler} className={`BurgerMenu-listDiv ${this.state.showMenu ? `BurgerMenu-listDiv--active` : ''}`}>
-                    <button onClick={this.onClickHandler} className={`BurgerMenu-listButton ${this.state.showMenu ? `BurgerMenu-listButton--active` : ''}`}>
-                        <span className={`BurgerMenu-listSpan ${this.state.showMenu ? `BurgerMenu-listSpan--active` : ''}`}></span>
+                <div onClick={this.onClickHandler} className={this.state.showMenu ? styles.BurgerMenuActive : styles.BurgerMenu}>
+                    <button onClick={this.onClickHandler} className={styles.BurgerMenuListButton}>
+                        <span className={styles.BurgerMenuListButtonContent}></span>
                     </button>
-                    <ul onClick={this.onClickHandler} className='BurgerMenu-list'>
-                        <li className='BurgerMenu-item'><Link className={`BurgerMenu-link`} to='/'>Home</Link></li>
-                        <li className='BurgerMenu-item'><Link className={`BurgerMenu-link`} to='/motorcycles'>Motorcycles</Link></li>
-                        <li className='BurgerMenu-item'><Link className={`BurgerMenu-link`} to='/check_if_available'>Check If Available</Link></li>
-                        <li className='BurgerMenu-item'><Link className={`BurgerMenu-link`} to='/cities'>Cities</Link></li>
-                        <li className='BurgerMenu-item'><Link className={`BurgerMenu-link`} to='/offer'>Offer</Link></li>
-                        <li className='BurgerMenu-item'><Link className={`BurgerMenu-link`} to={this.props.togglePath}>{this.props.togglePath === '/login' ? 'Log In' : 'Profile'}</Link></li>
+                    <ul onClick={this.onClickHandler} className={styles.BurgerMenuList}>
+                        <li className={styles.BurgerMenuListItem}><Link className={styles.BurgerMenuListItemLink} to='/'>Home</Link></li>
+                        <li className={styles.BurgerMenuListItem}><Link className={styles.BurgerMenuListItemLink} to='/motorcycles'>Motorcycles</Link></li>
+                        <li className={styles.BurgerMenuListItem}><Link className={styles.BurgerMenuListItemLink} to='/check_if_available'>Check If Available</Link></li>
+                        <li className={styles.BurgerMenuListItem}><Link className={styles.BurgerMenuListItemLink} to='/cities'>Cities</Link></li>
+                        <li className={styles.BurgerMenuListItem}><Link className={styles.BurgerMenuListItemLink} to='/offer'>Offer</Link></li>
+                        <li className={styles.BurgerMenuListItem}><Link className={styles.BurgerMenuListItemLink} to={this.props.togglePath}>{this.props.togglePath === '/login' ? 'Log In' : 'Profile'}</Link></li>
                     </ul>
                 </div>
             </React.Fragment>

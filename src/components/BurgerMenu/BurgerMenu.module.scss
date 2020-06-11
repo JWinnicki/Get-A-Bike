@@ -1,0 +1,258 @@
+
+
+@media (max-width: 1000px) {
+    
+    /* //////////////////////// BUTTON ///////////////////////////// */
+
+    .BurgerMenuButton {
+        padding: 10px;
+        margin: 0;
+        margin-left: 2rem;
+        border: none;
+        background-color: transparent;
+        position: relative;
+        height: 50px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition: transform .3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &Active {
+            @extend .BurgerMenuButton;
+            transform: translateX(40rem);
+        }
+
+        &Content {
+            width: 40px;
+            height: 4px;
+            background-color: white;
+
+            transition: background-color .1s ease-in-out;
+
+            &::before,
+            &::after {
+                content: '';
+                width: 40px;
+                height: 4px;
+                background-color: white;
+                position: absolute;
+                left: 10px;
+
+                transition: transform .3s ease-in-out;
+            }
+
+            &::before {
+                bottom: 10px;
+            }
+
+            &::after {
+                top: 10px;
+            }
+
+
+        }
+
+        &Active > &Content {
+            background-color: transparent;
+        }
+
+        &Active > &Content::before {
+            transform: translateY(-13px) rotate(45deg);
+        }
+
+        &Active > &Content::after {
+            transform: translateY(13px) rotate(-45deg);
+        }
+    }
+
+    /* //////////////////////// MENU ///////////////////////////// */
+
+    .BurgerMenu {
+        height: 100%;
+        width: 40rem;
+        background-color: black;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(-40rem);
+        transition: transform .3s ease-in-out;
+
+        z-index: 10;
+
+        &Active {
+            @extend .BurgerMenu;
+            transform: translateX(0);
+        }
+
+        &List {
+            list-style: none;
+            height: 100%;
+            margin-top: 10rem;
+            padding: 1rem;
+    
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+    
+            position: relative; 
+
+            &Item {
+                margin-bottom: 1rem;
+
+                &Link {
+                    color: white;
+                    text-decoration: none;
+                    display: block;
+                    padding: 1rem;
+                    font-size: 2rem;
+                    text-align: center;
+                    width: 20rem;
+                    transition: background-color .2s ease-in-out;
+
+                    &:active,
+                    &:visited {
+                        color: white;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: rgb(44, 44, 44);
+                    }
+                }
+            }
+        }
+
+        &ListButton {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 768px) and (min-height: 1020px) {
+
+    .BurgerMenuListItem {
+        margin-bottom: 3rem;
+
+        &Link {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 1rem;
+            font-size: 2.7rem;
+            text-align: center;
+            width: 25rem;
+            transition: background-color .2s ease-in-out; 
+        }
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .BurgerMenuButtonActive {
+        display: none;
+    }
+    
+    .BurgerMenu{
+        width: 100%;
+        transform: translateX(-100%);
+
+        &Active {
+            transform: translateX(0); 
+        }
+
+        &ListItem {
+            margin-bottom: 4rem;
+
+            &Link {
+                font-size: 2.7rem;
+                width: 26rem;
+                padding: 2rem;
+            }
+        }
+
+        &ListButton {
+            position: absolute;
+            border: none;
+            background-color: transparent;
+            height: 5rem;
+            top: 1rem;
+            right: 1rem;
+            padding: 1rem;
+            margin: 0;
+            opacity: 0;
+        
+        
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            transition: opacity .5s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &Content {
+                width: 4rem;
+                height: .4rem;
+                background-color: transparent;
+
+                &::after,
+                &::before {
+                    content: '';
+                    width: 4rem;
+                    height: .4rem;
+                    background-color: white;
+                    position: absolute;
+                    left: 1rem;
+                }
+
+                &::after {
+                    transform: rotate(-45deg);
+                }
+
+                &::before {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+        &Active > &ListButton {
+            opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 430px) {
+    .BurgerMenuList {
+        margin-top: 5rem;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-height: 350px) {
+    .BurgerMenuButton {
+        transform: scale(.9);
+    }
+
+    .BurgerMenuList {
+        margin-top: 0;
+        justify-content: center;
+    }
+
+    .BurgerMenuListItem {
+        margin-bottom: 1.5rem;
+    }
+}
+
+
+
+

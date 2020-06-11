@@ -2,40 +2,37 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import './BrandToggler.css';
+import styles from './BrandToggler.module.scss';
 import { selectBrand, selectBikes } from '../../store/actions/motorcycles';
 
-const BrandToggler = props => {
+const BrandToggler = ({motoList, onSelectBrand, onSelectBikes, brands, selectedBrand}) => {
 
     const onClickHandler = name => {
-        props.onSelectBrand(name);
+        onSelectBrand(name);
 
-        const motorcyclesList = props.motoList.filter(el => {
+        const motorcyclesList = motoList.filter(el => {
             return el.brand === name
         });
         
-        props.onSelectBikes(motorcyclesList);
+        onSelectBikes(motorcyclesList);
     }
 
     const renderOptions = () => {
         
-
-        return props.brands.map(el => {
-            let active = '';
-            if(props.selectedBrand === el.name) {
-                active = 'active'
-            }
+        return brands.map(el => {
+            const style = selectedBrand === el.name ? styles.BrandTogglerListItemLinkActive : styles.BrandTogglerListItemLink;
+            
             return (
-                <li onClick={() => onClickHandler(el.name)} key={el.name} className='BrandToggler-list--item'>
-                    <Link className={`BrandToggler-list--link BrandToggler-list--link__${active}`} to={`/motorcycles/${el.name}`}>{el.name}</Link>
+                <li onClick={() => onClickHandler(el.name)} key={el.name} className={styles.BrandTogglerListItem}>
+                    <Link className={style} to={`/motorcycles/${el.name}`}>{el.name}</Link>
                 </li>
             );
         })
     }
 
     return (
-        <div className='BrandToggler-container'>
-            <ul className='BrandToggler-list'>
+        <div className={styles.BrandToggler}>
+            <ul className={styles.BrandTogglerList}>
                 {renderOptions()}
             </ul>
         </div>

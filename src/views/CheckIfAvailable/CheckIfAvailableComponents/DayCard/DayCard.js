@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import './DayCard.css';
 import Icon from '../../../../components/Icon/Icon';

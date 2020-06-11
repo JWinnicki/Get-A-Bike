@@ -12,11 +12,8 @@ class BrandLogoItem extends Component {
     }
 
     render() {
-
-        let className = `Logo-div ${this.props.borderColor}`
-
         return (
-            <Link className={className} onClick={this.selectBrandHandler} to={`/motorcycles/${this.props.brandName}`}>
+            <Link className={`Logo-div ${this.props.borderColor}`} onClick={this.selectBrandHandler} to={`/motorcycles/${this.props.brandName}`}>
                 <img src={this.props.logo} alt={`${this.props.brandName} Logo`} />
             </Link>
         );

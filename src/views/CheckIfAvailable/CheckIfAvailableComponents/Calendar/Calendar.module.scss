@@ -1,0 +1,29 @@
+.Calendar {
+    width: 80%;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 2px;
+    /* justify-items: center;
+    align-items: center; */
+
+    &DayNameContainer {
+        padding: .5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid black;
+        justify-self: stretch;
+    }
+
+    &DayNameItem {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 700px) {
+    .Calendar {
+        width: 100%;
+    }
+}

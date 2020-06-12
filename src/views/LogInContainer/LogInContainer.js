@@ -13,12 +13,8 @@ class LogInContainer extends React.Component {
         isRegistered: true
     }
 
-    toggleToLogInHandler = () => {
-        this.setState({ isRegistered: true });
-    }
-
-    toggleToRegisterHandler = () => {
-        this.setState({ isRegistered: false });
+    toggleForm = value => {
+        this.setState({isRegistered: value});
     }
 
     render() {
@@ -27,8 +23,7 @@ class LogInContainer extends React.Component {
                 <div className='LogIn-toggle'>
                     <OptionToggle 
                         isRegistered={this.state.isRegistered}
-                        toggleToLogIn={this.toggleToLogInHandler}
-                        toggleToRegister={this.toggleToRegisterHandler}
+                        toggleForm={this.toggleForm}
                     />
                 </div>
                 <div className='LogIn-form__container'>

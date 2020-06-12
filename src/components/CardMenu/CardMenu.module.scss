@@ -1,0 +1,46 @@
+@import '../../scss/variables';
+
+.CardMenu {
+    width: 100%;
+    height: 100%;
+
+    &List {
+        height: 100%;
+
+        list-style: none;
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-start;
+    }
+
+    &ItemButton {
+        height: 100%;
+        width: 10rem;
+        background-color: $color-grey-secondary;
+        border: none;
+        font-family: inherit;
+        padding: 1rem;
+        font-weight: bold;
+        font-size: 1.5rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:active {
+            outline: none;
+        }
+
+        &Active {
+            @extend .CardMenuItemButton;
+            background-color: $color-grey-primary;
+            outline: none;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .CardMenuItemButton {
+        font-size: 1.6rem;
+    }
+}

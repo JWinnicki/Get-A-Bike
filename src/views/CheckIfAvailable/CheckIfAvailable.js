@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import './CheckIfAvailable.css';
+import styles from './CheckIfAvailable.module.scss';
 import Icon from '../../components/Icon/Icon';
 import { fetchSelectedModelOrders, clearOrdersArr } from '../../store/actions/index';
-//import CalendarItem from '../CalendarItem/CalendarItem';
 import Calendar from './CheckIfAvailableComponents/Calendar/Calendar';
 
 class CheckIfAvailable extends React.Component {
@@ -62,10 +61,6 @@ class CheckIfAvailable extends React.Component {
             return <option key={el} value={el}>{el}</option>
         })
     }
-
-    /* onChangeModelHandler = e => {
-        this.setState({selectedBike: e.target.value});
-    } */
     
     onChangeModelHandler = async e => {
         this.setState({selectedBike: e.target.value});
@@ -87,72 +82,63 @@ class CheckIfAvailable extends React.Component {
         if(direction === 'next') {
             if(Number(this.state.selectedMonth) < 11) {
                 this.setState({selectedMonth: Number(this.state.selectedMonth) + 1});
-                //console.log('dodawanie I opcja');
             } else if(Number(this.state.selectedMonth) === 11 && Number(this.state.selectedYear) < new Date().getFullYear() + 3) {
                 this.setState({
                     selectedMonth: 0,
                     selectedYear: Number(this.state.selectedYear) + 1
                 });
-                //console.log('dodawanie II opcja');
-            } else {
-                //console.log('dodawanie III opcja');
             }
         } else {
             if(Number(this.state.selectedMonth) > 0) {
                 this.setState({selectedMonth: Number(this.state.selectedMonth) - 1});
-                //console.log('odejmowanie I opcja');
             } else if(Number(this.state.selectedMonth) === 0 && Number(this.state.selectedYear) >= new Date().getFullYear()) {
                 this.setState({
                     selectedMonth: 11,
                     selectedYear: Number(this.state.selectedYear) - 1
                 });
-                //console.log('odejmowanie II opcja');
-            } else {
-                //console.log('odejmowanie III opcja');
             }
         }
     }
 
     render() {
         return (
-            <div className='CheckIfAvailable-container'>
-                <div className='CheckIfAvailable-content'>
-                    <div className='CheckIfAvailable-header'>
-                        <select value={this.state.selectedBike} className='input-select CheckIfAvailable--brandSelect' onChange={this.onChangeModelHandler}>
+            <div className={styles.CheckIfAvailable}>
+                <div className={styles.CheckIfAvailableContent}>
+                    <div className={styles.CheckIfAvailableHeader}>
+                        <select value={this.state.selectedBike} className={styles.CheckIfAvailableSelect} onChange={this.onChangeModelHandler}>
                             <option>Please select model</option>
                             {this.renderFiltered()}
                         </select>
                     </div>
-                    <div className='CheckIfAvailable-calendar'>
-                        <div className='CheckIfAvailable-navigation'>
-                            <button className='calendarNav-button' onClick={() => this.onClickButtonHandler('prev')}><Icon icon='arrow-right' size='tiny' rotate='deg180' color='white' /></button>
-                            <select className='input-select no-margin CheckIfAvailable-select' value={this.state.selectedMonth} onChange={this.onChangeMonthHandler}>
+                    <div className={styles.CheckIfAvailableCalendar}>
+                        <div className={styles.CheckIfAvailableNavigation}>
+                            <button className={styles.CheckIfAvailableButton} onClick={() => this.onClickButtonHandler('prev')}><Icon icon='arrow-right' size='tiny' rotate='deg180' color='white' /></button>
+                            <select className={styles.CheckIfAvailableSelect} value={this.state.selectedMonth} onChange={this.onChangeMonthHandler}>
                                 {this.renderMonths()}
                             </select>
-                            <select className='input-select no-margin CheckIfAvailable-select' value={this.state.selectedYear} onChange={this.onChangeYearHandler}>
+                            <select className={styles.CheckIfAvailableSelect} value={this.state.selectedYear} onChange={this.onChangeYearHandler}>
                                 {this.renderYears()}
                             </select>
-                            <button className='calendarNav-button' onClick={() => this.onClickButtonHandler('next')}><Icon icon='arrow-right' size='tiny' color='white' /></button>
+                            <button className={styles.CheckIfAvailableButton} onClick={() => this.onClickButtonHandler('next')}><Icon icon='arrow-right' size='tiny' color='white' /></button>
                         </div>
                         <Calendar 
                             selectedMonth={this.state.selectedMonth} 
                             selectedYear={this.state.selectedYear} 
                             selectedBike={this.state.selectedBike}
-                            /* orders={this.state.orders} */
                         />
                     </div>
-                    <div className='CheckIfAvailable-description'>
-                        <div className='CheckIfAvailable-description--div'>
-                            <div className='CheckIfAvailable-description--box'></div>
-                            <p className='CheckIfAvailable-description-p'> - available</p>
+                    <div className={styles.CheckIfAvailableDescription}>
+                        <div className={styles.CheckIfAvailableDescriptionContainer}>
+                            <div className={styles.CheckIfAvailableDescriptionBox}></div>
+                            <p className={styles.CheckIfAvailableDescriptionText}> - available</p>
                         </div>
-                        <div className='CheckIfAvailable-description--div'>
-                            <div className='CheckIfAvailable-description--box yellow-box'></div>
-                            <p className='CheckIfAvailable-description-p'> - partly available</p>
+                        <div className={styles.CheckIfAvailableDescriptionContainer}>
+                            <div className={styles.CheckIfAvailableDescriptionBoxYellow}></div>
+                            <p className={styles.CheckIfAvailableDescriptionText}> - partly available</p>
                         </div>
-                        <div className='CheckIfAvailable-description--div'>
-                            <div className='CheckIfAvailable-description--box red-box'></div>
-                            <p className='CheckIfAvailable-description-p'> - not available</p>
+                        <div className={styles.CheckIfAvailableDescriptionContainer}>
+                            <div className={styles.CheckIfAvailableDescriptionBoxRed}></div>
+                            <p className={styles.CheckIfAvailableDescriptionText}> - not available</p>
                         </div>
                     </div>
                 </div>

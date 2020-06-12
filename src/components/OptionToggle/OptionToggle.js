@@ -1,25 +1,17 @@
 import React from 'react';
 
-import './OptionToggle.css';
+import styles from './OptionToggle.module.scss';
 
-const OptionToggle = props => {
-
-    const toggleToLogIn = () => {
-        props.toggleToLogIn()
-    }
-
-    const toggleToRegister = () => {
-        props.toggleToRegister()
-    }
+const OptionToggle = ({isRegistered, toggleForm}) => {
 
     return(
-        <div className='OptionToggle-container'>
-            <ul className='OptionToggle-list'>
-                <li className='OptionToggle-item'>
-                    <button className={props.isRegistered === true ? 'OptionToggle-button OptionToggle-button--active' : 'OptionToggle-button'} onClick={toggleToLogIn} >Log In</button>
+        <div className={styles.OptionToggle}>
+            <ul className={styles.OptionToggleList}>
+                <li className={styles.OptionToggleListItem}>
+                    <button className={isRegistered ? styles.OptionToggleButtonActive : styles.OptionToggleButton} onClick={() => toggleForm(true)}>Log In</button>
                 </li>
-                <li className='OptionToggle-item'>
-                    <button className={props.isRegistered === false ? 'OptionToggle-button OptionToggle-button--active' : 'OptionToggle-button'} onClick={toggleToRegister} >Create Account</button>
+                <li className={styles.OptionToggleListItem}>
+                    <button className={!isRegistered ? styles.OptionToggleButtonActive : styles.OptionToggleButton} onClick={() => toggleForm(false)}>Create Account</button>
                 </li>
             </ul>
         </div>

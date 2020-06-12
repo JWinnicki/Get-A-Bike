@@ -1,0 +1,33 @@
+.Footer {
+    height: 12vh;
+    min-height: 60px;
+    background-color: black;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    bottom: 0;
+
+    &Text {
+        font-size: 1.2rem;
+    }
+
+    &Contact {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: .5rem;
+
+        &Text {
+            font-size: 1.4rem;
+        }
+
+        &Link {
+            margin-left: .8rem;
+        }
+    }
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import './Header.css';
+import styles from './Header.module.scss';
 import Logo from '../../img/Logos/Logo-second.png';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
@@ -12,20 +12,20 @@ const Header = ({token}) => {
 
         return (
             <nav>
-                <div className='Header'>
-                    <div className='Header-links'>
-                        <NavLink to='/' exact className={`Header-links__item`} activeClassName='Header-links__item--active'>Home</NavLink> 
-                        <NavLink to='/motorcycles' className={`Header-links__item`} activeClassName='Header-links__item--active'>Motorcycles</NavLink>
-                        <NavLink to='/check_if_available' className={`Header-links__item`} activeClassName='Header-links__item--active'>Check If Available</NavLink>
-                        <NavLink to='/offer' className={`Header-links__item`} activeClassName='Header-links__item--active'>Offer</NavLink>
-                        <NavLink to='/cities' className={`Header-links__item`} activeClassName='Header-links__item--active'>Cities</NavLink>
-                        <NavLink to={togglePath} className={`Header-links__item`} activeClassName='Header-links__item--active'>{token === null ? `Log In` : `Profile`}</NavLink>
+                <div className={styles.Header}>
+                    <div className={styles.HeaderLinksContainer}>
+                        <NavLink to='/' exact className={styles.HeaderLink} activeClassName={styles.HeaderLinkActive}>Home</NavLink> 
+                        <NavLink to='/motorcycles' className={styles.HeaderLink} activeClassName={styles.HeaderLinkActive}>Motorcycles</NavLink>
+                        <NavLink to='/check_if_available' className={styles.HeaderLink} activeClassName={styles.HeaderLinkActive}>Check If Available</NavLink>
+                        <NavLink to='/offer' className={styles.HeaderLink} activeClassName={styles.HeaderLinkActive}>Offer</NavLink>
+                        <NavLink to='/cities' className={styles.HeaderLink} activeClassName={styles.HeaderLinkActive}>Cities</NavLink>
+                        <NavLink to={togglePath} className={styles.HeaderLink} activeClassName={styles.HeaderLinkActive}>{token === null ? `Log In` : `Profile`}</NavLink>
                     </div>
-                    <div className='Header-burgerMenu'>
+                    <div className={styles.HeaderBurgerMenu}>
                         <BurgerMenu togglePath={togglePath} />
                     </div>
-                    <Link className='Header-logo__div' to='/'>
-                        <img src={Logo} alt='logo' className='Header-logo__img' /> 
+                    <Link className={styles.HeaderLogoContainer} to='/'>
+                        <img src={Logo} alt='logo' className={styles.HeaderLogoImage} /> 
                     </Link>
                 </div>
             </nav>

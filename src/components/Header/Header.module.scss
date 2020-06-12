@@ -1,0 +1,160 @@
+    @import '../../scss/variables';
+
+    .Header {
+        height: 12vh;
+        min-height: 60px;
+        background-color: black;
+    
+        display: flex;
+
+        &LinksContainer {
+            flex: 1;
+            color: white;
+        
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-left: 2rem;
+        }
+
+        &Link {
+            font-size: 1.8rem;
+            height: 80%;
+            padding: 1rem;
+            margin-right: 1rem;
+            min-width: 12rem; 
+        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+            transition: background-color 0.2s;
+        
+            text-decoration: none;
+            color: white;
+
+            &:hover {
+                background-color: $color-primary-hovered;
+            }
+
+            &Active {
+                background-color: $color-primary-hovered;
+            }
+        }
+
+        &LogoContainer {
+            width: 30rem;
+    
+            display: flex;
+            
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &LogoImage {
+            width: 100%;
+            max-height: 100%;
+        }
+
+        &BurgerMenu {
+            flex: 1;
+            display: none;
+        }
+    }
+
+
+@media (max-width: 1920px) {
+    .HeaderLogoContainer {
+        width: 26rem;
+    }
+}
+
+@media (max-width: 1795px) {
+    .HeaderLogoContainer  {
+        width: 25rem;
+    }
+}
+
+@media (max-width: 1600px) {
+    .HeaderLogoContainer  {
+        width: 24rem;
+    }
+}
+
+@media (max-width: 1030px) and (min-height: 1360px) {
+    .HeaderLink {
+        font-size: 2rem;
+        height: 50%;
+        min-width: 12rem; 
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .HeaderLogoContainer  {
+        width: 23rem;
+    }
+
+    .HeaderBurgerMenu {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .HeaderLinksContainer {
+        display: none;
+    }
+
+    .HeaderLogoContainer  {
+        margin-right: 3rem;
+    }
+}
+
+
+@media (max-width: 850px) {
+    .HeaderLogoContainer  {
+        width: 20rem;
+    }
+}
+
+@media (max-width: 850px) and (min-height: 360px) {
+    .HeaderLogoContainer  {
+        width: 17rem;
+    }
+}
+
+@media (max-width: 770px) and (min-height: 1000px) {
+    .HeaderLogoContainer  {
+        width: 24rem;
+    }
+}
+
+@media (max-width: 700px) and (max-height: 450px) {
+    .HeaderLogoContainer  {
+        width: 16rem;
+    }
+}
+
+@media (max-width: 600px) and (min-height: 310px) {
+    .HeaderLogoContainer  {
+        width: 15rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .HeaderLogoContainer  {
+        width: 20rem;
+    }
+}
+
+
+
+
+
+
+
+

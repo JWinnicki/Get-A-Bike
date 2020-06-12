@@ -1,19 +1,18 @@
-
-    .OptionToggle-list {
+.OptionToggle {
+    &List {
         list-style: none;
-    
         display: flex;
+
+        &Item {
+            border: 2px white solid;
+
+            &:last-child {
+                border-left: none;
+            }
+        }
     }
-    
-    .OptionToggle-item {
-        border: 2px white solid;
-    }
-    
-    .OptionToggle-item:last-child {
-        border-left: none;
-    }
-    
-    .OptionToggle-button {
+
+    &Button {
         color: white;
         background-color: transparent;
         border: none;
@@ -23,20 +22,21 @@
         font-weight: bold;
         font-family: inherit;
         font-size: 1.6rem;
-    }
-    
-    .OptionToggle-button:hover {
-        cursor: pointer;
-    }
-    
-    .OptionToggle-button--active {
-        color: black;
-        background-color: rgb(238, 238, 238);
-    }
 
+        &:hover {
+            cursor: pointer;
+        }
+
+        &Active {
+            @extend .OptionToggleButton;
+            color: black;
+            background-color: rgb(238, 238, 238);
+        }
+    }
+}
 
 @media (max-width: 2085px) {
-    .OptionToggle-button {
+    .OptionToggleButton {
         padding: 1rem 2rem;
         width: 16rem;
         font-size: 1.6rem;
@@ -44,7 +44,7 @@
 }
 
 @media (max-width: 1030px) {
-    .OptionToggle-button {
+    .OptionToggleButton {
         padding: 2rem 2rem;
     }
 }

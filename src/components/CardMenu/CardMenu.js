@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './CardMenu.css';
+import styles from './CardMenu.module.scss';
 
 const CardMenu = ({options, clicked, selected}) => {
 
@@ -8,15 +8,15 @@ const CardMenu = ({options, clicked, selected}) => {
         return options.map(el => {
             return(
                 <li key={el}>
-                    <button onClick={() => clicked(el)} className={`CardMenu-item__button ${selected === el && 'CardMenu-item__button--active'}`} >{el}</button>
+                    <button onClick={() => clicked(el)} className={selected === el ? styles.CardMenuItemButtonActive : styles.CardMenuItemButton}>{el}</button>
                 </li>
             );
         })
     }
 
     return(
-        <div className='CardMenu-div'>
-            <ul className='CardMenu-list'>
+        <div className={styles.CardMenu}>
+            <ul className={styles.CardMenuList}>
                 {renderCards()}
             </ul>
         </div>

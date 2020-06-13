@@ -1,24 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import './CalendarItem.css';
+import styles from './CalendarItem.module.scss';
 import { getOrdersOfTheDay } from '../../../../store/actions';
 
-const CalendarItem = props => {
+const CalendarItem = ({number, selectedBike, selectedMonth, selectedYear, available, actual, onShowDayCard, orders}) => {
+    
     const onClickHandler = () => {
-        
         const dayInfo = {
-            selectedDay: props.number,
-            selectedMonth: props.selectedMonth,
-            selectedYear: props.selectedYear,
-            availability: props.available,
-            selectedBike: props.selectedBike
+            selectedDay: number,
+            selectedMonth: selectedMonth,
+            selectedYear: selectedYear,
+            availability: available,
+            selectedBike: selectedBike
         }
-        props.onShowDayCard(props.orders, dayInfo);
+        onShowDayCard(orders, dayInfo);
     }
+
+    const style = [actual ? styles.CalendarItem : styles.CalendarItemAdditional, styles[available]].join(' ');
+
     return (
-        <div onClick={onClickHandler} className={`CalendarItem-container ${props.actual ? '' : 'CalendarItem-container-additional'} ${props.available}`}>
-            <span className='CalendarItem-number'>{props.number}</span>
+        <div onClick={onClickHandler} className={style}>
+            <span className={styles.CalendarItemText}>{number}</span>
         </div>
     );
 }

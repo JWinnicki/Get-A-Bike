@@ -90,12 +90,12 @@
             
             &Yellow {
                 @extend .CheckIfAvailableDescriptionBox;
-                background-color: rgb(253, 253, 131);
+                background-color: $color-yellow-availability;
             }
 
             &Red {
                 @extend .CheckIfAvailableDescriptionBox;
-                background-color: rgb(255, 94, 94);
+                background-color: $color-red-availability;
             }
         }
 

@@ -1,0 +1,20 @@
+.Modal{
+    &Container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        z-index: 300;
+    }
+
+    &Content {
+        z-index: 500;
+        background-color: rgb(238, 238, 238);
+        box-shadow: 1px 1px 1px black;
+        box-sizing: border-box;
+    }
+
+}

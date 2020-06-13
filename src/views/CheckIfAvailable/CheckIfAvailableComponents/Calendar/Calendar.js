@@ -33,14 +33,25 @@ const Calendar = ({selectedBike, selectedMonth, selectedYear, orders}) => {
 
         const prevArr = []
         for(let i = prevMonthStart; i <= prevMonthNumOfDays; i++) {
-            prevArr.push({number: i, actual: false, year: Number(selectedMonth) === 0 ? Number(selectedYear) - 1 : selectedYear, month: Number(selectedMonth) === 0 ? 11 : Number(selectedMonth) - 1, orders: []});
+            prevArr.push({
+                number: i, 
+                actual: false, 
+                year: Number(selectedMonth) === 0 ? Number(selectedYear) - 1 : selectedYear, 
+                month: Number(selectedMonth) === 0 ? 11 : Number(selectedMonth) - 1, 
+                orders: []
+            });
         }
 
 
         const nextArrLength = 7 - lastDayNumOfWeek;
         const nextArr = [];
         for(let i = 1; i <= nextArrLength; i++) {
-            nextArr.push({number: i, actual: false, year: Number(selectedMonth) === 11 ? Number(selectedYear) + 1 : selectedYear, month: Number(selectedMonth) === 11 ? 0 : Number(selectedMonth) + 1, orders: []});
+            nextArr.push({number: i, 
+                actual: false, 
+                year: Number(selectedMonth) === 11 ? Number(selectedYear) + 1 : selectedYear, 
+                month: Number(selectedMonth) === 11 ? 0 : Number(selectedMonth) + 1, 
+                orders: []
+            });
         }
 
         return [...prevArr, ...basicArr, ...nextArr];

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import './Modal.css';
+import styles from './Modal.module.scss';
 import Backdrop from '../Backdrop/Backdrop';
 import { cancelConfirmation } from '../../store/actions/orders';
 
@@ -21,13 +21,13 @@ class Modal extends React.Component {
                 <Backdrop show={this.props.showModal}/>
                 <div 
                     onClick={this.props.onCloseModal}
-                    className='Modal-container' 
+                    className={styles.ModalContainer} 
                     style={{
                         transform: this.props.showModal ? 'translate(0)' : 'translate(0, -100vh)',
                         opacity: this.props.showModal ? '1' : '0'
                     }}
                 >
-                    <div className='Modal' onClick={e => e.stopPropagation()}>
+                    <div className={styles.ModalContent} onClick={e => e.stopPropagation()}>
                         {this.props.children}
                     </div>
                 </div>

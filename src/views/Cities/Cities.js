@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './Cities.css';
+import styles from './Cities.module.scss';
 import CityDataComponent from './CitiesComponents/CityDataComponent';
 
 class Cities extends Component {
@@ -28,7 +28,7 @@ class Cities extends Component {
 
     render() {
         return (
-            <div className="Cities">
+            <div className={styles.Cities}>
                 {this.renderComponents()}
             </div>
         );

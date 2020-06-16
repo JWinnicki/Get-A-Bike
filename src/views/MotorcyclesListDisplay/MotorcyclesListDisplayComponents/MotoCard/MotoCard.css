@@ -75,12 +75,12 @@
     }
     
     .MotoCard-book:active {
-        background-color: rgb(44, 43, 43);
+        background-color: rgb(48, 48, 48);
     }
     
     .MotoCard-book:hover {
         cursor: pointer;
-        background-color: #0a0a0a;
+        background-color: rgb(34, 34, 34);
     }
 
 

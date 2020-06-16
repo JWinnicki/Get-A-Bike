@@ -1,9 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import './MotorcyclesListDisplay.css';
 import BrandToggler from '../../components/BrandToggler/BrandToggler';
-import { selectBrand, selectBikes } from '../../store/actions/motorcycles';
+import {selectBrand, selectBikes} from '../../store/actions/motorcycles';
 import MotoCollection from './MotorcyclesListDisplayComponents/MotoCollection/MotoCollection';
 
 class MotorcyclesListDisplay extends React.Component {

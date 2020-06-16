@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import './MotoCollection.css';
 import MotoCard from '../MotoCard/MotoCard';
 
-class MotoCollection extends Component {
+const MotoCollection = ({motoArr}) => {
 
-    renderBikesList = () => {
-        if(this.props.motoArr) {
-            return this.props.motoArr.map(el => {
+    const renderBikesList = () => {
+        if(motoArr) {
+            return motoArr.map(el => {
                 return <MotoCard 
                             key={el.model}
                             image={el.image}
@@ -22,14 +22,11 @@ class MotoCollection extends Component {
         }
         
     }
-
-    render() {
-        return (
-            <div className='MotoCollection'>
-                {this.renderBikesList()}
-            </div>
-        );
-    }
+    return (
+        <div className='MotoCollection'>
+            {renderBikesList()}
+        </div>
+    );
 }
 
 const mapStateToProps = state => {

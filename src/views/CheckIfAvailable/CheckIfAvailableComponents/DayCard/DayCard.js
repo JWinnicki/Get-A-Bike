@@ -5,7 +5,7 @@ import Icon from '../../../../components/Icon/Icon';
 import BasicButton from '../../../../components/atoms/BasicButton/BasicButton';
 
 const DayCard = ({dayInfo, orders, closeModal}) => {
-    const { selectedDay, selectedMonth, selectedYear, availability, selectedBike } = dayInfo;
+    const {selectedDay, selectedMonth, selectedYear, availability, selectedBike} = dayInfo;
 
     const renderStatus = () => {
         if(availability === 'available') {

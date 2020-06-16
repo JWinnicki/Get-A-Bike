@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
+import {connect} from 'react-redux';
 
 import './BrandLogosList.css';
 import BrandLogoItem from './MotorcyclesMenuComponents/BrandLogoItem';
 
-class BrandLogosList extends Component {
+const BrandLogosList = ({brandsArr}) => {
 
-   renderLogos = () => {
-        return this.props.brandsArr.map(el => {
+   const renderLogos = () => {
+        return brandsArr.map(el => {
             return <BrandLogoItem
                 key={el.name}
                 logo={el.logo}
@@ -17,14 +17,11 @@ class BrandLogosList extends Component {
         });
     }
 
-    render() {
-
-        return(
-            <div className='Brand-Logos__div'>
-                {this.renderLogos()}
-            </div>
-        );
-    }
+    return(
+        <div className='Brand-Logos__div'>
+            {renderLogos()}
+        </div>
+    );
 }
 
 const mapStateToProps = state => {

@@ -14,17 +14,14 @@ const Calendar = ({selectedBike, selectedMonth, selectedYear, orders}) => {
             basicArr.push({number: i, actual: true, year: selectedYear, month: selectedMonth, orders: []});
         }
 
-        let firstDayNumOfWeek = null;
+        let firstDayNumOfWeek = 7;
         if(new Date(selectedYear, selectedMonth, 1).getDay() !== 0) {
             firstDayNumOfWeek = new Date(selectedYear, selectedMonth, 1).getDay();
-        } else {
-                firstDayNumOfWeek = 7;
         }
-        let lastDayNumOfWeek = null
+
+        let lastDayNumOfWeek = 7;
         if(new Date(selectedYear, Number(selectedMonth) + 1, 0).getDay() !== 0) {
             lastDayNumOfWeek = new Date(selectedYear, Number(selectedMonth) + 1, 0).getDay();
-        } else {
-            lastDayNumOfWeek = 7;
         }
 
         const prevArrLength = Number(firstDayNumOfWeek) - 1;
@@ -59,7 +56,7 @@ const Calendar = ({selectedBike, selectedMonth, selectedYear, orders}) => {
 
     const renderDayItems = () => {
 
-        const finalArr = createDaysArr();
+        const finalArr = [...createDaysArr()];
 
         if(orders.length === 0) {
             finalArr.forEach(el => {
@@ -68,11 +65,15 @@ const Calendar = ({selectedBike, selectedMonth, selectedYear, orders}) => {
         } else {
             for(let i = 0; i <= orders.length - 1; i++) {
                 for(let j = 0; j <= finalArr.length - 1; j++) {
-                    if( new Date(orders[i].end.endYear, orders[i].end.endMonth - 1, orders[i].end.endDay, orders[i].end.endHour).getTime() < new Date(finalArr[j].year, finalArr[j].month, finalArr[j].number, 6).getTime() || new Date(orders[i].start.startYear, orders[i].start.startMonth - 1, orders[i].start.startDay, orders[i].start.startHour).getTime() > new Date(finalArr[j].year, finalArr[j].month, finalArr[j].number, 22).getTime() ) {
+
+                    const isAvailable = () => new Date(orders[i].end.endYear, orders[i].end.endMonth - 1, orders[i].end.endDay, orders[i].end.endHour).getTime() < new Date(finalArr[j].year, finalArr[j].month, finalArr[j].number, 6).getTime() || new Date(orders[i].start.startYear, orders[i].start.startMonth - 1, orders[i].start.startDay, orders[i].start.startHour).getTime() > new Date(finalArr[j].year, finalArr[j].month, finalArr[j].number, 22).getTime();
+                    const isPartlyAvailable = () => new Date(orders[i].start.startYear, orders[i].start.startMonth - 1, orders[i].start.startDay, orders[i].start.startHour).getTime() >= new Date(finalArr[j].year, finalArr[j].month, finalArr[j].number, 6).getTime() && new Date(orders[i].end.endYear, orders[i].end.endMonth - 1, orders[i].end.endDay, orders[i].end.endHour).getTime() <= new Date(finalArr[j].year, finalArr[j].month, finalArr[j].number, 22).getTime();
+                    
+                    if(isAvailable()) {
                         if(finalArr[j].available === undefined) {
                             finalArr[j].available = 'available';
                         }
-                    } else if( new Date(orders[i].start.startYear, orders[i].start.startMonth - 1, orders[i].start.startDay, orders[i].start.startHour).getTime() >= new Date(finalArr[j].year, finalArr[j].month, finalArr[j].number, 6).getTime() && new Date(orders[i].end.endYear, orders[i].end.endMonth - 1, orders[i].end.endDay, orders[i].end.endHour).getTime() <= new Date(finalArr[j].year, finalArr[j].month, finalArr[j].number, 22).getTime() ) {
+                    } else if(isPartlyAvailable()) {
                         finalArr[j].available = 'partly';
                         finalArr[j].orders.push(orders[i]);
                         const lengthArr = finalArr[j].orders.map(el => {
@@ -89,7 +90,16 @@ const Calendar = ({selectedBike, selectedMonth, selectedYear, orders}) => {
         } 
 
         return finalArr.map(el => {
-            return <CalendarItem selectedBike={selectedBike} orders={el.orders} selectedMonth={el.month} selectedYear={el.year} number={el.number} available={el.available} actual={el.actual} key={`${el.number}${el.actual}`}/>
+            return <CalendarItem 
+                selectedBike={selectedBike} 
+                orders={el.orders} 
+                selectedMonth={el.month} 
+                selectedYear={el.year} 
+                number={el.number} 
+                available={el.available} 
+                actual={el.actual} 
+                key={`${el.number}${el.actual}`}
+            />
         })
 
     }

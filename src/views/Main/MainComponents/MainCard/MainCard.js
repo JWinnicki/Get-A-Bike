@@ -1,17 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import './MainCard.css';
 import Icon from '../../../../components/Icon/Icon';
 
-const MainCard = props => {
+const MainCard = ({to, icon, text}) => {
     
     return (
-        <Link className='MainCard' to={props.to}>
+        <Link className='MainCard' to={to}>
             <div className='icon-div'>
-                <Icon icon={props.icon} size='big' />
+                <Icon icon={icon} size='big' />
              </div>
-            <h3>{props.text}</h3>
+            <h3>{text}</h3>
         </Link>
     )
 }

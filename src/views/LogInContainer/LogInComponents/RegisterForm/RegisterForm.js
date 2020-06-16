@@ -8,7 +8,7 @@ import Icon from '../../../../components/Icon/Icon';
 import { auth } from '../../../../store/actions';
 import BasicButton from '../../../../components/atoms/BasicButton/BasicButton';
 
-const RegisterForm = (/* props,  */{ /// destrukturyzacja props'ów
+const RegisterForm = ({
     values,
     errors,
     touched,
@@ -31,7 +31,7 @@ const RegisterForm = (/* props,  */{ /// destrukturyzacja props'ów
     return (
         <Form className='RegisterForm-Form'>
             {renderInformation()}
-            {<p className='RegisterForm-errorMsg'>{errorMsg !== null ? errorMsg.replace(/_/g, ' ') : null}</p>}
+            {<p className='RegisterForm-errorMsg'>{errorMsg !== null && errorMsg.replace(/_/g, ' ')}</p>}
             <div>
                 { touched.email && errors.email && <p className='RegisterForm-errorMsg'>{errors.email}</p> }
                 <Field type='email' name='email' placeholder='Email' className={touched.email && errors.email ? 'RegisterForm-textInput RegisterForm-textInput--error' : 'RegisterForm-textInput'} />
@@ -40,7 +40,6 @@ const RegisterForm = (/* props,  */{ /// destrukturyzacja props'ów
                 { touched.password && errors.password && <p className='RegisterForm-errorMsg'>{errors.password}</p> }
                 <Field type={isRegistered === true ? 'password' : 'text'} name='password' placeholder='Password' className={touched.password && errors.password ? 'RegisterForm-textInput RegisterForm-textInput--error' : 'RegisterForm-textInput'} />
             </div>
-            {/* isRegistered === true ? null : renderOptional() */}
             <div className='RegisterForm-checkboxContainer'>
                 <Field type='checkbox' name='allowLocalStorage' checked={values.allowLocalStorage} id='allowLocalStorage' />
                 <label htmlFor='allowLocalStorage'>
@@ -50,16 +49,15 @@ const RegisterForm = (/* props,  */{ /// destrukturyzacja props'ów
             <div className='RegisterForm-btnContainer'>
                 <BasicButton type='submit' disabled={isSubmitting}>{isRegistered === true ? 'Log In' : 'Create'}</BasicButton>
             </div>
-            {/* isRegistered === true ? renderInformation() : null */}
         </Form>
     );
 }
 
 const FormikRegisterForm = withFormik({
-    mapPropsToValues: props => ({
+    mapPropsToValues: ({isRegistered}) => ({
         email: '',
         password: '',
-        isRegistered: props.isRegistered,
+        isRegistered: isRegistered,
         name: '',
         surname: '',
         phone: '',
@@ -72,7 +70,7 @@ const FormikRegisterForm = withFormik({
         surname: Yup.string().min(2, 'Too short!').max(30, 'Too long!'),
         phone: Yup.number().min(5, 'At least 5 digits').positive()
     }),
-    handleSubmit(values, { resetForm, setErrors, setSubmitting, props }) {
+    handleSubmit(values, {setSubmitting, props}) {
         props.onAuth(values.email, values.password, values.isRegistered, values.allowLocalStorage);
         setSubmitting(false);
     },

@@ -1,23 +1,21 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import './BrandLogoItem.css'
 import { selectBrand } from '../../../store/actions/motorcycles';
 
-class BrandLogoItem extends Component {
+const BrandLogoItem = ({onSelectBrand, borderColor, brandName, logo}) => {
 
-    selectBrandHandler = () => {
-        this.props.onSelectBrand(this.props.brandName);
+    const selectBrandHandler = () => {
+        onSelectBrand(brandName);
     }
-
-    render() {
-        return (
-            <Link className={`Logo-div ${this.props.borderColor}`} onClick={this.selectBrandHandler} to={`/motorcycles/${this.props.brandName}`}>
-                <img src={this.props.logo} alt={`${this.props.brandName} Logo`} />
-            </Link>
-        );
-    }
+    
+    return (
+        <Link className={`Logo-div ${borderColor}`} onClick={selectBrandHandler} to={`/motorcycles/${brandName}`}>
+            <img src={logo} alt={`${brandName} Logo`} />
+        </Link>
+    );
 }
 
 const mapDispatchToProps = dispatch => {

@@ -6,7 +6,7 @@ import Spinner from '../Spinner/Spinner';
 import DayCard from '../../views/CheckIfAvailable/CheckIfAvailableComponents/DayCard/DayCard';
 import RentalSummary from '../../views/RentFormContainer/RentFormContainerComponents/RentalSummary/RentalSummary';
 import ModalMessage from '../ModalMessage/ModalMessage';
-import { cancelConfirmation, submitForm, rentBike, fetchSelectedModelOrders, fetchOrdersFail } from '../../store/actions';
+import {cancelConfirmation, submitForm, rentBike, fetchSelectedModelOrders, fetchOrdersFail} from '../../store/actions';
 
 const ModalContent = props => {
 

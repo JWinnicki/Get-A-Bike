@@ -10,7 +10,7 @@ class CheckIfAvailable extends React.Component {
 
     state = {
         selectedBike: 'Please select model',
-        selectedMonth: new Date().getMonth(), //miesiące są numerowane od 0
+        selectedMonth: new Date().getMonth(),
         selectedYear: new Date().getFullYear(),
         orders: null
     }

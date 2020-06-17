@@ -1,92 +1,15 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios-orders';
 
-export const submitForm = form => {
+export const fetchOrdersSuccess = orders => {
     return {
-        type: actionTypes.SUBMIT_FORM,
-        payload: form
-    }
-}
-
-export const startConfirmation = form => {
-    return {
-        type: actionTypes.START_CONFIRMATION,
-        payload: form
-    }
-}
-
-export const cancelConfirmation = () => {
-    return {
-        type: actionTypes.CANCEL_CONFIRMATION
-    }
-}
-
-export const rentStart = () => {
-    return {
-        type: actionTypes.RENT_START
-    }
-}
-
-export const rentFail = error => {
-    return {
-        type: actionTypes.RENT_FAIL,
-        error: true,
-        errorMsg: error
-    }
-}
-
-export const rentSucces = (orderData, id) => {
-    return {
-        type: actionTypes.RENT_SUCCES,
-        orderId: id,
-        orderData: orderData
-    }
-}
-
-export const rentBike = orderData => {
-    return async dispatch => {
-        dispatch(rentStart());
-        
-        try{
-            const response = await axios.post(`/orders.json`, orderData); //`/orders/${orderData.selectedModel}.json`
-            //console.log(response);
-            dispatch(rentSucces(orderData, response.data.name));
-        } catch(error) {
-            
-            if(error.response === undefined) {
-                dispatch(rentFail(null));
-                //console.log(error);
-            } else {
-                dispatch(rentFail(error.response.data.error));
-                //console.log(error.response.data.response);
-            }
-            
-        }
-    }
-    /* return dispatch => {
-        dispatch(rentStart());
-
-        axios.post(`/orders/${orderData.selectedModel}`, orderData)
-            .then( response => {
-                console.log(response);
-                dispatch(rentSucces(orderData, response.data.name));
-            })
-            .catch(error => {
-                console.log(error);
-                dispatch(rentFail(error));
-            });
-    } */
-}
-
-export const fetchOrdersSucces = orders => {
-    return{
-        type: actionTypes.FETCH_ORDERS_SUCCES,
+        type: actionTypes.FETCH_ORDERS_SUCCESS,
         orders: orders
     };
 };
 
 export const fetchOrdersFail = error => {
-    return{
+    return {
         type: actionTypes.FETCH_ORDERS_FAIL,
         error: true,
         errorMsg: error
@@ -105,15 +28,12 @@ export const fetchOrders = () => {
 
         try {
             const response = await axios.get(`/orders.json`);
-            //console.log(response.data);
-            dispatch(fetchOrdersSucces(response.data));
+            dispatch(fetchOrdersSuccess(response.data));
         } catch(error) {
             if(error.response === undefined) {
                 dispatch(fetchOrdersFail(null));
-                //console.log(error);
             } else {
                 dispatch(fetchOrdersFail(error.response.data.error));
-                //console.log(error.response.data.error);
             }
             
         }
@@ -134,7 +54,6 @@ export const fetchUserOrders = (token, userId) => {
 
         try {
             const response = await axios.get(`/orders.json${queryParams}`);
-            //console.log(response.data);
             const fetchedOrders = [];
 
             for ( let key in response.data ) {
@@ -144,14 +63,11 @@ export const fetchUserOrders = (token, userId) => {
                 } );
             }
             dispatch(fetchUserOrdersSuccess(fetchedOrders));
-            //console.log(fetchedOrders);
         } catch(error) {
             if(error.response === undefined) {
                 dispatch(fetchOrdersFail(null));
-                //console.log(error);
             } else {
                 dispatch(fetchOrdersFail(error.response.data.error));
-                //console.log(error.response.data.error);
             }
             
         }
@@ -165,7 +81,6 @@ export const fetchSelectedModelOrders = selectedModel => {
 
         try {
             const response = await axios.get(`/orders.json${queryParams}`);
-            //console.log(selectedModel);
             const fetchedOrders = [];
 
             for ( let key in response.data ) {
@@ -174,21 +89,19 @@ export const fetchSelectedModelOrders = selectedModel => {
                     id: key
                 } );
             }
-            dispatch(fetchOrdersSucces(fetchedOrders));
-            //console.log(fetchedOrders);
+            dispatch(fetchOrdersSuccess(fetchedOrders));
             return fetchedOrders;
         } catch(error) {
             if(error.response === undefined) {
                 dispatch(fetchOrdersFail(null));
-                //console.log(error);
             } else {
                 dispatch(fetchOrdersFail(error.response.data.error));
-                //console.log(error.response.data.error);
             }
-            
         }
     }
 }
+
+////////////////////////////////////////////
 
 
 export const deleteItemStart = () => {
@@ -216,24 +129,22 @@ export const deleteItem = orderId => {
         dispatch(deleteItemStart());
 
         try {
-
             axios.delete(`/orders/${orderId}.json`);
             dispatch(deleteItemSuccess(orderId));
-
 
         } catch(error) {
 
             if(error.response === undefined) {
                 dispatch(deleteItemFail(null));
-                //console.log(error);
             } else {
                 dispatch(deleteItemFail(error.response.data.error));
-                //console.log(error.response.data.error);
             }
 
         }   
     }
 }
+
+///////////////////////////////////////////////////////////////////
 
 export const clearOrdersArr = () => {
     return {

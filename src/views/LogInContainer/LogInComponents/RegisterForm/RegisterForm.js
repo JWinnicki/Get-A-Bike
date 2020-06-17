@@ -1,11 +1,11 @@
 import React from 'react';
-import { withFormik, Form, Field } from 'formik';
+import {withFormik, Form, Field} from 'formik';
 import * as Yup from 'yup';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import './RegisterForm.css';
 import Icon from '../../../../components/Icon/Icon';
-import { auth } from '../../../../store/actions';
+import {auth} from '../../../../store/actions';
 import BasicButton from '../../../../components/atoms/BasicButton/BasicButton';
 
 const RegisterForm = ({

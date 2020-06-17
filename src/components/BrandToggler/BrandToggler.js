@@ -1,9 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import styles from './BrandToggler.module.scss';
-import { selectBrand, selectBikes } from '../../store/actions/motorcycles';
+import {selectBrand, selectBikes} from '../../store/actions/motorcycles';
 
 const BrandToggler = ({motoList, onSelectBrand, onSelectBikes, brands, selectedBrand}) => {
 

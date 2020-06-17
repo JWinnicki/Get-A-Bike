@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, withRouter, NavLink } from 'react-router-dom';
-import { connect } from 'react-redux';
+import {Link, withRouter, NavLink} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 import styles from './Header.module.scss';
 import Logo from '../../img/Logos/Logo-second.png';

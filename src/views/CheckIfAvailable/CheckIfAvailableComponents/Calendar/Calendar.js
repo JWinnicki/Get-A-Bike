@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import styles from './Calendar.module.scss';
 import CalendarItem from '../CalendarItem/CalendarItem';

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {Route, Switch} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 import './App.css';
 import Main from './views/Main/Main';
@@ -11,7 +11,7 @@ import Offer from './views/Offer/Offer';
 import RentFormContainer from './views/RentFormContainer/RentFormContainer';
 import LogInContainer from './views/LogInContainer/LogInContainer';
 import Profile from './views/Profile/Profile';
-import { authCheckState } from './store/actions/index';
+import {authCheckState} from './store/actions/index';
 import CheckIfAvailable from './views/CheckIfAvailable/CheckIfAvailable';
 import MainTemplate from './templates/MainTemplate/MainTemplate';
 
@@ -22,7 +22,6 @@ class App extends Component {
   }
 
   render() {
-
     return (
       <div className="container">
         <MainTemplate>

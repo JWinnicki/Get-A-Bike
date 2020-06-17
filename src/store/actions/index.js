@@ -11,7 +11,16 @@ export {
     fetchOrdersFail,
     clearOrdersArr,
     getOrdersOfTheDay,
+} from './orders';
+
+export {
+    selectBrand,
+    selectBikes
+} from './motorcycles';
+
+export {
+    submitForm,
+    startConfirmation,
     cancelConfirmation,
     rentBike,
-    submitForm
-} from './orders'
+} from './rent';

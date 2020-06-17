@@ -1,8 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import styles from './CalendarItem.module.scss';
-import { getOrdersOfTheDay } from '../../../../store/actions';
+import {getOrdersOfTheDay} from '../../../../store/actions';
 
 const CalendarItem = ({number, selectedBike, selectedMonth, selectedYear, available, actual, onShowDayCard, orders}) => {
     

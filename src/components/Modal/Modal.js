@@ -1,9 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import styles from './Modal.module.scss';
 import Backdrop from '../Backdrop/Backdrop';
-import {cancelConfirmation} from '../../store/actions/orders';
+import {cancelConfirmation} from '../../store/actions';
 
 class Modal extends React.Component {
 
@@ -40,7 +40,7 @@ class Modal extends React.Component {
 }
 
 const mapPropsToState = state => {
-    const shouldShowModal = () => state.orders.renting || state.orders.error || state.orders.deleted || state.orders.checkingOrders || state.orders.rented;
+    const shouldShowModal = () => state.appState.renting || state.appState.error || state.appState.deleted || state.appState.checkingOrders || state.appState.rented;
 
     return {
         showModal: shouldShowModal(),

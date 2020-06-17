@@ -1,9 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 
 import './Profile.css';
-import { logout, fetchUserOrders, deleteItem, clearOrdersArr } from '../../store/actions/index';
+import {logout, fetchUserOrders, deleteItem, clearOrdersArr} from '../../store/actions/index';
 import CardMenu from '../../components/CardMenu/CardMenu';
 import OrderItem from './ProfileComponents/OrderItem/OrderItem';
 import Spinner from '../../components/Spinner/Spinner';
@@ -26,10 +26,7 @@ class Profile extends React.Component {
     }
 
     selectPageHandler = selectedPage => {
-
-        const newPage = selectedPage;
-
-        this.setState({selected: newPage});
+        this.setState({selected: selectedPage});
     }
 
     filterOrdersHandler = () => {
@@ -78,20 +75,17 @@ class Profile extends React.Component {
         return(
             <div className='profile-container'>
                 {this.props.token === null ? <Redirect to={`/`} /> : null}
-                
                 <div className='profile-content'>
                     <div className='profile-controls'>
                         <CardMenu selected={this.state.selected} options={this.state.menuCards} clicked={this.selectPageHandler} />
                     </div>
                     <div className='profile-body'>
-                        <div className='profile-whiteBar top'></div>
                         <div className='profile-orders__div'>
                             {this.renderOrdersHandler()}
                         </div>
                         <div className='profile-personal__div'>
                             <BasicButton onClick={this.props.onLogout}>Log Out</BasicButton>
                         </div>
-                        <div className='profile-whiteBar bottom'></div>
                     </div>
                 </div>
             </div>
@@ -104,7 +98,7 @@ const mapStateToProps = state => {
         token: state.auth.token,
         userId: state.auth.userId,
         userOrders: state.orders.userOrders,
-        loading: state.orders.loading
+        loading: state.appState.loading
     }
 }
 

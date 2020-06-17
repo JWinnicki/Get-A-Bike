@@ -67,16 +67,16 @@ const mapPropsToState = state => {
     return {
         order: state.orders.order,
         orders: state.orders.orders,
-        error: state.orders.error,
-        errorMsg: state.orders.errorMsg,
-        fetched: state.orders.fetched,
-        rented: state.orders.rented,
-        renting: state.orders.renting,
-        loading: state.orders.loading,
-        deleted: state.orders.deleted,
-        checkingOrders: state.orders.checkingOrders,
         ordersOfTheDay: state.orders.ordersOfTheDay,
-        dayInfo: state.orders.dayInfo
+        dayInfo: state.orders.dayInfo,
+        error: state.appState.error,
+        errorMsg: state.appState.errorMsg,
+        fetched: state.appState.fetched,
+        rented: state.appState.rented,
+        renting: state.appState.renting,
+        loading: state.appState.loading,
+        deleted: state.appState.deleted,
+        checkingOrders: state.appState.checkingOrders,
     }
 }
 

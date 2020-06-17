@@ -4,13 +4,14 @@ import './RentalSummary.css';
 import Icon from '../../../../components/Icon/Icon';
 import BasicButton from '../../../../components/atoms/BasicButton/BasicButton';
 
-const RentalSummary = props => {
+const RentalSummary = ({order, submitForm, cancelOrder, fetchOrders, fetchOrdersFail}) => {
+    const {end, start, rentalOption, city, selectedModel} = order;
 
     const calculateTotal = () => {
 
-        if(props.order.rentalOption === 'short') {
+        if(rentalOption === 'short') {
 
-            const totalHours = props.order.end.endHour - props.order.start.startHour;
+            const totalHours = end.endHour - start.startHour;
             
             if(totalHours <= 2) {
                 return totalHours * 12;
@@ -20,8 +21,8 @@ const RentalSummary = props => {
                 return totalHours * 10;
             }
 
-        } else { /// wynik w milisekundach trzeba podzielić przez 86 400 000, uzyskamy wtedy wynik w dniach :)
-            const totalDays = Math.round(Math.abs((new Date(props.order.end.endYear, props.order.end.endMonth, props.order.end.endDay).getTime() - new Date(props.order.start.startYear, props.order.start.startMonth, props.order.start.startDay).getTime() + 86400000) / 86400000));
+        } else { /// wynik w milisekundach trzeba podzielić przez 86 400 000, uzyskamy wtedy wynik w dniach
+            const totalDays = Math.round(Math.abs((new Date(end.endYear, end.endMonth, end.endDay).getTime() - new Date(start.startYear, start.startMonth, start.startDay).getTime() + 86400000) / 86400000));
 
             if(totalDays <= 3) {
                 return totalDays * 155;
@@ -37,53 +38,49 @@ const RentalSummary = props => {
     }
 
     const renderDetails = () => {
-        if(props.order.start !== undefined) {
-            return (
-                <div className='details-main'>
-                    <div className='details-section'>
-                        <ul className='details-section--list'>
-                            <li className='details-section--listItem'>
-                                <div className='details-section--icon' ><Icon icon='arrow-right' size='tiniest'/></div>
-                                <p className='details-section--listItem__text'>Model: {props.order.selectedModel}</p>
-                            </li>
-                            <li className='details-section--listItem'>
-                                <div className='details-section--icon' ><Icon icon='arrow-right' size='tiniest'/></div>
-                                <p className='details-section--listItem__text'>City: {props.order.city}</p>
-                            </li>
-                            <li className='details-section--listItem'>
-                                <div className='details-section--icon' ><Icon icon='arrow-right' size='tiniest'/></div>
-                                <p className='details-section--listItem__text'>Start: {props.order.rentalOption === 'short' ? `${props.order.start.startHour}:00, ${props.order.start.startDay < 10 ? '0' + props.order.start.startDay : props.order.start.startDay}.${props.order.start.startMonth < 10 ? '0' + props.order.start.startMonth : props.order.start.startMonth}.${props.order.start.startYear}` : `${props.order.start.startDay < 10 ? '0' + props.order.start.startDay : props.order.start.startDay}.${props.order.start.startMonth < 10 ? '0' + props.order.start.startMonth : props.order.start.startMonth}.${props.order.start.startYear}`}</p>
-                            </li>
-                            <li className='details-section--listItem'>
-                                <div className='details-section--icon' ><Icon icon='arrow-right' size='tiniest'/></div>
-                                <p className='details-section--listItem__text'>End: {props.order.rentalOption === 'short' ? `${props.order.end.endHour}:00, ${props.order.end.endDay < 10 ? '0' + props.order.end.endDay : props.order.end.endDay}.${props.order.end.endMonth < 10 ? '0' + props.order.end.endMonth : props.order.end.endMonth}.${props.order.end.endYear}` : `${props.order.end.endDay < 10 ? '0' + props.order.end.endDay : props.order.end.endDay}.${props.order.end.endMonth < 10 ? '0' + props.order.end.endMonth : props.order.end.endMonth}.${props.order.end.endYear}`}</p>
-                            </li>
-                            <li className='details-section--listItem'>
-                                <div className='details-section--icon' ><Icon icon='arrow-right' size='tiniest'/></div>
-                                <p className='details-section--listItem__text'>Total: {calculateTotal()}$</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            );
-        } else {
-            props.cancelOrder();
-        }
+        return (
+            <div className='details-main'>
+                <div className='details-section'>
+                    <ul className='details-section--list'>
+                        <li className='details-section--listItem'>
+                            <div className='details-section--icon' ><Icon icon='arrow-right' size='tiniest'/></div>
+                            <p className='details-section--listItem__text'>Model: {selectedModel}</p>
+                        </li>
+                         <li className='details-section--listItem'>
+                            <div className='details-section--icon' ><Icon icon='arrow-right' size='tiniest'/></div>
+                            <p className='details-section--listItem__text'>City: {city}</p>
+                        </li>
+                        <li className='details-section--listItem'>
+                            <div className='details-section--icon' ><Icon icon='arrow-right' size='tiniest'/></div>
+                            <p className='details-section--listItem__text'>Start: {rentalOption === 'short' ? `${start.startHour}:00, ${start.startDay < 10 ? '0' + start.startDay : start.startDay}.${start.startMonth < 10 ? '0' + start.startMonth : start.startMonth}.${start.startYear}` : `${start.startDay < 10 ? '0' + start.startDay : start.startDay}.${start.startMonth < 10 ? '0' + start.startMonth : start.startMonth}.${start.startYear}`}</p>
+                        </li>
+                        <li className='details-section--listItem'>
+                            <div className='details-section--icon' ><Icon icon='arrow-right' size='tiniest'/></div>
+                            <p className='details-section--listItem__text'>End: {rentalOption === 'short' ? `${end.endHour}:00, ${end.endDay < 10 ? '0' + end.endDay : end.endDay}.${end.endMonth < 10 ? '0' + end.endMonth : end.endMonth}.${end.endYear}` : `${end.endDay < 10 ? '0' + end.endDay : end.endDay}.${end.endMonth < 10 ? '0' + end.endMonth : end.endMonth}.${end.endYear}`}</p>
+                        </li>
+                        <li className='details-section--listItem'>
+                            <div className='details-section--icon' ><Icon icon='arrow-right' size='tiniest'/></div>
+                            <p className='details-section--listItem__text'>Total: {calculateTotal()}$</p>
+                        </li>
+                    </ul>
+                 </div>
+             </div>
+        );
     }
 
-    const submitForm = async () => {
-        const response = await props.fetchOrders(props.order.selectedModel)
+    const onSubmitForm = async () => {
+        const response = await fetchOrders(selectedModel)
 
         const checkIfEvery = () => {
             return response.every(el => {
-                return (new Date(props.order.end.endYear, props.order.end.endMonth, props.order.end.endDay, props.order.end.endHour).getTime() <= new Date(el.start.startYear, el.start.startMonth, el.start.startDay, el.start.startHour).getTime() || new Date(props.order.start.startYear, props.order.start.startMonth, props.order.start.startDay, props.order.start.startHour).getTime() >= new Date(el.end.endYear, el.end.endMonth, el.end.endDay, el.end.endHour).getTime());
+                return (new Date(end.endYear, end.endMonth, end.endDay, end.endHour).getTime() <= new Date(el.start.startYear, el.start.startMonth, el.start.startDay, el.start.startHour).getTime() || new Date(start.startYear, start.startMonth, start.startDay, start.startHour).getTime() >= new Date(el.end.endYear, el.end.endMonth, el.end.endDay, el.end.endHour).getTime());
             });
         }
 
         if(checkIfEvery()) {
-            props.submitForm(props.order);
+            submitForm(order);
         } else {
-            props.fetchOrdersFail('Motorcycle not availible');
+            fetchOrdersFail('Motorcycle not availible');
         }
 
     }
@@ -92,8 +89,8 @@ const RentalSummary = props => {
             <h1>Rental Summary</h1>
             {renderDetails()}
             <div className='buttons-container'> 
-                <BasicButton onClick={submitForm} color='green'>Confirm</BasicButton>
-                <BasicButton onClick={props.cancelOrder} color='red'>Cancel</BasicButton>
+                <BasicButton onClick={onSubmitForm} color='green'>Confirm</BasicButton>
+                <BasicButton onClick={cancelOrder} color='red'>Cancel</BasicButton>
             </div>
         </div>
     );

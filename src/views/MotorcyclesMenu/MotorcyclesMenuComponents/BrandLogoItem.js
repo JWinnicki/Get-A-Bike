@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 import './BrandLogoItem.css'
-import { selectBrand } from '../../../store/actions/motorcycles';
+import {selectBrand} from '../../../store/actions/motorcycles';
 
 const BrandLogoItem = ({onSelectBrand, borderColor, brandName, logo}) => {
 

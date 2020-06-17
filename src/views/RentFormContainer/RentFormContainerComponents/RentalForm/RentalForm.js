@@ -1,14 +1,13 @@
 import React from 'react';
-import { withFormik, Form, Field } from 'formik';
+import {withFormik, Form, Field} from 'formik';
 import * as Yup from 'yup';
-import { connect } from 'react-redux';
-
+import {connect} from 'react-redux';
 
 import './RentalForm.css';
-import { startConfirmation } from '../../../../store/actions/orders';
+import {startConfirmation} from '../../../../store/actions';
 import BasicButton from '../../../../components/atoms/BasicButton/BasicButton';
 
-const RentalForm = ({ /// destrukturyzacja props'ów
+const RentalForm = ({
     values,
     errors,
     touched
@@ -91,7 +90,7 @@ const RentalForm = ({ /// destrukturyzacja props'ów
 
         return (
             <React.Fragment>
-            { touched.startYear && errors.startYear && <div className='error-container'><p className='error-message'>{errors.startYear}</p></div> }
+                { touched.startYear && errors.startYear && <div className='error-container'><p className='error-message'>{errors.startYear}</p></div> }
                 <div className={ touched.startYear && errors.startYear ? 'data-container error-date' : 'data-container' }>
                     <div className='data-start'>
                         <div className='span-item'>
@@ -173,7 +172,7 @@ const RentalForm = ({ /// destrukturyzacja props'ów
             </div>
             <p className='form-p'>Please select date:</p>
             {values.rentalOption === 'short' ? renderHoursSelect() : renderDateSelect()} 
-            <BasicButton  type='submit' >Submit</BasicButton>
+            <BasicButton  type='submit'>Submit</BasicButton>
         </Form>
     );
 }
@@ -206,13 +205,6 @@ const FormikForm = withFormik({
         
         const now = new Date().getTime();
 
-        /* name: values.name,
-            surname: values.surname,
-            email: values.email,
-            phone: values.phone,
-            city: values.city, 
-            rentalOption: values.rentalOption, */
-
         const formData = {
             rentalOption: values.rentalOption,
             selectedModel: props.selectedModel,
@@ -236,14 +228,13 @@ const FormikForm = withFormik({
 
 const mapStateToProps = state => {
     return {
-        testValue: state.orders.testValues,
         userId: state.auth.userId
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        onFormSubmit: form => dispatch(startConfirmation(form)) //tak naprawdę to nie będzie submit tylko przejscie do modala
+        onFormSubmit: form => dispatch(startConfirmation(form))
     }
 }
 

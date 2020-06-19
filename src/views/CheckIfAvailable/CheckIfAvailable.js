@@ -5,6 +5,7 @@ import styles from './CheckIfAvailable.module.scss';
 import Icon from '../../components/Icon/Icon';
 import { fetchSelectedModelOrders, clearOrdersArr } from '../../store/actions/index';
 import Calendar from './CheckIfAvailableComponents/Calendar/Calendar';
+import CalendarDescription from './CheckIfAvailableComponents/CalendarDescription/CalendarDescription';
 
 class CheckIfAvailable extends React.Component {
 
@@ -127,20 +128,7 @@ class CheckIfAvailable extends React.Component {
                             selectedBike={this.state.selectedBike}
                         />
                     </div>
-                    <div className={styles.CheckIfAvailableDescription}>
-                        <div className={styles.CheckIfAvailableDescriptionContainer}>
-                            <div className={styles.CheckIfAvailableDescriptionBox}></div>
-                            <p className={styles.CheckIfAvailableDescriptionText}> - available</p>
-                        </div>
-                        <div className={styles.CheckIfAvailableDescriptionContainer}>
-                            <div className={styles.CheckIfAvailableDescriptionBoxYellow}></div>
-                            <p className={styles.CheckIfAvailableDescriptionText}> - partly available</p>
-                        </div>
-                        <div className={styles.CheckIfAvailableDescriptionContainer}>
-                            <div className={styles.CheckIfAvailableDescriptionBoxRed}></div>
-                            <p className={styles.CheckIfAvailableDescriptionText}> - not available</p>
-                        </div>
-                    </div>
+                    <CalendarDescription />
                 </div>
             </div>
         );

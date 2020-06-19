@@ -8,7 +8,7 @@ import {cancelConfirmation} from '../../store/actions';
 class Modal extends React.Component {
 
     shouldComponentUpdate(nextProps) {
-        if(nextProps.show !== this.props.showModal || nextProps.children !== this.props.children){
+        if(nextProps.show !== this.props.showModal || nextProps.children !== this.props.children) {
             return true;
         } else {
             return false;
@@ -40,7 +40,9 @@ class Modal extends React.Component {
 }
 
 const mapPropsToState = state => {
-    const shouldShowModal = () => state.appState.renting || state.appState.error || state.appState.deleted || state.appState.checkingOrders || state.appState.rented;
+    const {renting, error, deleted, checkingOrders, rented} = state.appState
+
+    const shouldShowModal = () => renting || error || deleted || checkingOrders || rented;
 
     return {
         showModal: shouldShowModal(),

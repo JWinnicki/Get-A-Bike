@@ -37,7 +37,7 @@ import R3 from '../../img/Yamaha/R3.jpg';
 import R1 from '../../img/Yamaha/Yamaha-R1.png';
 import R6 from '../../img/Yamaha/Yamaha-R6.png';
 
-const initialState = {
+export const initialState = {
     brands: [
         {name: 'Honda', color: 'red', logo: hondaLogo},
         {name: 'Kawasaki', color: 'green', logo: kawasakiLogo},

@@ -3,13 +3,12 @@ import {connect} from 'react-redux';
 
 import './MotorcyclesListDisplay.css';
 import BrandToggler from '../../components/BrandToggler/BrandToggler';
-import {selectBrand, selectBikes} from '../../store/actions/motorcycles';
+import {selectBrand, selectBikes} from '../../store/actions';
 import MotoCollection from './MotorcyclesListDisplayComponents/MotoCollection/MotoCollection';
 
 class MotorcyclesListDisplay extends React.Component {
 
     componentDidMount() {
-
         this.props.onSelectBrand(this.props.match.params.brand);
 
         const motorcyclesList = this.props.motoList.filter(el => {
@@ -19,11 +18,25 @@ class MotorcyclesListDisplay extends React.Component {
         this.props.onSelectBikes(motorcyclesList);
     }
 
+    onClickHandler = name => {
+        this.props.onSelectBrand(name);
+
+        const motorcyclesList = this.props.motoList.filter(el => {
+            return el.brand === name
+        });
+        
+        this.props.onSelectBikes(motorcyclesList);
+    }
+
     render() {
         return (
             <div className='MotorcyclesListDisplay'>
                 <div className='MotorcyclesListDisplay-togglerDiv'>
-                    <BrandToggler />
+                    <BrandToggler
+                        clicked = {this.onClickHandler}
+                        brands = {this.props.brands}
+                        selectedBrand = {this.props.selectedBrand}
+                    />
                 </div>
                 <div className='list-container'>
                     <MotoCollection />
@@ -35,6 +48,8 @@ class MotorcyclesListDisplay extends React.Component {
 
 const mapStateToProps = state => {
     return{
+        brands: state.motorcycles.brands,
+        selectedBrand: state.motorcycles.selectedBrand,
         motoList: state.motorcycles.motorcycles
     }
 }

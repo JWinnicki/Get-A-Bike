@@ -15,7 +15,10 @@
     "react-scripts": "2.1.8",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "yup": "^0.27.0"
+    "yup": "^0.27.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.3",
+    "@testing-library/user-event": "^7.1.2"
   },
   "scripts": {
     "predeploy": "npm run build",

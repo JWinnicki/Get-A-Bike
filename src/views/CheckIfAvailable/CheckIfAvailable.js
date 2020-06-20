@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import styles from './CheckIfAvailable.module.scss';
-import Icon from '../../components/Icon/Icon';
 import { fetchSelectedModelOrders, clearOrdersArr } from '../../store/actions/index';
 import Calendar from './CheckIfAvailableComponents/Calendar/Calendar';
 import CalendarDescription from './CheckIfAvailableComponents/CalendarDescription/CalendarDescription';
+import CalendarNavigation from './CheckIfAvailableComponents/CalendarNavigation/CalendarNavigation';
 
 class CheckIfAvailable extends React.Component {
 
@@ -20,49 +20,6 @@ class CheckIfAvailable extends React.Component {
         this.props.onClearOrders();
     }
 
-    renderFiltered = () => {
-        const motoArr = this.props.rawMotorcyclesArr.map(el => {
-            return {model: el.model, brand: el.brand}
-        });
-
-        const brands = ['Honda', 'Kawasaki', 'Suzuki', 'Yamaha'];
-        const filterArr = brand => {
-            const arr = motoArr.filter(el => {
-                return el.brand === brand;
-            });
-
-            return arr.map(el => {
-                return el.model;
-            })
-        }
-
-        return brands.map( brand => {
-            return (
-                <optgroup label={brand} key={brand}>
-                    {filterArr(brand).map(el => {
-                        return <option key={el}>{el}</option>
-                    })}
-                </optgroup>
-            );
-        })
-    }
-
-    renderMonths = () => {
-        const monthsNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-        return monthsNames.map((el, index) => {
-            return <option value={index} key={index}>{el}</option>
-        })
-    }
-
-    renderYears = () => {
-        const actualYear = new Date().getFullYear();
-
-        return [actualYear - 1, actualYear, actualYear + 1, actualYear + 2, actualYear + 3].map(el => {
-            return <option key={el} value={el}>{el}</option>
-        })
-    }
-    
     onChangeModelHandler = async e => {
         this.setState({selectedBike: e.target.value});
         if(e.target.value !== 'Please select model') {
@@ -105,23 +62,17 @@ class CheckIfAvailable extends React.Component {
         return (
             <div className={styles.CheckIfAvailable}>
                 <div className={styles.CheckIfAvailableContent}>
-                    <div className={styles.CheckIfAvailableHeader}>
-                        <select value={this.state.selectedBike} className={styles.CheckIfAvailableSelect} onChange={this.onChangeModelHandler}>
-                            <option>Please select model</option>
-                            {this.renderFiltered()}
-                        </select>
-                    </div>
+                    <CalendarNavigation
+                        rawMotorcyclesArr={this.props.rawMotorcyclesArr}
+                        selectedBike={this.state.selectedBike}
+                        selectedYear={this.state.selectedYear}
+                        selectedMonth={this.state.selectedMonth}
+                        selectModel={this.onChangeModelHandler}
+                        selectMonth={this.onChangeMonthHandler}
+                        selectYear={this.onChangeYearHandler}
+                        clickButton={this.onClickButtonHandler}
+                    />
                     <div className={styles.CheckIfAvailableCalendar}>
-                        <div className={styles.CheckIfAvailableNavigation}>
-                            <button className={styles.CheckIfAvailableButton} onClick={() => this.onClickButtonHandler('prev')}><Icon icon='arrow-right' size='tiny' rotate='deg180' color='white' /></button>
-                            <select className={styles.CheckIfAvailableSelect} value={this.state.selectedMonth} onChange={this.onChangeMonthHandler}>
-                                {this.renderMonths()}
-                            </select>
-                            <select className={styles.CheckIfAvailableSelect} value={this.state.selectedYear} onChange={this.onChangeYearHandler}>
-                                {this.renderYears()}
-                            </select>
-                            <button className={styles.CheckIfAvailableButton} onClick={() => this.onClickButtonHandler('next')}><Icon icon='arrow-right' size='tiny' color='white' /></button>
-                        </div>
                         <Calendar 
                             selectedMonth={this.state.selectedMonth} 
                             selectedYear={this.state.selectedYear} 

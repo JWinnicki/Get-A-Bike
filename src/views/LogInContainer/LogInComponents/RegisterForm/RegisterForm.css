@@ -18,45 +18,9 @@
         width: 30rem;
     }
     
-    .RegisterForm-textInput {
-        background-color: transparent;
-        border: none;
-        border-bottom: 1px solid black;
-        font-family: inherit;
-        font-size: 1.4rem;
-    
-        height: 3rem;
-        width: 30rem;
-        padding: .5rem;
-        margin-bottom: 2rem;
-    }
-    
     .RegisterForm-errorMsg {
         font-weight: bold;
         color: red;
-    }
-    
-    .RegisterForm-textInput--error {
-        background-color: rgb(255, 151, 151);
-        border-bottom: 1px solid rgb(255, 14, 14);
-    }
-    
-    .RegisterForm-textInput:-webkit-autofill,
-    .RegisterForm-textInput:-webkit-autofill:hover, 
-    .RegisterForm-textInput:-webkit-autofill:focus, 
-    .RegisterForm-textInput:-webkit-autofill:active  {
-        -webkit-box-shadow: 0 0 0 30px rgb(238, 238, 238) inset !important;
-        box-shadow: 0 0 0 30px rgb(238, 238, 238) inset !important;
-        -webkit-text-fill-color: black !important;
-    }
-    
-    .RegisterForm-textInput--error:-webkit-autofill,
-    .RegisterForm-textInput--error:-webkit-autofill:hover, 
-    .RegisterForm-textInput--error:-webkit-autofill:focus, 
-    .RegisterForm-textInput--error:-webkit-autofill:active  {
-        -webkit-box-shadow: 0 0 0 30px rgb(255, 151, 151) inset !important;
-        box-shadow: 0 0 0 30px rgb(255, 151, 151) inset !important;
-        -webkit-text-fill-color: black !important;
     }
     
     .RegisterForm-btnContainer{
@@ -95,7 +59,7 @@
     .RegisterForm-checkboxContainer {
         display: flex;
         align-items: center;
-        margin-bottom: 2rem;
+        margin: 2rem 0;
     }
 
     .RegisterForm-checkboxText {
@@ -105,18 +69,8 @@
     }
 
 
-@media (max-width: 1400px) {
-    .RegisterForm-textInput {
-        font-size: 1.6rem;
-    }
-}
 
 @media (max-width: 1030px) {
-    .RegisterForm-textInput {
-        font-size: 2rem;
-        height: 4rem;
-    }
-
     .RegisterForm-errorMsg {
         font-size: 1.8rem;
     }
@@ -124,15 +78,9 @@
     .RegisterForm-informationDiv {
         font-size: 1.3rem;
     }
-
 }
 
 @media (max-width: 815px) {
-    .RegisterForm-textInput {
-        font-size: 2.1rem;
-        height: 4rem;
-    }
-
     .RegisterForm-errorMsg {
         font-size: 1.8rem;
     }
@@ -152,14 +100,4 @@
         height: 5rem;
         font-size: 1.8rem;
     }
-
-    .RegisterForm-textInput {
-        font-size: 2.3rem;
-        height: 4.5rem;
-        width: 35rem;
-    }
-}
-
-@media (max-width: 450px) {
-    
 }

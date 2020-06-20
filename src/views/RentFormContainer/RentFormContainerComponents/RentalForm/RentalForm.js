@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import './RentalForm.css';
 import {startConfirmation} from '../../../../store/actions';
 import BasicButton from '../../../../components/atoms/BasicButton/BasicButton';
+import TextInputContainer from '../../../../components/TextInputContainer/TextInputContainer';
 
 const RentalForm = ({
     values,
@@ -138,22 +139,10 @@ const RentalForm = ({
 
     return (
         <Form className='Form'>
-            <div className='Form-inputDiv'>
-                { touched.name && errors.name && <p className='error-message'>{errors.name}</p> }
-                <Field type='text' name='name' placeholder='Name' className={ touched.name && errors.name ? 'field-text error-text-field' : 'field-text' } />
-            </div>
-            <div className='Form-inputDiv'>
-                { touched.surname && errors.surname && <p className='error-message'>{errors.surname}</p> }
-                <Field type='text' name='surname' placeholder='Surname' className={ touched.surname && errors.surname ? 'field-text error-text-field' : 'field-text' } />
-            </div>
-            <div className='Form-inputDiv'>
-                { touched.email && errors.email && <p className='error-message'>{errors.email}</p> }    
-                <Field type='email' name='email' placeholder='Email' className={ touched.email && errors.email ? 'field-text error-text-field' : 'field-text' } />
-            </div>
-            <div className='Form-inputDiv'>   
-                { touched.phone && errors.phone && <p className='error-message'>{errors.phone}</p> }
-                <Field type='text' name='phone' placeholder='Phone' className={ touched.phone && errors.phone ? 'field-text error-text-field' : 'field-text' } />
-            </div>
+            <TextInputContainer name='name' errors={errors.name} touched={touched.name} placeholder='Name'/>
+            <TextInputContainer name='surname' errors={errors.surname} touched={touched.surname} placeholder='Surname'/>
+            <TextInputContainer name='email' errors={errors.email} touched={touched.email} placeholder='Email' type='email'/>
+            <TextInputContainer name='phone' errors={errors.phone} touched={touched.phone} placeholder='Phone'/>
             <div className='select-div'>
                 <p>City: </p>
                 <Field component="select" name='city' className='input-select no-margin'>

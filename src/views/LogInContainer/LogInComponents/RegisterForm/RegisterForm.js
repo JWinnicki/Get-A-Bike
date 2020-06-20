@@ -7,6 +7,7 @@ import './RegisterForm.css';
 import Icon from '../../../../components/Icon/Icon';
 import {auth} from '../../../../store/actions';
 import BasicButton from '../../../../components/atoms/BasicButton/BasicButton';
+import TextInputContainer from '../../../../components/TextInputContainer/TextInputContainer';
 
 const RegisterForm = ({
     values,
@@ -17,29 +18,18 @@ const RegisterForm = ({
     errorMsg
 }) => {
 
-    const renderInformation = () => {
-        return (
+
+    return (
+        <Form className='RegisterForm-Form'>
             <div className='RegisterForm-informationDiv'>
                 <div className='RegisterForm-informationIcon'>
                     <Icon size='tiny' icon='information' />
                 </div>
                 <p>If you are not interested in creating new account feel free to use dummy account (email: test1@test.com, password: test11)</p>
             </div>
-        );
-    }
-
-    return (
-        <Form className='RegisterForm-Form'>
-            {renderInformation()}
-            {<p className='RegisterForm-errorMsg'>{errorMsg !== null && errorMsg.replace(/_/g, ' ')}</p>}
-            <div>
-                { touched.email && errors.email && <p className='RegisterForm-errorMsg'>{errors.email}</p> }
-                <Field type='email' name='email' placeholder='Email' className={touched.email && errors.email ? 'RegisterForm-textInput RegisterForm-textInput--error' : 'RegisterForm-textInput'} />
-            </div>
-            <div>
-                { touched.password && errors.password && <p className='RegisterForm-errorMsg'>{errors.password}</p> }
-                <Field type={isRegistered === true ? 'password' : 'text'} name='password' placeholder='Password' className={touched.password && errors.password ? 'RegisterForm-textInput RegisterForm-textInput--error' : 'RegisterForm-textInput'} />
-            </div>
+            <p className='RegisterForm-errorMsg'>{errorMsg !== null && errorMsg.replace(/_/g, ' ')}</p>
+            <TextInputContainer name='email' type='email' touched={touched.email} errors={errors.email} placeholder='Email'/>
+            <TextInputContainer name='password' type={isRegistered ? 'password' : 'text'} touched={touched.password} errors={errors.password} placeholder='Password'/>
             <div className='RegisterForm-checkboxContainer'>
                 <Field type='checkbox' name='allowLocalStorage' checked={values.allowLocalStorage} id='allowLocalStorage' />
                 <label htmlFor='allowLocalStorage'>
@@ -58,17 +48,11 @@ const FormikRegisterForm = withFormik({
         email: '',
         password: '',
         isRegistered: isRegistered,
-        name: '',
-        surname: '',
-        phone: '',
         allowLocalStorage: false,
     }),
     validationSchema: Yup.object().shape({
         email: Yup.string().email('Email is not valid').required('Email is required!'),
         password: Yup.string().min(6, 'At least 6 digits').required('Password is required!'),
-        name: Yup.string().min(2, 'Too short!').max(30, 'Too long!'),
-        surname: Yup.string().min(2, 'Too short!').max(30, 'Too long!'),
-        phone: Yup.number().min(5, 'At least 5 digits').positive()
     }),
     handleSubmit(values, {setSubmitting, props}) {
         props.onAuth(values.email, values.password, values.isRegistered, values.allowLocalStorage);

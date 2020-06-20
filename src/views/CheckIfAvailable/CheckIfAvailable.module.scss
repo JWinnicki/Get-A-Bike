@@ -24,50 +24,11 @@
 
     &Calendar {
         width: 100%;
-        margin: 2rem 0;
+        margin-bottom: 2rem;
     
         display: flex;
         flex-direction: column;
         align-items: center; 
-    }
-
-    &Navigation {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-
-        width: 60%;
-    }
-
-    &Button {
-        background-color: black;
-        border: none;
-        padding: .5rem;
-        width: 4.5rem;
-        border-radius: 3px; 
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        transition: all .2s;
-
-        &:hover {
-            background-color: $color-primary-hovered;
-            cursor: pointer;
-        }
-    }
-
-    &Select {
-        font-size: 2rem;
-        font-family: inherit;
-        margin-right: 1rem;
-
-        background-color: transparent;
-        color: black;
-        border: none;
-        border-bottom: 1px solid black;
-        margin: 0;
     }
 }
 
@@ -79,10 +40,6 @@
 }
 
 @media (max-width: 567px) {
-    .CheckIfAvailableNavigation {
-        width: 100%;
-    }
-
     .CheckIfAvailableContent {
         min-width: 0;
         width: 100%;

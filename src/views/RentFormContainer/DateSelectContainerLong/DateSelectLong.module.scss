@@ -1,0 +1,97 @@
+@import '../../../scss/mixins';
+
+.DateSelect {
+    padding: 1.5rem;
+    margin-top: -1rem;
+    margin-bottom: .5rem; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    &Error {
+        @extend .DateSelect;
+        background-color: rgb(255, 86, 86);
+        border: 2px rgb(245, 26, 26) solid;
+    }
+
+    &Section {
+        display: flex;
+        &:first-of-type {
+            margin-bottom: 1.5rem;
+        }
+
+        &Text {
+            flex: 0 0 13%;
+            font-size: 1.5rem;
+            font-weight: bold; 
+            margin-right: .5rem;
+        }
+    }
+
+    &Container {
+        flex: 1;
+    }
+
+    &Input {
+        font-size: 1.4rem;
+        font-family: inherit;
+        margin-right: 1rem;
+    
+        background-color: transparent;
+        color: black;
+        border: none;
+        border-bottom: 1px solid black;
+    }
+
+
+}
+
+.Error {
+    &Container {
+        text-align: start;
+        width: 80%;
+        margin-bottom: 1rem;
+    }
+
+    &Message {
+        color: red;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 3px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1030px) and (orientation: portrait) {
+    .DateSelect {
+        &Input {
+            font-size: 1.8rem;
+        }
+
+        &SectionText {
+            font-size: 1.8rem;
+        }
+    }
+
+    .ErrorMessage {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .DateSelectSection:first-of-type {
+        margin-bottom: 2rem;
+        margin-top: .5rem;
+    }
+
+    .DateSelect {
+        margin: 1rem 0;
+    }
+}
+
+@media (max-width: 390px) {
+    .DateSelect {
+        padding: 1.5rem 1rem;
+    }
+}

@@ -7,6 +7,8 @@ import './RentalForm.css';
 import {startConfirmation} from '../../../../store/actions';
 import BasicButton from '../../../../components/atoms/BasicButton/BasicButton';
 import TextInputContainer from '../../../../components/TextInputContainer/TextInputContainer';
+import DateSelectLong from '../../DateSelectContainerLong/DateSelectLong';
+import DateSelectShort from '../../DateSelectContainerShort/DateSelectShort';
 
 const RentalForm = ({
     values,
@@ -14,7 +16,7 @@ const RentalForm = ({
     touched
 }) => {
 
-    const createNumbersArr = (start, end) => {
+   /*  const createNumbersArr = (start, end) => {
         const numbersArr = [];
         for(let i = start; i <= end; i++) {
             numbersArr.push(i);
@@ -22,9 +24,9 @@ const RentalForm = ({
         return numbersArr;
     }
 
-    const today = new Date();
+    const today = new Date(); */
 
-    const renderDateSelect = () => {
+    /* const renderDateSelect = () => {
 
         const calculateMonthLength = (year, month) => {
             return new Date(year, month, 0).getDate();
@@ -135,7 +137,7 @@ const RentalForm = ({
                 </div>
             </React.Fragment>
         )
-    }
+    } */
 
     return (
         <Form className='Form'>
@@ -160,7 +162,7 @@ const RentalForm = ({
                 </Field>
             </div>
             <p className='form-p'>Please select date:</p>
-            {values.rentalOption === 'short' ? renderHoursSelect() : renderDateSelect()} 
+            {values.rentalOption === 'short' ? <DateSelectShort touched={touched.startYear} errors={errors.startYear} values={values} /> : <DateSelectLong touched={touched.startYear} errors={errors.startYear} values={values} />} 
             <BasicButton  type='submit'>Submit</BasicButton>
         </Form>
     );

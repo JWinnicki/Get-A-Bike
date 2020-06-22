@@ -4,46 +4,14 @@
     align-items: center;
     justify-content: space-around;
 
-    padding: 1.5rem 1.5rem;
+    padding: 1.5rem;
     width: 100%;
-    /* min-height: 40rem; */
-
-    /* color: rgb(179, 179, 179); */
     color: black;
     
 }
 .form-p {
     font-size: 2rem;
     font-weight: bold;
-}
-
-.data-container {
-    width: 80%;
-    padding: 1.5rem;
-    margin-top: -1rem;
-}
-
-.data-container span {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.data-start {
-    display: flex;
-    
-    margin-bottom: 1.5rem;
-}
-
-.data-end {
-    display: flex;
-}
-
-.span-item {
-    flex: 0 0 13%;
-}
-
-.date-items {
-    flex: 1;
 }
 
 .input-select {
@@ -57,61 +25,8 @@
     border-bottom: 1px solid black;
 }
 
-.error-container {
-    text-align: start;
-    width: 80%;
-    margin-bottom: 1rem;
-    margin-left: 1rem;
-}
-
-.error-message {
-    color: red;
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 3px;
-}
-
-.error-text-field {
-    border-color: rgb(255, 52, 52);
-    background-color: rgb(255, 163, 163);
-    color: black;
-}
-.error-text-field::placeholder {
-    color: black;
-}
-
-.error-text-field::-moz-placeholder {
-    color: black;
-    opacity: 1;
-}
-
-.error-date {
-    background-color: rgb(255, 86, 86);
-    border: 2px rgb(245, 26, 26) solid;
-}
-
 .no-margin {
     margin: 0;
-}
-
-.btn {
-    width: 10rem;
-    height: 4rem;
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    font-size: 1.5rem;
-    border: none;
-    font-family: inherit;
-}
-
-.btn:hover {
-    cursor: pointer;
-    background-color: rgb(29, 29, 29);
-}
-
-.btn:active {
-    background-color: rgb(49, 49, 49);
 }
 
 .select-div {
@@ -132,25 +47,13 @@
 }
 
 .form-p {
-    margin-top: 1.5rem;
+    margin: 1rem 0;
 }
 
-@media (max-width: 2000px) {
-    .data-container {
-        width: 85%;
-    }
-}
 
-@media (max-width: 1370px)/*  and (min-height: 850px) */ {
+@media (max-width: 1370px) {
     .select-div {
         padding: 1rem;
-    }
-
-    .btn {
-        width: 10rem;
-        height: 5rem;
-        font-size: 1.8rem;
-        margin: .5rem;
     }
 }
 
@@ -171,45 +74,10 @@
         font-size: 2.5rem;
         margin-top: 1.5rem;
     }
-
-    .data-container {
-        width: 70%;
-    }
-
-    .span-item span {
-        font-size: 1.8rem;
-    }
-
-    .error-message {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 745px) {
-    .data-container {
-        width: 90%;
-    }
-}
-
-
-
-@media (max-width: 450px) {
-    .data-start {
-        margin-bottom: 2rem;
-        margin-top: .5rem;
-    }
-
-    .data-container {
-        margin: 1rem 0;
-    }
 }
 
 @media (max-width: 390px) {
     .Form {
         padding: 1.5rem 0;
-    }
-
-    .data-container {
-        padding: 1.5rem 1rem;
     }
 }

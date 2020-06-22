@@ -38,7 +38,13 @@
     }
 
     .form-content__div {
-        margin: 3rem auto;
+        margin: 1rem auto;
+    }
+}
+
+@media (max-width: 766px) {
+    .form-content__div {
+        min-width: 276px;
     }
 }
 

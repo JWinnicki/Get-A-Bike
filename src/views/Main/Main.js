@@ -1,13 +1,13 @@
 import React from 'react';
 
-import './Main.css';
+import styles from './Main.module.scss';
 import MainCardsList from './MainComponents/MainCardList/MainCardsList';
 
 
 const Main = () => (
-    <div className='StartPage'>
-         <h1 className='Main-title'>Rent your dream motorcyckle!</h1>
-        <div className='Main-Cards'>
+    <div className={styles.Main}>
+        <h1 className={styles.MainTitle}>Rent your dream motorcyckle!</h1>
+        <div className={styles.MainCardsContainer}>
             <MainCardsList />
         </div>
     </div>

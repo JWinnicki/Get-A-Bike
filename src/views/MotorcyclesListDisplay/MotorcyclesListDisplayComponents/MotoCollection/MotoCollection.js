@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import './MotoCollection.css';
+import styles from './MotoCollection.module.scss';
 import MotoCard from '../MotoCard/MotoCard';
 
 const MotoCollection = ({motoArr}) => {
@@ -23,7 +23,7 @@ const MotoCollection = ({motoArr}) => {
         
     }
     return (
-        <div className='MotoCollection'>
+        <div className={styles.MotoCollection}>
             {renderBikesList()}
         </div>
     );

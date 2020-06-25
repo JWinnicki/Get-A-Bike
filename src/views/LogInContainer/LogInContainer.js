@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 
-import './LogInContainer.css';
+import styles from './LogInContainer.module.scss';
 import OptionToggle from '../../components/OptionToggle/OptionToggle';
 import RegisterForm from './LogInComponents/RegisterForm/RegisterForm';
 
@@ -16,19 +16,19 @@ const LogInContainer = ({token, userId}) => {
     }
 
     return (
-        <div className='LogIn-container'>
-            <div className='LogIn-toggle'>
+        <div className={styles.LogInContainer}>
+            <div className={styles.LogInContainerToggleContainer}>
                 <OptionToggle 
                     isRegistered={isRegistered}
                     toggleForm={toggleForm}
                 />
             </div>
-            <div className='LogIn-form__container'>
-                <div className='LogIn-form__background'>
+            <div className={styles.LogInContainerFormContainer}>
+                <div className={styles.LogInContainerFormBackground}>
                     <RegisterForm isRegistered={isRegistered} />
                 </div>
             </div>
-            {(token && userId) && <Redirect to='/' />}
+            {token && userId && <Redirect to='/' />}
         </div>
     );
 }

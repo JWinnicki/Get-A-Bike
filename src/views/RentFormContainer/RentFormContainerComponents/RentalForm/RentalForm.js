@@ -16,129 +16,6 @@ const RentalForm = ({
     touched
 }) => {
 
-   /*  const createNumbersArr = (start, end) => {
-        const numbersArr = [];
-        for(let i = start; i <= end; i++) {
-            numbersArr.push(i);
-        }
-        return numbersArr;
-    }
-
-    const today = new Date(); */
-
-    /* const renderDateSelect = () => {
-
-        const calculateMonthLength = (year, month) => {
-            return new Date(year, month, 0).getDate();
-        }
-
-        return (
-            <React.Fragment>
-                { touched.startYear && errors.startYear && <div className='error-container'><p className='error-message'>{errors.startYear}</p></div> }
-                <div className={ touched.startYear && errors.startYear ? 'data-container error-date' : 'data-container' }>
-                    <div className='data-start'>
-                        <div className='span-item'>
-                            <span>Start: </span>
-                        </div>
-                        <div className='date-items'>
-                            <Field component='select' name='startYear' className='input-select'>
-                                {createNumbersArr(today.getFullYear(),today.getFullYear() + 3).map(el => {
-                                    return <option key={el} value={el}>{el}</option>
-                                })}
-                            </Field>
-                            <Field component='select' name='startMonth' className='input-select'>
-                                {createNumbersArr(1,12).map(el => {
-                                    return <option key={el} value={el}>{el}</option>
-                                })}
-                            </Field>
-                            <Field component='select' name='startDay' className='input-select'>
-                                {createNumbersArr(1, calculateMonthLength(values.startYear, values.startMonth)).map(el => {
-                                    return <option key={el} value={el}>{el}</option>
-                                })}
-                            </Field>
-                        </div>
-                    </div>
-                    <div className='data-end'>
-                        <div className='span-item'>
-                            <span>End: </span>
-                        </div>
-                        <div className='date-items'>
-                            <Field component='select' name='endYear' className='input-select'>
-                                {createNumbersArr(today.getFullYear(),today.getFullYear() + 3).map(el => {
-                                    return <option key={el} value={el}>{el}</option>
-                                })}
-                            </Field>
-                            <Field component='select' name='endMonth' className='input-select'>
-                                {createNumbersArr(1,12).map(el => {
-                                    return <option key={el} value={el}>{el}</option>
-                                })}
-                            </Field>
-                            <Field component='select' name='endDay' className='input-select'>
-                                {createNumbersArr(1, calculateMonthLength(values.endYear, values.endMonth)).map(el => {
-                                    return <option key={el} value={el}>{el}</option>
-                                })}
-                            </Field>
-                        </div>
-                    </div>
-                </div>
-            </React.Fragment>
-        )
-    };
-
-    const renderHoursSelect  = () => {
-
-        const calculateMonthLength = (year, month) => {
-            return new Date(year, month, 0).getDate();
-        }
-
-        return (
-            <React.Fragment>
-                { touched.startYear && errors.startYear && <div className='error-container'><p className='error-message'>{errors.startYear}</p></div> }
-                <div className={ touched.startYear && errors.startYear ? 'data-container error-date' : 'data-container' }>
-                    <div className='data-start'>
-                        <div className='span-item'>
-                            <span>Start: </span>
-                        </div>
-                        <div className='date-items'>
-                            <Field component='select' name='startYear' className='input-select'>
-                                {createNumbersArr(today.getFullYear(),today.getFullYear() + 3).map(el => {
-                                    return <option key={el} value={el}>{el}</option>
-                                })}
-                            </Field>
-                            <Field component='select' name='startMonth' className='input-select'>
-                                {createNumbersArr(1,12).map(el => {
-                                    return <option key={el} value={el}>{el}</option>
-                                })}
-                            </Field>
-                            <Field component='select' name='startDay' className='input-select'>
-                                {createNumbersArr(1, calculateMonthLength(values.startYear, values.startMonth)).map(el => {
-                                    return <option key={el} value={el}>{el}</option>
-                                })}
-                            </Field>
-                            <Field component='select' name='startHour' className='input-select'>
-                                {createNumbersArr(6,21).map(el => {
-                                    return <option key={el} value={el}>{`${el}:00`}</option>
-                                })}
-                            </Field>
-                        </div>
-                    </div>
-                    <div className='data-end'>
-                        <div className='span-item'>
-                            <span>End: </span>
-                        </div>
-                        <div className='date-items'>
-                            <Field component='select' name='endHour' className='input-select'>
-                                {createNumbersArr(7,22).map(el => {
-                                    return <option key={el} value={el}>{`${el}:00`}</option>
-                                })}
-                            </Field>
-                        </div>
-                    </div>
-                </div>
-            </React.Fragment>
-        )
-    } */
-
     return (
         <Form className='Form'>
             <TextInputContainer name='name' errors={errors.name} touched={touched.name} placeholder='Name'/>
@@ -169,7 +46,7 @@ const RentalForm = ({
 }
 
 const FormikForm = withFormik({
-    mapPropsToValues: props => ({ //ustawia dane początkowe
+    mapPropsToValues: props => ({
         testValue: props.testValue,
         name: '',
         surname: '',
@@ -192,7 +69,7 @@ const FormikForm = withFormik({
         surname: Yup.string().min(2, 'Too short!').max(30, 'Too long!').required('Surname is required!'),
         phone: Yup.number().min(5, 'At least 5 digits').required('Phone is required!').integer().positive()
     }),
-    handleSubmit(values, { setErrors, setSubmitting, props }) { ///dzięki dodaniu tu 'props' mam dostep do redux store
+    handleSubmit(values, { setErrors, setSubmitting, props }) {
         
         const now = new Date().getTime();
 
@@ -211,8 +88,6 @@ const FormikForm = withFormik({
             setErrors({startYear: 'Incorrect date'});
         }
 
-        
-       
         setSubmitting(false);
     } 
 })(RentalForm);

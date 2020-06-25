@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import './MotoCard.css';
+import styles from './MotoCard.module.scss';
 
 const MotoCard = ({
     image,
@@ -11,19 +11,19 @@ const MotoCard = ({
     power,
     engineSize
 }) => (
-        <div className='MotoCard'>
-            <div className='MotoCard-img_div'>
-                <img className='MotoCard-img' src={image} alt='moto' />
+        <div className={styles.MotoCard}>
+            <div className={styles.MotoCardImgContainer}>
+                <img className={styles.MotoCardImg} src={image} alt='moto' />
             </div>
-             <div className='MotoCard-title'>
-                <h3>{name}</h3>
+             <div className={styles.MotoCardTitleContainer}>
+                <h3 className={styles.MotoCardTitleText}>{name}</h3>
             </div>
-            <div className='MotoCard-short_info'>
-                <p>Type: {subType !== null ? `${type} / ${subType}`:`${type}`}</p>
-                <p>Engine size: {engineSize} cm<sup>3</sup></p>
-                <p>Power: {power} hp</p>
+            <div className={styles.MotoCardDescription}>
+                <p className={styles.MotoCardDescriptionText}>Type: {subType !== null ? `${type} / ${subType}`:`${type}`}</p>
+                <p className={styles.MotoCardDescriptionText}>Engine size: {engineSize} cm<sup>3</sup></p>
+                <p className={styles.MotoCardDescriptionText}>Power: {power} hp</p>
             </div>
-            <Link className='MotoCard-book' to={`/rent/${name}`}>RENT NOW</Link>
+            <Link className={styles.MotoCardButton} to={`/rent/${name}`}>RENT NOW</Link>
         </div>
     );
 

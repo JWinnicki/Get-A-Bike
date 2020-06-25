@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import './MotorcyclesListDisplay.css';
+import styles from './MotorcyclesListDisplay.module.scss';
 import BrandToggler from '../../components/BrandToggler/BrandToggler';
 import {selectBrand, selectBikes} from '../../store/actions';
 import MotoCollection from './MotorcyclesListDisplayComponents/MotoCollection/MotoCollection';
@@ -30,15 +30,15 @@ class MotorcyclesListDisplay extends React.Component {
 
     render() {
         return (
-            <div className='MotorcyclesListDisplay'>
-                <div className='MotorcyclesListDisplay-togglerDiv'>
+            <div className={styles.MotorcyclesListDisplay}>
+                <div className={styles.MotorcyclesListDisplayTogglerContainer}>
                     <BrandToggler
                         clicked = {this.onClickHandler}
                         brands = {this.props.brands}
                         selectedBrand = {this.props.selectedBrand}
                     />
                 </div>
-                <div className='list-container'>
+                <div className={styles.MotorcyclesListDisplayListContainer}>
                     <MotoCollection />
                 </div>
             </div>

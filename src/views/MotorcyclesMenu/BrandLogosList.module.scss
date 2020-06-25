@@ -1,25 +1,21 @@
-
-    .Brand-Logos__div {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        
-        /* width: 90%; */
+    @import '../../scss/mixins';
+    
+    .BrandLogosList {
+        @include flexSpaceAround;
         min-height: 76vh;
-        /* margin: 5rem auto; */
         color: white;
         background-color: rgba(0, 0, 0, .8);
     }
 
 
 @media (max-width: 1700px) {
-    .Brand-Logos__div {
+    .BrandLogosList {
         padding: 3rem;
     }
 }
 
 @media (max-width: 1030px) and (min-height: 1000px) {
-    .Brand-Logos__div {
+    .BrandLogosList {
         display: grid;
         grid-template-columns: repeat(2, minmax(25rem, 1fr));
         align-items: center;
@@ -32,23 +28,23 @@
 
 
 @media (max-width: 770px) {
-    .Brand-Logos__div {
+    .BrandLogosList {
         display: grid;
         grid-template-columns: repeat(2, minmax(25rem, 1fr));
         align-items: center;
         justify-items: center;
-        grid-gap: 4rem;
+        gap: 4rem;
         padding: 8rem 18rem;
 
     }
 }
 
 @media (max-width: 430px) {
-    .Brand-Logos__div {
+    .BrandLogosList {
         display: grid;
         grid-template-columns: repeat(1, minmax(25rem, 1fr));
         align-items: center;
         justify-items: center;
-        grid-gap: 4rem; 
+        gap: 4rem; 
     }
 }

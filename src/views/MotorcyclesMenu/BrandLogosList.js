@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import './BrandLogosList.css';
+import styles from './BrandLogosList.module.scss';
 import BrandLogoItem from './MotorcyclesMenuComponents/BrandLogoItem';
 
 const BrandLogosList = ({brandsArr}) => {
@@ -18,7 +18,7 @@ const BrandLogosList = ({brandsArr}) => {
     }
 
     return(
-        <div className='Brand-Logos__div'>
+        <div className={styles.BrandLogosList}>
             {renderLogos()}
         </div>
     );

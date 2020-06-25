@@ -3,7 +3,7 @@
     .MotoCollection {
         display: grid;
         grid-template-columns: repeat(3, minmax(30rem, 1fr));
-        grid-gap: 8rem;
+        gap: 8rem;
         justify-items: center;
         align-items: center;
         padding: 1rem 5rem 3rem 5rem;
@@ -14,31 +14,31 @@
 
 @media (max-width: 1950px) {
     .MotoCollection {
-        grid-gap: 4.5rem;
+        gap: 4.5rem;
     }
 }
 
 @media (max-width: 1370px) {
     .MotoCollection {
-        grid-gap: 8rem;
+        gap: 8rem;
     }
 }
 
 @media (max-width: 1030px) {
     .MotoCollection {
-        grid-gap: 5rem;
+        gap: 5rem;
     }
 }
 
 @media (max-width: 1030px) and (min-height: 1300px) {
     .MotoCollection {
-        grid-gap: 5rem;
+        gap: 5rem;
     }
 }
 
 @media (max-width: 970px) {
     .MotoCollection {
-        grid-gap: 3.5rem;
+        gap: 3.5rem;
     }
 }
 
@@ -47,26 +47,26 @@
         display: grid;
         grid-template-columns: repeat(2, minmax(30rem, 1fr));
         padding: 1rem 5rem 3rem 5rem;
-        grid-row-gap: 5rem;
-        grid-column-gap: 10rem;
+        row-gap: 5rem;
+        column-gap: 10rem;
     }
 }
 
 @media (max-width: 700px) {
     .MotoCollection {
-        grid-column-gap: 7rem;
+        column-gap: 7rem;
     }
 }
 
 @media (max-width: 600px) {
     .MotoCollection {
-        grid-column-gap: 5rem;
+        column-gap: 5rem;
     }
 }
 
 @media (max-width: 550px) {
     .MotoCollection {
         grid-template-columns: repeat(1, minmax(30rem, 1fr));
-        grid-column-gap: 4rem;
+        column-gap: 4rem;
     }
 }

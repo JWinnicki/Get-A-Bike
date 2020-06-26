@@ -11,7 +11,6 @@ const BrandLogosList = ({brandsArr}) => {
             return <BrandLogoItem
                 key={el.name}
                 logo={el.logo}
-                borderColor={el.color}
                 brandName={el.name}
             />
         });

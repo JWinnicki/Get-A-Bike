@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './OrderItem.css';
+import styles from './OrderItem.module.scss';
 import Icon from '../../../../components/Icon/Icon';
 
 const OrderItem = ({start, end, city, rentalOption, displayDeleteBtn, clicked, orderId, model}) => {

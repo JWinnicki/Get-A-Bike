@@ -1,11 +1,46 @@
+    @import '../../../scss/mixins';
 
-    .Logo-div {
-        width: 22rem; /* było 18rem oryginalnie */
+    .BrandLogoItem {
+        width: 22rem; 
         height: 22rem;
         border-radius: 3px;
         background-color: white;
         opacity: 1;
-        filter: grayscale();
+        filter: grayscale(100%);
+    
+        @include flexCenter;
+    
+        transition: all .2s;
+
+        &:hover {
+            filter: none;
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        &Img {
+            opacity: 1;
+            filter: none;
+        }
+    }
+
+    .standard {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .small {
+        width: 13.5rem;
+        height: 13.5rem;
+    }
+
+/*     .Logo-div {
+        width: 22rem; 
+        height: 22rem;
+        border-radius: 3px;
+        background-color: white;
+        opacity: 1;
+        filter: grayscale(100%);
     
         display: flex;
         align-items: center;
@@ -19,9 +54,9 @@
         filter: none;
         transform: scale(1.1);
         cursor: pointer;
-    }
+    } */
     
-    .red > img {
+    /* .red > img {
         width: 13.5rem;
         height: 13.5rem;
     }
@@ -39,21 +74,36 @@
     .dark-blue > img {
         width: 15rem;
         height: 15rem;
-    }
+    } */
     
-    .Logo-div > img {
+/*     .Logo-div > img {
         opacity: 1;
         filter: none;
-    }
+    } */
 
 
 @media (max-width: 1925px) {
-    .Logo-div {
-        width: 19.5rem; /* było 18rem oryginalnie */
+    .BrandLogoItem {
+        width: 19.5rem; 
         height: 19.5rem;
     }
+
+    .standard {
+        width: 12.5rem;
+        height: 12.5rem;
+    }
+
+    .small {
+        width: 11rem;
+        height: 11rem;
+    }
+
+    /* .Logo-div {
+        width: 19.5rem; 
+        height: 19.5rem;
+    } */
     
-    .red > img {
+    /* .red > img {
         width: 11rem;
         height: 11rem;
     }
@@ -71,12 +121,27 @@
     .dark-blue > img {
         width: 12.5rem;
         height: 12.5rem;
-    }
+    } */
 }
 
 @media (max-width: 1700px) {
-    .Logo-div {
-        width: 18rem; /* było 18rem oryginalnie */
+    .BrandLogoItem {
+        width: 18rem; 
+        height: 18rem;
+    }
+
+    .standard {
+        width: 11rem;
+        height: 11rem;
+    }
+
+    .small {
+        width: 9.5rem;
+        height: 9.5rem;
+    }
+
+    /* .Logo-div {
+        width: 18rem; 
         height: 18rem;
     }
     
@@ -98,12 +163,30 @@
     .dark-blue > img {
         width: 11rem;
         height: 11rem;
-    }
+    } */
 }
 
 @media (max-width: 1370px) and (min-height: 1020px) {
-    .Logo-div {
-        width: 25rem; /* było 18rem oryginalnie */
+    .BrandLogoItem {
+        width: 25rem; 
+        height: 25rem;
+
+        filter: none;
+        opacity: .8;
+    }
+
+    .standard {
+        width: 16rem;
+        height: 16rem;
+    }
+
+    .small {
+        width: 14.5rem;
+        height: 14.5rem;
+    }
+
+    /* .Logo-div {
+        width: 25rem; 
         height: 25rem;
 
         filter: none;
@@ -128,12 +211,30 @@
     .dark-blue > img {
         width: 16rem;
         height: 16rem;
-    }
+    } */
 }
 
 @media (max-width: 1030px) and (min-height: 1360px) {
-    .Logo-div {
-        width: 26rem; /* było 18rem oryginalnie */
+    .BrandLogoItem {
+        width: 26rem; 
+        height: 26rem;
+
+        filter: none;
+        opacity: .8;
+    }
+
+    .standard {
+        width: 17rem;
+        height: 17rem;
+    }
+
+    .small {
+        width: 15.5rem;
+        height: 15.5rem;
+    }
+
+    /* .Logo-div {
+        width: 26rem; 
         height: 26rem;
         filter: none;
         opacity: .8;
@@ -157,14 +258,32 @@
     .dark-blue > img {
         width: 17rem;
         height: 17rem;
-    }
+    } */
 }
 
 
 
 @media (max-width: 770px) {
-    .Logo-div {
-        width: 16rem; /* było 18rem oryginalnie */
+    .BrandLogoItem {
+        width: 16rem; 
+        height: 16rem;
+
+        filter: none;
+        opacity: .8;
+    }
+
+    .standard {
+        width: 11rem;
+        height: 11rem;
+    }
+
+    .small {
+        width: 9.5rem;
+        height: 9.5rem;
+    }
+
+    /* .Logo-div {
+        width: 16rem; 
         height: 16rem;
         filter: none;
         opacity: .8;
@@ -188,12 +307,27 @@
     .dark-blue > img {
         width: 11rem;
         height: 11rem;
-    }
+    } */
 }
 
 @media (max-width: 770px) and (min-height: 800px) {
-    .Logo-div {
-        width: 20rem; /* było 18rem oryginalnie */
+    .BrandLogoItem {
+        width: 20rem; 
+        height: 20rem;
+    }
+
+    .standard {
+        width: 13rem;
+        height: 13rem;
+    }
+
+    .small {
+        width: 11.5rem;
+        height: 11.5rem;
+    }
+
+    /* .Logo-div {
+        width: 20rem; 
         height: 20rem;
     }
 
@@ -215,39 +349,27 @@
     .dark-blue > img {
         width: 13rem;
         height: 13rem;
-    }
+    } */
 }
 
-/* @media (max-width: 670px) {
-    .Logo-div {
-        width: 16rem;
-        height: 16rem;
-    }
-    
-    .red > img {
-        width: 8.5rem;
-        height: 8.5rem;
-    }
-    
-    .green > img {
-        width: 10rem;
-        height: 10rem;
-    }
-    
-    .light-blue > img {
-        width: 10rem;
-        height: 10rem;
-    }
-    
-    .dark-blue > img {
-        width: 10rem;
-        height: 10rem;
-    }
-} */
-
 @media (max-width: 570px) {
-    .Logo-div {
-        width: 14rem; /* było 18rem oryginalnie */
+    .BrandLogoItem {
+        width: 14rem; 
+        height: 14rem;
+    }
+
+    .standard {
+        width: 9rem;
+        height: 9rem;
+    }
+
+    .small {
+        width: 7.5rem;
+        height: 7.5rem;
+    }
+
+    /* .Logo-div {
+        width: 14rem; 
         height: 14rem;
     }
     
@@ -269,12 +391,27 @@
     .dark-blue > img {
         width: 9rem;
         height: 9rem;
-    }
+    } */
 }
 
 @media (max-width: 430px) {
-    .Logo-div {
-        width: 21rem; /* było 18rem oryginalnie */
+    .BrandLogoItem {
+        width: 21rem; 
+        height: 21rem;
+    }
+
+    .standard {
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .small {
+        width: 16.5rem;
+        height: 16.5rem;
+    }
+
+    /* .Logo-div {
+        width: 21rem; 
         height: 21rem;
     }
     
@@ -296,6 +433,6 @@
     .dark-blue > img {
         width: 18rem;
         height: 18rem;
-    }
+    } */
 }
 

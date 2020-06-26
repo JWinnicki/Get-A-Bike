@@ -2,18 +2,20 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
-import './BrandLogoItem.css'
+import styles from './BrandLogoItem.module.scss'
 import {selectBrand} from '../../../store/actions/motorcycles';
 
-const BrandLogoItem = ({onSelectBrand, borderColor, brandName, logo}) => {
+const BrandLogoItem = ({onSelectBrand, brandName, logo}) => {
 
     const selectBrandHandler = () => {
         onSelectBrand(brandName);
     }
+
+    const style = [styles.BrandLogoItemImg, brandName === 'Honda' ? styles.small : styles.standard].join(' ');
     
     return (
-        <Link className={`Logo-div ${borderColor}`} onClick={selectBrandHandler} to={`/motorcycles/${brandName}`}>
-            <img src={logo} alt={`${brandName} Logo`} />
+        <Link className={styles.BrandLogoItem} onClick={selectBrandHandler} to={`/motorcycles/${brandName}`}>
+            <img className={style} src={logo} alt={`${brandName} Logo`}/>
         </Link>
     );
 }

@@ -17,6 +17,7 @@ const LogInContainer = ({token, userId}) => {
 
     return (
         <div className={styles.LogInContainer}>
+            {token && userId && <Redirect to='/' />}
             <div className={styles.LogInContainerToggleContainer}>
                 <OptionToggle 
                     isRegistered={isRegistered}
@@ -28,7 +29,6 @@ const LogInContainer = ({token, userId}) => {
                     <RegisterForm isRegistered={isRegistered} />
                 </div>
             </div>
-            {token && userId && <Redirect to='/' />}
         </div>
     );
 }

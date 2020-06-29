@@ -20,7 +20,7 @@ class Modal extends React.Component {
         const {showModal, onCloseModal, children} = this.props;
 
         return(
-            <div >
+            <div>
                 <Backdrop show={showModal}/>
                 <div 
                     onClick={onCloseModal}

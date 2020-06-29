@@ -55,28 +55,25 @@ const ModalContent = props => {
         }
     }
 
-    return (
-        <>
-            {renderModalContent()}
-        </>
-        
-    );
+    return renderModalContent();
 }
 
 const mapPropsToState = state => {
+    const {orders, appState} = state;
+
     return {
-        order: state.orders.order,
-        orders: state.orders.orders,
-        ordersOfTheDay: state.orders.ordersOfTheDay,
-        dayInfo: state.orders.dayInfo,
-        error: state.appState.error,
-        errorMsg: state.appState.errorMsg,
-        fetched: state.appState.fetched,
-        rented: state.appState.rented,
-        renting: state.appState.renting,
-        loading: state.appState.loading,
-        deleted: state.appState.deleted,
-        checkingOrders: state.appState.checkingOrders,
+        order: orders.order,
+        orders: orders.orders,
+        ordersOfTheDay: orders.ordersOfTheDay,
+        dayInfo: orders.dayInfo,
+        error: appState.error,
+        errorMsg: appState.errorMsg,
+        fetched: appState.fetched,
+        rented: appState.rented,
+        renting: appState.renting,
+        loading: appState.loading,
+        deleted: appState.deleted,
+        checkingOrders: appState.checkingOrders,
     }
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './RentalSummary.css';
+import styles from './RentalSummary.module.scss';
 import Icon from '../../../../components/Icon/Icon';
 import BasicButton from '../../../../components/atoms/BasicButton/BasicButton';
 
@@ -37,37 +37,6 @@ const RentalSummary = ({order, submitForm, cancelOrder, fetchOrders, fetchOrders
 
     }
 
-    const renderDetails = () => {
-        return (
-            <div className='details-main'>
-                <div className='details-section'>
-                    <ul className='details-section--list'>
-                        <li className='details-section--listItem'>
-                            <div className='details-section--icon' ><Icon icon='arrow-right' size='tiniest'/></div>
-                            <p className='details-section--listItem__text'>Model: {selectedModel}</p>
-                        </li>
-                         <li className='details-section--listItem'>
-                            <div className='details-section--icon' ><Icon icon='arrow-right' size='tiniest'/></div>
-                            <p className='details-section--listItem__text'>City: {city}</p>
-                        </li>
-                        <li className='details-section--listItem'>
-                            <div className='details-section--icon' ><Icon icon='arrow-right' size='tiniest'/></div>
-                            <p className='details-section--listItem__text'>Start: {rentalOption === 'short' ? `${start.startHour}:00, ${start.startDay < 10 ? '0' + start.startDay : start.startDay}.${start.startMonth < 10 ? '0' + start.startMonth : start.startMonth}.${start.startYear}` : `${start.startDay < 10 ? '0' + start.startDay : start.startDay}.${start.startMonth < 10 ? '0' + start.startMonth : start.startMonth}.${start.startYear}`}</p>
-                        </li>
-                        <li className='details-section--listItem'>
-                            <div className='details-section--icon' ><Icon icon='arrow-right' size='tiniest'/></div>
-                            <p className='details-section--listItem__text'>End: {rentalOption === 'short' ? `${end.endHour}:00, ${end.endDay < 10 ? '0' + end.endDay : end.endDay}.${end.endMonth < 10 ? '0' + end.endMonth : end.endMonth}.${end.endYear}` : `${end.endDay < 10 ? '0' + end.endDay : end.endDay}.${end.endMonth < 10 ? '0' + end.endMonth : end.endMonth}.${end.endYear}`}</p>
-                        </li>
-                        <li className='details-section--listItem'>
-                            <div className='details-section--icon' ><Icon icon='arrow-right' size='tiniest'/></div>
-                            <p className='details-section--listItem__text'>Total: {calculateTotal()}$</p>
-                        </li>
-                    </ul>
-                 </div>
-             </div>
-        );
-    }
-
     const onSubmitForm = async () => {
         const response = await fetchOrders(selectedModel)
 
@@ -85,10 +54,35 @@ const RentalSummary = ({order, submitForm, cancelOrder, fetchOrders, fetchOrders
 
     }
     return (
-        <div className='RentalSummary'>
-            <h1>Rental Summary</h1>
-            {renderDetails()}
-            <div className='buttons-container'> 
+        <div className={styles.RentalSummary}>
+            <h1 className={styles.RentalSummaryTitle}>Rental Summary</h1>
+            <div className={styles.RentalSummaryDetailsContainer}>
+                <div>
+                    <ul className={styles.RentalSummaryList}>
+                        <li className={styles.RentalSummaryListItem}>
+                            <div className={styles.RentalSummaryListItemIcon} ><Icon icon='arrow-right' size='tiniest'/></div>
+                            <p className={styles.RentalSummaryListItemText}>Model: {selectedModel}</p>
+                        </li>
+                         <li className={styles.RentalSummaryListItem}>
+                            <div className={styles.RentalSummaryListItemIcon} ><Icon icon='arrow-right' size='tiniest'/></div>
+                            <p className={styles.RentalSummaryListItemText}>City: {city}</p>
+                        </li>
+                        <li className={styles.RentalSummaryListItem}>
+                            <div className={styles.RentalSummaryListItemIcon} ><Icon icon='arrow-right' size='tiniest'/></div>
+                            <p className={styles.RentalSummaryListItemText}>Start: {rentalOption === 'short' ? `${start.startHour}:00, ${start.startDay < 10 ? '0' + start.startDay : start.startDay}.${start.startMonth < 10 ? '0' + start.startMonth : start.startMonth}.${start.startYear}` : `${start.startDay < 10 ? '0' + start.startDay : start.startDay}.${start.startMonth < 10 ? '0' + start.startMonth : start.startMonth}.${start.startYear}`}</p>
+                        </li>
+                        <li className={styles.RentalSummaryListItem}>
+                            <div className={styles.RentalSummaryListItemIcon} ><Icon icon='arrow-right' size='tiniest'/></div>
+                            <p className={styles.RentalSummaryListItemText}>End: {rentalOption === 'short' ? `${end.endHour}:00, ${end.endDay < 10 ? '0' + end.endDay : end.endDay}.${end.endMonth < 10 ? '0' + end.endMonth : end.endMonth}.${end.endYear}` : `${end.endDay < 10 ? '0' + end.endDay : end.endDay}.${end.endMonth < 10 ? '0' + end.endMonth : end.endMonth}.${end.endYear}`}</p>
+                        </li>
+                        <li className={styles.RentalSummaryListItem}>
+                            <div className={styles.RentalSummaryListItemIcon} ><Icon icon='arrow-right' size='tiniest'/></div>
+                            <p className={styles.RentalSummaryListItemText}>Total: {calculateTotal()}$</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div className={styles.RentalSummaryButtonsContainer}> 
                 <BasicButton onClick={onSubmitForm} color='green'>Confirm</BasicButton>
                 <BasicButton onClick={cancelOrder} color='red'>Cancel</BasicButton>
             </div>

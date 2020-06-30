@@ -1,16 +1,13 @@
 
 
-    .MotoCollection {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(30rem, 1fr));
-        gap: 8rem;
-        justify-items: center;
-        align-items: center;
-        padding: 1rem 5rem 3rem 5rem;
-        
-        /* padding: 0rem 1rem 5rem 1rem; */
-    }
-
+.MotoCollection {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(30rem, 1fr));
+    gap: 8rem;
+    justify-items: center;
+    align-items: center;
+    padding: 1rem 5rem 3rem 5rem;
+}
 
 @media (max-width: 1950px) {
     .MotoCollection {

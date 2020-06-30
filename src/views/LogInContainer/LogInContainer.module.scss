@@ -1,3 +1,4 @@
+@import '../../scss/variables';
 
     .LogInContainer {
         min-height: 76vh;
@@ -27,7 +28,7 @@
             }
 
             &Background {
-                background-color: rgb(238, 238, 238);
+                background-color: $color-grey-primary;
                 width: 30%;
                 min-height: 30rem;
                 border-radius: 3px;

@@ -1,0 +1,79 @@
+.RentalSummary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    height: 40rem;
+    width: 35rem;
+
+    &Title {
+        font-size: 3.5rem;
+    }
+
+    &DetailsContainer {
+        display: flex;
+        align-content: flex-start;
+        justify-content: space-around;
+    
+        width: 100%;
+    }
+    
+    &List {
+        list-style: none;
+
+        &Item {
+            display: flex;
+            align-items: center;
+            padding: .3rem;
+
+            &Text {
+                margin-left: .3rem;
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    &ButtonsContainer {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+}
+
+@media (max-width: 1030px) and (min-height: 1000px) {
+    .RentalSummary {
+        height: 55rem;
+        width: 50rem;
+
+        &Title {
+            font-size: 4rem;
+        }
+
+        &ListItem {
+            &Icon {
+                display: none;
+            }
+
+            &Text {
+                font-size: 2.5rem;  
+            }
+        }
+
+    }
+}
+
+@media (max-width: 1000px) {
+    .RentalSummaryListItem {
+        &Icon {
+            display: none;
+        }
+
+        &Text {
+            font-size: 2rem; 
+        }
+    }
+}
+

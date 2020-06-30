@@ -3,7 +3,7 @@ import {withFormik, Form, Field} from 'formik';
 import * as Yup from 'yup';
 import {connect} from 'react-redux';
 
-import './RentalForm.css';
+import styles from './RentalForm.module.scss';
 import {startConfirmation} from '../../../../store/actions';
 import BasicButton from '../../../../components/atoms/BasicButton/BasicButton';
 import TextInputContainer from '../../../../components/TextInputContainer/TextInputContainer';
@@ -17,28 +17,28 @@ const RentalForm = ({
 }) => {
 
     return (
-        <Form className='Form'>
+        <Form className={styles.Form}>
             <TextInputContainer name='name' errors={errors.name} touched={touched.name} placeholder='Name'/>
             <TextInputContainer name='surname' errors={errors.surname} touched={touched.surname} placeholder='Surname'/>
             <TextInputContainer name='email' errors={errors.email} touched={touched.email} placeholder='Email' type='email'/>
             <TextInputContainer name='phone' errors={errors.phone} touched={touched.phone} placeholder='Phone'/>
-            <div className='select-div'>
-                <p>City: </p>
-                <Field component="select" name='city' className='input-select no-margin'>
+            <div className={styles.FormSection}>
+                <p className={styles.FormSectionText}>City: </p>
+                <Field component="select" name='city' className={styles.FormSelectInput}>
                     <option value='Gdańsk'>Gdańsk</option>
                     <option value='Kraków'>Kraków</option>
                     <option value='Warszawa'>Warszawa</option>
                     <option value='Wrocław'>Wrocław</option>
                 </Field>
             </div>
-            <div className='select-div'>
-                <p>Rental option: </p>
-                <Field component="select" name='rentalOption' className='input-select no-margin'>
+            <div className={styles.FormSection}>
+                <p className={styles.FormSectionText}>Rental option: </p>
+                <Field component="select" name='rentalOption' className={styles.FormSelectInput}>
                     <option value='short'>Rent for hours</option>
                     <option value='long'>Rent for longer period</option>
                 </Field>
             </div>
-            <p className='form-p'>Please select date:</p>
+            <p className={styles.FormText}>Please select date:</p>
             {values.rentalOption === 'short' ? <DateSelectShort touched={touched.startYear} errors={errors.startYear} values={values} /> : <DateSelectLong touched={touched.startYear} errors={errors.startYear} values={values} />} 
             <BasicButton  type='submit'>Submit</BasicButton>
         </Form>

@@ -1,0 +1,113 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.Profile {
+    min-height: 76vh;
+    color: white;
+    background-color: rgba(0, 0, 0, .8);
+    @include flexCenter;
+
+    &Content {
+        width: 40%;
+        color: black;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &Controls {
+        height: 5rem;
+    }
+
+    &Body {
+        margin-top: -2px;
+        background-color: $color-grey-primary;
+        width: 100%;
+        border-radius: 3px;
+        position: relative;
+        padding: 2rem 0;
+        @include flexSpaceAroundColumn;
+    }
+
+    &OrdersContainer {
+        overflow: auto;
+        height: 30rem;
+        padding: 2rem;
+        width: 100%;
+        position: relative;
+    
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-template-rows: repeat(auto-fill, 10rem);
+        justify-items: center;
+        grid-row-gap: 1.5rem;
+        justify-content: center;
+    }
+
+    &ButtonContainer {
+        margin-top: 2rem;
+        @include flexCenter;
+    }
+}
+
+@media (max-width: 1700px) {
+    .Profile {
+        &Controls {
+            height: 4rem;
+        }
+
+        &OrdersContainer {
+            height: 27rem;
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    .ProfileContent {
+        margin: 1rem 0;
+    }
+}
+
+@media (max-width: 1030px) and (min-height: 900px) {
+    .Profile {
+        &Content {
+            width: 50%
+        }
+
+        &OrdersContainer {
+            height: 35rem;
+        }
+
+        &Controls {
+            height: 5rem;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .ProfileContent {
+        width: 70%;
+    }
+}
+
+@media (max-width: 450px) {
+    .Profile {
+        &Content {
+            width: 90%;
+        }
+
+        &OrdersContainer {
+            height: 35rem;
+        }
+
+        &Controls {
+            height: 5.5rem;
+        }
+    }
+}
+
+@media (max-width: 330px) {
+    .ProfileContent {
+        width: 95%;
+    }
+}

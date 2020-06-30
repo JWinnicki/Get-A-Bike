@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 
-import './Profile.css';
+import styles from './Profile.module.scss';
 import {logout, fetchUserOrders, deleteItem, clearOrdersArr} from '../../store/actions/index';
 import CardMenu from '../../components/CardMenu/CardMenu';
 import OrderItem from './ProfileComponents/OrderItem/OrderItem';
@@ -17,12 +17,10 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-
         if(this.props.token !== null && this.props.userId !== null) {
             this.props.onClearOrers();
             this.props.onFetchUserOrders(this.props.token, this.props.userId);
         }
-
     }
 
     selectPageHandler = selectedPage => {
@@ -73,17 +71,17 @@ class Profile extends React.Component {
 
     render() {
         return(
-            <div className='profile-container'>
+            <div className={styles.Profile}>
                 {this.props.token === null ? <Redirect to={`/`} /> : null}
-                <div className='profile-content'>
-                    <div className='profile-controls'>
+                <div className={styles.ProfileContent}>
+                    <div className={styles.ProfileControls}>
                         <CardMenu selected={this.state.selected} options={this.state.menuCards} clicked={this.selectPageHandler} />
                     </div>
-                    <div className='profile-body'>
-                        <div className='profile-orders__div'>
+                    <div className={styles.ProfileBody}>
+                        <div className={styles.ProfileOrdersContainer}>
                             {this.renderOrdersHandler()}
                         </div>
-                        <div className='profile-personal__div'>
+                        <div className={styles.ProfileButtonContainer}>
                             <BasicButton onClick={this.props.onLogout}>Log Out</BasicButton>
                         </div>
                     </div>

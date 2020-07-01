@@ -68,7 +68,7 @@ describe('BrandToggler', () => {
         expect(button).toHaveClass('BrandTogglerListItemLinkActive');
     });
 
-    test('check class of button with text Kawasaki', () => {
+    test('check class of button with text Yahama', () => {
         const history = createMemoryHistory()
         render(
             <Router history={history}>

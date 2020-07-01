@@ -1,0 +1,81 @@
+@import '../../scss/mixins';
+
+.RentFormContainer {
+    width: 100%;
+    min-height: 76vh;
+    background-color: #1b1b1b;
+    display: flex;
+    align-items: center;
+
+    &Card {
+        flex: 0 0 40%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &Form {
+        flex: 1;
+
+        &Content {
+            width: 60%;
+            background-color: rgb(238, 238, 238);
+            margin: 0 auto;
+            padding: 1rem;
+        }
+    }
+}
+
+@media (max-width: 1030px) and (orientation: portrait) {
+    .RentFormContainerCard {
+        display: none;
+    }
+}
+
+@media (max-width: 825px) and (max-height: 500px) {
+    .RentFormContainer {
+        &Card {
+            display: none;
+        }
+
+        &FormContent {
+            margin: 1rem auto;
+        }
+    }
+}
+
+@media (max-width: 766px) {
+    .RentFormContainerFormContent {
+        min-width: 276px;
+    }
+}
+
+@media (max-width: 600px) {
+    .RentFormContainerFormContent {
+        width: 90%;
+    }
+}
+
+@media (max-width: 390px) {
+    .form-content {
+        @include flexCenter;
+    }
+
+    .RentFormContainerForm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &Content {
+            width: 90%;
+            margin: 0;
+            padding: 1rem 0;
+        }
+    }
+}
+
+@media (max-width: 330px) {
+    .RentFormContainerFormContent {
+        width: 100%;
+    }
+}

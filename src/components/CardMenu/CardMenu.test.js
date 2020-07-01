@@ -67,7 +67,7 @@ describe('CardMenu', () => {
         expect(screen.getByText('Option3')).toHaveClass('CardMenuItemButton');
     });
 
-    test('to check if not active will change into active after click', async () => {
+    test('to check if not active button will change into active after click', async () => {
         let selectedOption = 'Option2';
         const options = ['Option1', 'Option2', 'Option3'];
         const changeSelected = () => selectedOption = 'Option1';

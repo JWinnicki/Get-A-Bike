@@ -1,15 +1,15 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import './RentFormContainer.css';
+import styles from './RentFormContainer.module.scss';
 import FormMotoCard from './RentFormContainerComponents/FormMotoCard/FormMotoCard';
 import RentalForm from './RentFormContainerComponents/RentalForm/RentalForm';
 
 const RentFormContainer = ({motoArr, match}) => {
     const selectedModel = motoArr.filter( el => el.model === match.params.name)[0];
     return (
-        <div className='form-container'>
-            <div className='form-card'>
+        <div className={styles.RentFormContainer}>
+            <div className={styles.RentFormContainerCard}>
                 <FormMotoCard 
                     key={selectedModel.model}
                     image={selectedModel.image}
@@ -20,8 +20,8 @@ const RentFormContainer = ({motoArr, match}) => {
                     power={selectedModel.hp} 
                 />  
             </div>
-            <div className='form-content'>
-                <div className='form-content__div'>
+            <div className={styles.RentFormContainerForm}>
+                <div className={styles.RentFormContainerFormContent}>
                     <RentalForm selectedModel={selectedModel.model} />
                 </div>
             </div>

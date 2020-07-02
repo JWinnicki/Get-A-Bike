@@ -29,9 +29,9 @@ const ModalMessage = ({errorMsg, error, loading, rented, deleted, fetched, check
 
     const renderAdditionalInfo = () => {
         return (
-            <div className={styles.messageLinkContainer}>
-                <p className={styles.messageLinkText}>
-                    Please click <Link onClick={cancelOrder} className={styles.messageLink} to='/check_if_available'>here</Link> to check when motorcycle is available.
+            <div className={styles.MessageLinkContainer}>
+                <p className={styles.MessageLinkText}>
+                    Please click <Link onClick={cancelOrder} className={styles.MessageLink} to='/check_if_available'>here</Link> to check when motorcycle is available.
                 </p>
             </div>
         );
@@ -39,9 +39,9 @@ const ModalMessage = ({errorMsg, error, loading, rented, deleted, fetched, check
 
     return(
         <>
-            <div className={styles.messageContainer}>
+            <div className={styles.MessageContainer}>
                 <Icon size='medium' icon={icon} />
-                <p className={styles.messageText}>
+                <p className={styles.MessageText}>
                     {text}
                 </p>
             </div>

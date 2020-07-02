@@ -1,50 +1,43 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
 
-    .BrandToggler {
+.BrandToggler {
+    @include flexCenter;
+    padding: 2rem;
+    &List {
+        list-style: none;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
 
-        &List {
-            list-style: none;
-            display: flex;
+        &Item {
+            width: 10rem;
+            background-color: transparent;
+            border: 2px white solid;
+            border-left: none;
+            @include flexCenter;
 
-            &Item {
-                width: 10rem;
-                background-color: transparent;
-                border: 2px white solid;
-                border-left: none;
+            &:first-child {
+                border-left: 2px white solid;
+            }
+
+            &Link {
+                width: 100%;
+                height: 100%;
+                padding: 1rem;
+                color: white;
+                text-decoration: none;
+                font-size: 1.4rem;
+                font-weight: bold;
+                @include flexCenter;
                 
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                &:first-child {
-                    border-left: 2px white solid;
-                }
-
-                &Link {
-                    width: 100%;
-                    height: 100%;
-                    padding: 1rem;
-                    color: white;
-                    text-decoration: none;
-                    font-size: 1.4rem;
-                    font-weight: bold;
-                
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    
-                    &Active {
-                        @extend .BrandTogglerListItemLink;
-                        color: black;
-                        background-color: rgb(238, 238, 238);
-                    }
+                &Active {
+                    @extend .BrandTogglerListItemLink;
+                    color: black;
+                    background-color: $color-grey-primary;
                 }
             }
         }
     }
+}
 
 @media (max-width: 1030px) and (min-height: 1300px) {
 

@@ -1,4 +1,5 @@
 @import '../../../scss/mixins';
+@import '../../../scss/variables';
 
 .DateSelect {
     padding: 1.5rem;
@@ -12,8 +13,8 @@
 
     &Error {
         @extend .DateSelect;
-        background-color: rgb(255, 86, 86);
-        border: 2px rgb(245, 26, 26) solid;
+        background-color: $color-red-inputBackgroundError;
+        border: 2px $color-red-availability solid;
     }
 
     &Section {

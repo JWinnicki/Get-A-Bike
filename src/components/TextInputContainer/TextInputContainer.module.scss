@@ -1,3 +1,5 @@
+@import '../../scss/variables';
+
 .Container {
     width: 80%;
     display: flex;
@@ -21,15 +23,15 @@
         &:-webkit-autofill:hover, 
         &:-webkit-autofill:focus, 
         &:-webkit-autofill:active  {
-            -webkit-box-shadow: 0 0 0 30px rgb(238, 238, 238) inset !important;
-            box-shadow: 0 0 0 30px rgb(238, 238, 238) inset !important;
+            -webkit-box-shadow: 0 0 0 30px $color-grey-primary inset !important;
+            box-shadow: 0 0 0 30px $color-grey-primary inset !important;
             -webkit-text-fill-color: black !important;
         }
 
         &Error {
             @extend .ContainerInput;
-            border-color: rgb(255, 52, 52);
-            background-color: rgb(255, 163, 163);
+            border-bottom: 2px solid $color-red;
+            background-color: $color-red-inputBackgroundError;
         }
 
 

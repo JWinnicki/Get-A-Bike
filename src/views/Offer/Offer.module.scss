@@ -1,0 +1,260 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.Offer {
+    min-height: 76vh;
+    color: white;
+    background-color: rgba(0, 0, 0, .8);
+    @include flexCenter;
+
+    &Container {
+        width: 70%;
+        min-height: 45rem;
+        background-color: $color-grey-primary;
+        color: black;
+        margin: 1rem;
+        padding: 2rem;
+        border-radius: 3px;
+    }
+
+    &Content { //offers
+        display: flex;
+        padding: 0 2rem;
+    }
+
+    &SectionA {
+        flex: 0 0 calc(50% + 2.5px);
+        border-right: 5px black solid;
+
+        margin-top: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+
+    &SectionB {
+        flex: 1;
+
+        margin-top: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+
+    &Section {
+        &Title {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 1rem;
+    
+            &Text {
+                margin-left: 3rem;
+                font-size: 3rem;
+            }
+        }
+
+        &Content {
+            @include flexCenter;
+        }
+
+        &List {
+            list-style: none;
+
+            &Item {
+                display: flex;
+                align-items: center;
+                padding: .5rem;
+
+                &Text {
+                    font-size: 2rem;
+                    margin-left: 1rem; 
+                }
+            }
+        }
+    }
+
+    &ButtonContainer {
+        margin-top: 3rem;
+        width: 100%;
+        @include flexCenter;
+    }
+
+}
+
+@media (max-width: 2000px) {
+    .OfferContainer {
+        width: 75%;
+    }
+}
+
+@media (max-width: 1880px) {
+    .OfferContainer {
+        min-height: 38rem;
+    }
+}
+
+@media (max-width: 1810px) {
+    .OfferContainer {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1385px) {
+    .Offer-Container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1030px) and (orientation: portrait) {
+    .Offer {
+        &Container {
+            width: 60%;
+        }
+
+        &Content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &SectionA,
+        &SectionB {
+            padding: 3rem 0;
+            margin-top: 0;
+            width: 70%; 
+        }
+
+        &SectionA {
+            border-bottom: 5px black solid;
+            border-right: none; 
+        }
+    }
+}
+
+@media (max-width: 780px) {
+    .Offer {
+        &Container {
+            width: 70%;
+        }
+
+        &Section {
+            &TitleText {
+                margin-left: 2rem;
+                font-size: 3.2rem;
+            }
+
+            &ListItemText {
+                font-size: 2.5rem; 
+            }
+        }
+    }
+}
+
+@media (max-width: 682px) {
+
+    .Offer {
+        &Container {
+            width: 80%;
+        }
+
+        &Section {
+            &TitleText {
+                font-size: 3rem;
+            }
+
+            &ListItemText {
+                font-size: 2.4rem; 
+            }
+        }
+        
+        &SectionA,
+        &SectionB {
+            width: 75%;
+        }
+    }
+}
+
+@media (max-width: 682px) {
+
+    .Offer {
+        &Container {
+            width: 80%;
+        }
+
+        &SectionA,
+        &SectionB {
+            width: 95%;
+        }
+    }
+}
+
+@media (max-width: 473px) {
+    .Offer {
+        &Container {
+            width: 85%;
+        }
+        
+        &Section {
+            &TitleText {
+                font-size: 2.9rem;
+            }
+
+            &ListItemText {
+                font-size: 2.3rem; 
+            }
+        }
+    }
+}
+
+@media (max-width: 440px) {
+    .Offer {
+        &SectionA,
+        &SectionB {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 418px) {
+    .Offer {
+        &Section {
+            &TitleText {
+                font-size: 2.8rem;
+                margin-left: 1rem;
+            }
+
+            &ListItemText {
+                font-size: 2.2rem; 
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .OfferContent {
+        padding: 0;
+    }
+}
+
+@media (max-width: 362px) {
+    .OfferContainer {
+        width: 90%;
+    }
+}
+
+@media (max-width: 342px) {
+    .Offer {
+        &Section{
+            &TitleText {
+                font-size: 2.5rem;
+            }
+
+            &ListItemText {
+                font-size: 2.0rem; 
+            }
+        }
+    }
+}

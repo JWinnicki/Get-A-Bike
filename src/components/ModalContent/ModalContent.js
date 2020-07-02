@@ -18,7 +18,7 @@ const ModalContent = props => {
     const renderModalContent = () => {
         if(isLoading()) {
             return (
-                <div className={styles.messageContainer}>
+                <div className={styles.MessageContainer}>
                     <Spinner />
                 </div>
               )

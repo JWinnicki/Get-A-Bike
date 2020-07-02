@@ -52,5 +52,34 @@ describe('OptionToggle', () => {
         expect(testFn).toHaveBeenCalledTimes(2);
     });
 
+    test('check if buttons have correct classed (user not registered)', () => {
+        const testFn = jest.fn();
+        render(<OptionToggle 
+                    isRegistered={false}
+                    toggleForm={testFn}
+                />
+        );
+        const button1 = screen.getByText('Create Account');
+        const button2 = screen.getByText('Log In');
+        expect(button1).toHaveClass('OptionToggleButtonActive');
+        expect(button1).not.toHaveClass('OptionToggleButton');
+        expect(button2).toHaveClass('OptionToggleButton');
+        expect(button2).not.toHaveClass('OptionToggleButtonActive');
+    });
+
+    test('check if buttons have correct classed (user registered)', () => {
+        const testFn = jest.fn();
+        render(<OptionToggle 
+                    isRegistered={true}
+                    toggleForm={testFn}
+                />
+        );
+        const button1 = screen.getByText('Create Account');
+        const button2 = screen.getByText('Log In');
+        expect(button2).toHaveClass('OptionToggleButtonActive');
+        expect(button2).not.toHaveClass('OptionToggleButton');
+        expect(button1).toHaveClass('OptionToggleButton');
+        expect(button1).not.toHaveClass('OptionToggleButtonActive');
+    });
     
 });

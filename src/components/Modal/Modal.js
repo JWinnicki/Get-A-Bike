@@ -15,10 +15,8 @@ class Modal extends React.Component {
         }
     }
 
-    render(){
-
+    render() {
         const {showModal, onCloseModal, children} = this.props;
-
         return(
             <div>
                 <Backdrop show={showModal}/>
@@ -39,8 +37,8 @@ class Modal extends React.Component {
     }
 }
 
-const mapPropsToState = state => {
-    const {renting, error, deleted, checkingOrders, rented} = state.appState
+const mapPropsToState = ({appState}) => {
+    const {renting, error, deleted, checkingOrders, rented} = appState
 
     const shouldShowModal = () => renting || error || deleted || checkingOrders || rented;
 

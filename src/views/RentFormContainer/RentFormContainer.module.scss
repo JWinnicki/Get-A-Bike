@@ -1,4 +1,5 @@
 @import '../../scss/mixins';
+@import '../../scss/variables';
 
 .RentFormContainer {
     width: 100%;
@@ -19,7 +20,7 @@
 
         &Content {
             width: 60%;
-            background-color: rgb(238, 238, 238);
+            background-color: $color-grey-primary;
             margin: 0 auto;
             padding: 1rem;
         }

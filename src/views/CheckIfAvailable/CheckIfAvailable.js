@@ -1,8 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import styles from './CheckIfAvailable.module.scss';
-import { fetchSelectedModelOrders, clearOrdersArr } from '../../store/actions/index';
+import {fetchSelectedModelOrders, clearOrdersArr} from '../../store/actions/index';
 import Calendar from './CheckIfAvailableComponents/Calendar/Calendar';
 import CalendarDescription from './CheckIfAvailableComponents/CalendarDescription/CalendarDescription';
 import CalendarNavigation from './CheckIfAvailableComponents/CalendarNavigation/CalendarNavigation';

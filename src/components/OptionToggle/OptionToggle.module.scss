@@ -1,3 +1,5 @@
+@import '../../scss/variables';
+
 .OptionToggle {
     &List {
         list-style: none;
@@ -30,7 +32,7 @@
         &Active {
             @extend .OptionToggleButton;
             color: black;
-            background-color: rgb(238, 238, 238);
+            background-color: $color-grey-primary;
         }
     }
 }

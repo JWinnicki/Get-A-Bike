@@ -1,4 +1,5 @@
     @import '../../scss/variables';
+    @import '../../scss/mixins';
 
     .Header {
         height: 12vh;
@@ -44,11 +45,7 @@
 
         &LogoContainer {
             width: 30rem;
-    
-            display: flex;
-            
-            justify-content: center;
-            align-items: center;
+            @include flexCenter;
 
             &:hover {
                 cursor: pointer;

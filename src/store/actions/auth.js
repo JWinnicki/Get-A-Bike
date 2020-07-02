@@ -63,12 +63,10 @@ export const auth = (email, password, isRegistered, allowLocalStorage) => {
         }
 
         try {
-
             const response = await axios.post(url, authData);
-            //console.log(response);
-            const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
 
             if(allowLocalStorage) {
+                const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
                 localStorage.setItem('token', response.data.idToken);
                 localStorage.setItem('expirationDate', expirationDate);
                 localStorage.setItem('userId', response.data.localId);
@@ -78,13 +76,10 @@ export const auth = (email, password, isRegistered, allowLocalStorage) => {
             dispatch(checkAuthTimeout(response.data.expiresIn));
 
         } catch(error) {
-
             if(error.response === undefined) {
                 dispatch(authFail(null));
-                //console.log(error);
             } else {
                 dispatch(authFail(error.response.data.error.message));
-                //console.log(error.response.data.error);
             }
 
         }

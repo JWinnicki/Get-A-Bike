@@ -1,32 +1,28 @@
-.messageContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@import '../../scss/mixins';
+
+.MessageContainer {
+    @include flexCenter;
     padding: 2rem;
-  
-    /* min-height: 16rem; */
     min-width: 25rem;
 }
   
-.messageText {
+.MessageText {
     margin-left: 1rem;
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
 }
   
-.messageLinkContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.MessageLinkContainer {
+    @include flexCenter;
     padding: 0 1rem 1rem 1rem;
 }
   
-.messageLinkText {
+.MessageLinkText {
     font-size: 1.4rem;
     font-weight: bold;
 }
   
-.messageLink {
+.MessageLink {
     color: #0000EE;
 }

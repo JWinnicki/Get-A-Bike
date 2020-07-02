@@ -1,18 +1,14 @@
+@import '../../../../scss/variables';
+@import '../../../../scss//mixins';
 
     .MainCard {
         height: 27rem;
         width: 22rem;
-        background-color: rgb(238, 238, 238);
+        background-color: $color-grey-primary;
         color: black;
         border-radius: 3px;
-    
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-    
+        @include flexSpaceEvenlyColumn;
         transition: all 0.2s;
-    
         text-decoration: none;
         color: black;
 

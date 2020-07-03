@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import styles from './BrandLogosList.module.scss';
-import BrandLogoItem from './MotorcyclesMenuComponents/BrandLogoItem';
+import BrandLogoItem from './BrandLogoItem/BrandLogoItem';
 
 const BrandLogosList = ({brandsArr}) => {
 

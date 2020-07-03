@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import styles from './Cities.module.scss';
-import CityDataComponent from './CitiesComponents/CityDataComponent';
+import CityDataComponent from './CityDataComponent/CityDataComponent';
 
 class Cities extends Component {
 

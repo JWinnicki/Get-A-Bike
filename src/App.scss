@@ -1,0 +1,89 @@
+  html {
+    font-size: 100%;
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+  }
+  
+  body {
+    font-family: 'Lato', sans-serif;
+    background-image: none;
+  }
+  
+  .container {
+    background-color: white;
+    width: 100%;
+    margin: 0;
+    background-image:  linear-gradient(to right bottom, rgba(138, 138, 138, 0.7), rgba(80, 80, 80, 0.7)), url('./img/background/main.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  
+    overflow-y: hidden;
+    position: relative;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .Main {
+    width: 100%;
+    height: 100%;
+    min-height: 76vh;
+  }
+  
+  
+
+
+@media (max-width: 4000px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media (max-width: 1385px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 57%;
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  body {
+    background-image: none;
+  }
+}
+
+@media (max-width: 425px) {
+  .container { 
+    background-image: none;
+    background-color: rgb(109, 109, 109);
+  }
+}

@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 
 import styles from './CheckIfAvailable.module.scss';
 import {fetchSelectedModelOrders, clearOrdersArr} from '../../store/actions/index';
-import Calendar from './CheckIfAvailableComponents/Calendar/Calendar';
-import CalendarDescription from './CheckIfAvailableComponents/CalendarDescription/CalendarDescription';
-import CalendarNavigation from './CheckIfAvailableComponents/CalendarNavigation/CalendarNavigation';
+import Calendar from './Calendar/Calendar';
+import CalendarDescription from './CalendarDescription/CalendarDescription';
+import CalendarNavigation from './CalendarNavigation/CalendarNavigation';
 
 class CheckIfAvailable extends React.Component {
 

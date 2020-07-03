@@ -1,0 +1,84 @@
+@import '../../../scss/mixins';
+
+
+    .RegisterForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        
+        color: black;
+        width: 80%;
+        margin: 2rem;
+
+        &Information {
+            &Container{
+                margin-top: 2rem;
+                margin-bottom: 5rem;
+                font-size: 1.2rem;
+                font-weight: bold;
+                @include flexCenterColumn;
+            }
+
+            &Icon {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        &ErrorMessage {
+            font-weight: bold;
+            color: red;
+        }
+
+        &Checkbox {
+            &Container {
+                display: flex;
+                align-items: center;
+                margin: 2rem 0;
+            }
+
+            &Text {
+                margin-left: .5rem;
+                font-size: 1.3rem;
+                font-weight: bold;
+            }
+        }
+
+        &ButtonContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    
+ 
+@media (max-width: 1030px) {
+    .RegisterForm {
+        &ErrorMessage {
+            font-size: 1.8rem;
+        }
+
+        &InformationContainer {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+@media (max-width: 815px) {
+    .RegisterForm {
+        &ErrorMessage {
+            font-size: 1.8rem;
+        }
+
+        &InformationContainer {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .RegisterFormInformationContainer {
+        font-size: 1.8rem;
+    }
+}

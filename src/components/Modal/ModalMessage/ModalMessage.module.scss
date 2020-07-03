@@ -1,0 +1,28 @@
+@import '../../../scss/mixins';
+
+.MessageContainer {
+    @include flexCenter;
+    padding: 2rem;
+    min-width: 25rem;
+}
+  
+.MessageText {
+    margin-left: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+  
+.MessageLinkContainer {
+    @include flexCenter;
+    padding: 0 1rem 1rem 1rem;
+}
+  
+.MessageLinkText {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+  
+.MessageLink {
+    color: #0000EE;
+}

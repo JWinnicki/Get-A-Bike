@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import styles from './Modal.module.scss';
-import Backdrop from '../Backdrop/Backdrop';
+import Backdrop from './Backdrop/Backdrop';
 import {cancelConfirmation} from '../../store/actions';
 
 class Modal extends React.Component {

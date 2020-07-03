@@ -2,8 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import styles from './RentFormContainer.module.scss';
-import FormMotoCard from './RentFormContainerComponents/FormMotoCard/FormMotoCard';
-import RentalForm from './RentFormContainerComponents/RentalForm/RentalForm';
+import FormMotoCard from './FormMotoCard/FormMotoCard';
+import RentalForm from './RentalForm/RentalForm';
 
 const RentFormContainer = ({motoArr, match}) => {
     const selectedModel = motoArr.filter( el => el.model === match.params.name)[0];

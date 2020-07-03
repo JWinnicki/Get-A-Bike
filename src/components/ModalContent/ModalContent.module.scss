@@ -1,7 +1,0 @@
-@import '../../scss/mixins';
-
-.MessageContainer {
-    @include flexCenter;
-    padding: 2rem;
-    min-width: 25rem;
-}

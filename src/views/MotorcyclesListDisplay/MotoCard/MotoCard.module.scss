@@ -1,0 +1,93 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+
+    .MotoCard {
+        width: 30rem;
+        height: 40rem;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    
+        background-color: #333333;
+        color: white;
+
+        &ImgContainer {
+            flex: 0 0 55%;
+            background-color: white;
+            width: 100%;
+        
+            @include flexCenter;
+        }
+
+        &Img {
+            max-width: 29rem;
+            max-height: 21rem;
+        }
+
+        &Title {
+            &Container {
+                height: 5rem;
+                width: 70%;
+                background-color: black;
+                color: white;
+            
+                @include flexCenter;
+            
+                transform: translateY(-50%);
+            }
+
+            &Text {
+                font-size: 1.9rem;
+            }
+        }
+        
+        &Description {
+            transform: translateY(-1.2rem);
+
+            &Text {
+                font-size: 1.5rem;
+                padding: .5rem;
+            }
+        }
+
+        &Button {
+            height: 6rem;
+            width: 100%;
+            font-size: 1.9rem;
+        
+            background-color: $color-primary;
+        
+            @include flexCenter;
+        
+            transition: all .2s;
+
+            &:visited,
+            &:link {
+                text-decoration: none;
+                color: white;
+            }
+
+            &:active {
+                background-color: $color-primary-active;
+            }
+
+            &:hover {
+                cursor: pointer;
+                background-color: $color-primary-hovered;
+            }
+        }
+    }
+
+
+@media (max-width: 550px) {
+    .MotoCard {
+        width: 35rem;
+        height: 45rem;
+
+        &Button {
+            height: 7rem;  
+        }
+    }
+}

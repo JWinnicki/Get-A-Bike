@@ -4,10 +4,10 @@ import {Redirect} from 'react-router-dom';
 
 import styles from './Profile.module.scss';
 import {logout, fetchUserOrders, deleteItem, clearOrdersArr} from '../../store/actions/index';
-import CardMenu from '../../components/CardMenu/CardMenu';
-import OrderItem from './ProfileComponents/OrderItem/OrderItem';
+import CardMenu from './CardMenu/CardMenu';
+import OrderItem from './OrderItem/OrderItem';
 import Spinner from '../../components/Spinner/Spinner';
-import BasicButton from '../../components/atoms/BasicButton/BasicButton';
+import BasicButton from '../../components/BasicButton/BasicButton';
 
 class Profile extends React.Component {
 

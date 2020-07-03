@@ -3,7 +3,7 @@ import React from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Modal from '../../components/Modal/Modal';
-import ModalContent from '../../components/ModalContent/ModalContent';
+import ModalContent from '../../components/Modal/ModalContent/ModalContent';
 
 
 

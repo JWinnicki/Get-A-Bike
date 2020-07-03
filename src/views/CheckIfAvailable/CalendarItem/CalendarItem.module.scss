@@ -1,0 +1,34 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.CalendarItem {
+    height: 8rem;
+    border: 1px solid black;
+    @include flexCenter;
+
+    &:hover {
+        cursor: pointer;
+        border-width: 3px;
+    }
+
+    &Additional {
+        @extend .CalendarItem;
+        opacity: .4;
+    }
+
+    &Text {
+        font-size: 3rem;
+    }
+}
+
+.available {
+    background-color: transparent;
+}
+
+.partly {
+    background-color: $color-yellow-availability;
+}
+
+.not {
+    background-color: $color-red-availability;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Offer.module.scss';
 import Icon from '../../components/Icon/Icon';
-import BasicButton from '../../components/atoms/BasicButton/BasicButton';
+import BasicButton from '../../components/BasicButton/BasicButton';
 
 const Offer = () => {
     return (

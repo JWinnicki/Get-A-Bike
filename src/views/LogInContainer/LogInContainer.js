@@ -3,8 +3,8 @@ import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 
 import styles from './LogInContainer.module.scss';
-import OptionToggle from '../../components/OptionToggle/OptionToggle';
-import RegisterForm from './LogInComponents/RegisterForm/RegisterForm';
+import OptionToggle from './OptionToggle/OptionToggle';
+import RegisterForm from './RegisterForm/RegisterForm';
 
 
 const LogInContainer = ({token, userId}) => {

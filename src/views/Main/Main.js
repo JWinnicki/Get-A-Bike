@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './Main.module.scss';
-import MainCardsList from './MainComponents/MainCardList/MainCardsList';
+import MainCardsList from './MainCardList/MainCardsList';
 
 
 const Main = () => (

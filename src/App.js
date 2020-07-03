@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-import './App.css';
+import './App.scss';
 import Main from './views/Main/Main';
 import Cities from './views/Cities/Cities';
 import BrandLogosList from './views/MotorcyclesMenu/BrandLogosList';

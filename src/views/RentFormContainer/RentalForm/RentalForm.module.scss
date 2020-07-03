@@ -1,0 +1,72 @@
+@import '../../../scss/mixins';
+
+.Form {
+    @include flexSpaceAroundColumn;
+    padding: 1.5rem;
+    width: 100%;
+    color: black;
+    
+    &Section {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 30rem;
+
+        &Text {
+            flex: 0 0 40%;
+            text-align: center;
+            margin-right: .5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    }
+
+    &SelectInput {
+        font-size: 1.4rem;
+        font-family: inherit;
+        background-color: transparent;
+        color: black;
+        border: none;
+        border-bottom: 1px solid black;
+        margin: 0;
+    }
+
+    &Text {
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 1rem 0;
+    }
+}
+
+@media (max-width: 1370px) {
+    .FormSection {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 1030px) and (orientation: portrait) {
+    .Form {
+        &Section {
+            width: 35rem;
+
+            &Text {
+                font-size: 2rem; 
+            }
+        }
+
+        &SelectInput {
+            font-size: 1.8rem;
+        }
+
+        &Text {
+            font-size: 2.5rem;
+            margin-top: 1.5rem;
+        }
+    }
+}
+
+@media (max-width: 390px) {
+    .Form {
+        padding: 1.5rem 0;
+    }
+}

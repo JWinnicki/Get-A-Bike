@@ -4,7 +4,7 @@ import "@testing-library/jest-dom/extend-expect";
 import {Router} from 'react-router-dom';
 import {createMemoryHistory} from 'history';
 
-import {initialState} from '../../store/reducers/motorcyclesReducer'
+import {initialState} from '../../../store/reducers/motorcyclesReducer'
 import BrandToggler from './BrandToggler';
 
 describe('BrandToggler', () => {

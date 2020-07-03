@@ -1,9 +1,9 @@
 import React from 'react';
-import { render, screen, cleanup } from '../../test-utils';
-import { Router } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
+import {render, screen, cleanup} from '../../test-utils';
+import {Router } from 'react-router-dom';
+import {createMemoryHistory} from 'history';
 import "@testing-library/jest-dom/extend-expect";
-import { createStore } from 'redux'
+import {createStore} from 'redux'
 
 import Header from './Header';
 

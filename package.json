@@ -4,7 +4,7 @@
   "homepage": "https://jwinnicki.github.io/Get-A-Bike",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "formik": "^1.5.7",
     "gh-pages": "^2.1.1",
     "node-sass": "^4.14.1",
